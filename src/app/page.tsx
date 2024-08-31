@@ -1,10 +1,11 @@
-import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-     <div>
-      Omid Mohebbi
+    <main className="container-fluid">
+     <div className="row">
+        <div className="col"> Hello </div>
+        <div className="col"> World </div>
+
      </div>
     </main>
   );
