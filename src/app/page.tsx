@@ -5,11 +5,12 @@ export default function Home() {
       <div className="row">
         <div className="col">
           <header>
-            <div class="container">
+            <div className="container">
               <h1>Omid Mohebbi</h1>
               <p>Senior Software Engineer</p>
             </div>
           </header>
+
           <nav>
             <ul>
               <li><a href="#about">About</a></li>
@@ -21,19 +22,19 @@ export default function Home() {
           </nav>
 
           <section id="about">
-            <div class="container">
-              <h2 class="section-title">About Me</h2>
+            <div className="container">
+              <h2 className="section-title">About Me</h2>
               <p>I'm an experienced Senior Software Engineer with expertise in Java, Spring, AWS, React, and Docker. I've worked on ERP solutions, startup applications, and enjoy mentoring junior developers while following the latest technologies.</p>
             </div>
           </section>
 
-          <section id="experience" class="bg-light">
-            <div class="container">
-              <h2 class="section-title">Experience</h2>
+          <section id="experience" className="bg-light">
+            <div className="container">
+              <h2 className="section-title">Experience</h2>
 
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="experience-item">
+              <div className="row">
+                <div className="col-md-12">
+                  <div className="experience-item">
                     <h3>Senior Software Engineer</h3>
                     <p><strong>NAMO BPM AS (Oslo, Norway) / Remote Working From Isfahan, Iran</strong></p>
                     <p><em>July 2021 - August 2023</em></p>
@@ -56,9 +57,9 @@ export default function Home() {
 
 
 
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="experience-item">
+              <div className="row">
+                <div className="col-md-12">
+                  <div className="experience-item">
                     <h3>Senior Software Engineer</h3>
                     <p><strong>NAMO BPM AS (Oslo, Norway) / Remote Working From Isfahan, Iran</strong></p>
                     <p><em>July 2021 - August 2023</em></p>
@@ -76,9 +77,9 @@ export default function Home() {
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="experience-item">
+              <div className="row">
+                <div className="col-md-12">
+                  <div className="experience-item">
                     <h3>Software Engineer</h3>
                     <p><strong>IRISA (Isfahan, Iran)</strong></p>
                     <ul>
@@ -95,9 +96,9 @@ export default function Home() {
                 </div>
               </div>
 
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="experience-item">
+              <div className="row">
+                <div className="col-md-12">
+                  <div className="experience-item">
                     <h3>Senior Backend Developer</h3>
                     <p><strong>RAYADIAR System (Isfahan, Iran)</strong></p>
                     <p><em>July 2019 - Jun 2021</em></p>
@@ -111,7 +112,7 @@ export default function Home() {
                     <p><strong>Stack:</strong> Java 11, Spring & Hibernate, RestAPIs, PostgreSQL, MongoDB, Docker & Swarm, AWS, gRPC, React, Jenkins, ELK, Kafka, Redis, Prometheus, Grafana</p>
                   </div>
 
-                  <div class="experience-item">
+                  <div className="experience-item">
                     <h3>Full Stack Developer / Technical Leader</h3>
                     <p><strong>RAYADIAR System (Isfahan, Iran)</strong></p>
                     <p><em>Feb 2014 - Jun 2019</em></p>
@@ -131,10 +132,10 @@ export default function Home() {
             </div>
           </section>
           <section id="skills">
-            <div class="container">
-              <h2 class="section-title">Technical Skill</h2>
-              <div class="row">
-                <div class="col-md-4">
+            <div className="container">
+              <h2 className="section-title">Technical Skill</h2>
+              <div className="row">
+                <div className="col-md-4">
                   <h4>Back-End</h4>
                   <ul>
                     <li>Java</li>
@@ -146,9 +147,9 @@ export default function Home() {
                     <li>Prometheus, Grafana</li>
                   </ul>
                 </div>
-                <div class="col-md-4">
+                <div className="col-md-4">
                   <br />
-                  <ul class="pt-1">
+                  <ul className="pt-1">
                     <li>Oracle ADF, BPM, WebLogic</li>
                     <li>Apache Kafka</li>
                     <li>AWS SNS, SQS, SES</li>
@@ -159,7 +160,7 @@ export default function Home() {
                   </ul>
 
                 </div>
-                <div class="col-md-4">
+                <div className="col-md-4">
                   <h4>Front-End</h4>
                   <ul>
                     <li>HTML/CSS/JS/React</li>
@@ -176,8 +177,8 @@ export default function Home() {
                   </ul>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-12">
+              <div className="row">
+                <div className="col-12">
                   <h4>Other:</h4>
                   <ul>
                     <li>Good Knowledge of Microservices, SOA, Integration patterns, and Security Principles</li>
@@ -192,15 +193,15 @@ export default function Home() {
 
 
 
-          <section id="education" class="bg-light">
-            <div class="container">
-              <h2 class="section-title">Education</h2>
-              <div class="row">
-                <div class="col-md-6">
+          <section id="education" className="bg-light">
+            <div className="container">
+              <h2 className="section-title">Education</h2>
+              <div className="row">
+                <div className="col-md-6">
                   <h4>M.Sc. Software Engineering</h4>
                   <p>Payame Noor University, Tehran, Iran (2013-2016)</p>
                 </div>
-                <div class="col-md-6">
+                <div className="col-md-6">
                   <h4>B.Sc. Software Engineering</h4>
                   <p>Payame Noor University, Isfahan, Iran (2008-2013)</p>
                 </div>
@@ -210,8 +211,8 @@ export default function Home() {
 
 
           <section id="contact">
-            <div class="container">
-              <h2 class="section-title">Contact</h2>
+            <div className="container">
+              <h2 className="section-title">Contact</h2>
               <p>Email: <a href="mailto:omidmohebbise@gmail.com">omidmohebbise@gmail.com</a></p>
               <p>LinkedIn: <a href="https://www.linkedin.com/in/omidmohebbise" target="_blank">Omid Mohebbi on LinkedIn</a></p>
             </div>
