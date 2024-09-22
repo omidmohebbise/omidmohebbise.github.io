@@ -6,7 +6,7 @@ export default function Experiences() {
 
                 <div className="row">
                     <div className="col-md-12">
-                        <div className="experience-item">
+                        <div className="section-item">
                             <h3>Senior Software Engineer</h3>
                             <p><strong>NAMO BPM AS (Oslo, Norway) / Remote Working From Isfahan, Iran</strong></p>
                             <p><em>July 2021 - August 2023</em></p>
@@ -26,7 +26,7 @@ export default function Experiences() {
 
                 <div className="row">
                     <div className="col-md-12">
-                        <div className="experience-item">
+                        <div className="section-item">
                             <h3>Senior Backend Developer</h3>
                             <p><strong>RAYADIAR System (Isfahan, Iran)</strong></p>
                             <p><em>July 2019 - Jun 2021</em></p>
@@ -43,13 +43,9 @@ export default function Experiences() {
                     </div>
                 </div>
 
-
-
-
-
                 <div className="row">
                     <div className="col-md-12">
-                        <div className="experience-item">
+                        <div className="section-item">
                             <h3>Senior Software Engineer / Technical Leader</h3>
                             <p><strong>IRISA (Isfahan, Iran)</strong></p>
                             <p><em>March 2018 - Jun 2019</em></p>
@@ -65,7 +61,7 @@ export default function Experiences() {
                             <p><strong>Stack:</strong> Java 6-8 & J2EE, JSF2, Servlet, Oracle DB, ADF, BPMS, WebLogic, OAM, OID, OEM, ELK</p>
                         </div>
 
-                        <div className="experience-item">
+                        <div className="section-item">
                             <h3>Full Stack Java Developer </h3>
                             <div><strong>IRISA (Isfahan, Iran)</strong> <em className="ml-auto">Feb 2014 - Feb 2018</em></div>                          
                             <ul>
@@ -81,8 +77,6 @@ export default function Experiences() {
 
                     </div>
                 </div>
-
-            
 
             </div>
         </section>
