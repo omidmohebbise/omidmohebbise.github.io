@@ -13,7 +13,7 @@ export default function Home() {
       <Experiences />
       <Educations />
       <Contact />
-      <Footer />
+      
     </div>
   );
 }
