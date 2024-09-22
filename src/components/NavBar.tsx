@@ -3,7 +3,6 @@ export default function NavBar() {
         <>
             <div className="row">
                 <div className="col">
-
                     <nav>
                         <ul>
                             <li><a href="/">Portfolio</a></li>
@@ -15,14 +14,7 @@ export default function NavBar() {
                     </nav>
                 </div>
             </div>
-            <div>
-                <header>
-                    <div className="">
-                        <h1>O.Mohebbi</h1>
-                        <div className="px-3">Senior Software Engineer</div>
-                    </div>
-                </header>
-            </div>
+
         </>
     )
 }
