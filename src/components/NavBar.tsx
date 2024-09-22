@@ -6,10 +6,10 @@ export default function NavBar() {
                     <nav>
                         <ul>
                             <li><a href="/">Portfolio</a></li>
-                            <li><a href="/tech-news">Tech News</a></li>
                             <li><a href="/cloud">Cloud </a></li>
                             <li><a href="/ai">AI</a></li>
                             <li><a href="/gallery">Gallery</a></li>
+                            <li><a href="/news">News</a></li>
                         </ul>
                     </nav>
                 </div>
