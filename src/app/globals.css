@@ -115,3 +115,14 @@ footer {
 .section-item ul li {
   margin-bottom: 10px;
 }
+
+
+.skill-level-high{
+  background: linear-gradient(128deg, rgb(237, 247, 234) 19%, transparent 99%)
+}
+.skill-level-medium{
+  background: linear-gradient(128deg, rgb(237, 247, 234) 19%, transparent 50%)
+}
+.skill-level-low{
+  background: linear-gradient(128deg, rgb(237, 247, 234) 19%, transparent 30%)
+}

@@ -1,0 +1,11 @@
+.service-category {
+    margin-top: 20px;
+  }
+  .service-category h4 {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .service-list li {
+    margin-bottom: 10px;
+  }
