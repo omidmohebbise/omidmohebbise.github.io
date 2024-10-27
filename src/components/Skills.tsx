@@ -24,6 +24,7 @@ export default function Skills() {
                                     <li>PostgreSQL, MySQL, Oracle</li>
                                     <li>MongoDB, DynamoDB</li>
                                     <li>Prometheus, Grafana</li>
+                                    <li></li>
                                 </ul>
                             </div>
                             <div className="col-sm-6 col-md-6 ">
@@ -48,13 +49,12 @@ export default function Skills() {
                             <li>SAAS/Redux</li>
                             <li>Bootstrap 5</li>
                         </ul>
-                        <h4 className="bg-light p-2">DevOps</h4>
-                        <ul>
-
-                            <li>Gradle, Git</li>
-                            <li>Docker and Docker Swarm</li>
-                            <li>AWS Cloud Services</li>
-                            <li>Gitlab CI/CD, Jenkins</li>
+                        <h4 className="bg-light p-2">Cloud and Infra</h4>
+                        <ul>                            
+                            <li>AWS, Azure. GCP</li>
+                            <li>K8s, Docker and Docker Swarm</li>
+                            <li>Gitlab CI/CD, Jenkins, Azure Devops</li>
+                           
                         </ul>
                     </div>
                 </div>
