@@ -4,7 +4,7 @@ import React from 'react';
 
 
 
-export default function CloudPage() {
+export default function ArchitecturePage() {
 
     return (
         <>
