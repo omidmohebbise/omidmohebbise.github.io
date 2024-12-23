@@ -1,13 +1,9 @@
 
 
-import AiPageHeader, { AiPageHeaders } from "@/components/ai/header/AiHeader";
 
-
-
-const AiPage: React.FC<AiPageHeaders> = () => {
+const CloudPage = () => {
 
   return (<div>
-    {/* <AiPageHeader selected={AiPageHeaders.Intro}/> */}
     <div className="container my-5">
       <h1 className="text-center mb-4">Cloud Service: AWS, Azure, GCP</h1>
       <p className="text-center">
@@ -221,8 +217,8 @@ const AiPage: React.FC<AiPageHeaders> = () => {
         </table>
     </div>
   </div>
-  )
+  );
 }
 
 
-export default AiPage;
+export default CloudPage;
