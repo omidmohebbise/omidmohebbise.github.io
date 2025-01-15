@@ -10,7 +10,7 @@ export default function NavBar() {
                             <li><a href="/cloud">Cloud</a></li>
                             <li><a href="/security">Security</a></li>
                             <li><a href="/ai">AI</a></li>
-                            <li><a href="/soft-skill">Development</a></li>
+                            <li><a href="/development">Development</a></li>
                         </ul>
                     </nav>
                 </div>

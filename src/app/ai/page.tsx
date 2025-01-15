@@ -7,7 +7,7 @@ const PageStates = {
     Concept: 1,
     Tools: 2,
     Libraries: 3
-}
+} 
 
 const AiPage = () => {
     const [pageState, setPageState] = useState(PageStates.Concept)
