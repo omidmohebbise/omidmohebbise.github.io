@@ -7,21 +7,6 @@ export default function NavBar() {
         <>
             <div className="flex justify-content-around w-100 text-light bg-dark p-2">
 
-                {/* <nav>
-                        <ul>
-                            
-                            <li><a href="/">Portfolio</a></li>
-                            <li><a href="/architecture">Architecture</a></li>
-                            <li><a href="/cloud">Cloud</a></li>
-                            <li><a href="/security">Security</a></li>
-                            <li><a href="/ai">AI</a></li>
-                            <li >
-
-                                
-                            </li>
-
-                        </ul>
-                    </nav> */}
                 <div className='mx-2'>
                     <Dropdown>
                         <Dropdown.Item href="/">
@@ -59,9 +44,16 @@ export default function NavBar() {
                 </div>
                 <div className='mx-2'>
                     <Dropdown>
-                        <Dropdown.Item href="/security">
-                            Security
-                        </Dropdown.Item>
+                    <Dropdown.Toggle as="span" style={{ cursor: 'pointer' }} className='color-white' variant="success" id="dropdown-basic">
+                    Security
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                            <Dropdown.Item href="/security/key-concepts">Concepts</Dropdown.Item>
+                            <Dropdown.Item href="/security/web-security">Web Security</Dropdown.Item>
+                            <Dropdown.Item href="/security/algorithms">Algorithms</Dropdown.Item>
+                            <Dropdown.Item href="/security/frameworks">Frameworks</Dropdown.Item>
+                        </Dropdown.Menu>
+ 
                     </Dropdown>
                 </div>
 
