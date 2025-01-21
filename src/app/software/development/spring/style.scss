@@ -1,0 +1,30 @@
+.tab-content{
+    border-left: 1px solid #efefef;
+    margin-top: 10px;
+}
+.tab-content div {
+    padding: 20px;
+}
+.tab-pane ul {
+    padding: 10px !important;
+
+}
+.tab-pane ul li {
+    padding: 10px;
+}
+.nav-link{
+    color: black !important;
+}
+.nav-pills button{
+    background-color: aliceblue !important;
+    color: cadetblue !important;
+    margin: 5px;
+    
+}
+
+.nav-pills button.active{
+    background-color: aliceblue !important;
+    color: cadetblue !important;
+
+    border: 1px solid rgb(203, 203, 203) !important;
+}
