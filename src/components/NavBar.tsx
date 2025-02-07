@@ -63,7 +63,8 @@ export default function NavBar() {
                             Security
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                            <Dropdown.Item href="/security/key-concepts">Concepts</Dropdown.Item>
+                            <Dropdown.Item href="/security/key-concepts">Key Concepts</Dropdown.Item>
+                            <Dropdown.Item href="/security/security-areas">Security Areas</Dropdown.Item>
                             <Dropdown.Item href="/security/web-security">Web Security</Dropdown.Item>
                             <Dropdown.Item href="/security/algorithms">Algorithms</Dropdown.Item>
                             <Dropdown.Item href="/security/frameworks">Frameworks</Dropdown.Item>
