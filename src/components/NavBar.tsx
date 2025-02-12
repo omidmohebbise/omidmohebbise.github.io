@@ -68,6 +68,8 @@ export default function NavBar() {
                             <Dropdown.Item href="/security/web-security">Web Security</Dropdown.Item>
                             <Dropdown.Item href="/security/algorithms">Algorithms</Dropdown.Item>
                             <Dropdown.Item href="/security/frameworks">Frameworks</Dropdown.Item>
+                            <Dropdown.Item href="/security/modern-security-approches">Modern Security</Dropdown.Item>
+                            <Dropdown.Item href="/security/stride-model">STRIDE model</Dropdown.Item>
                         </Dropdown.Menu>
 
                     </Dropdown>
