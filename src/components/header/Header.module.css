@@ -1,0 +1,80 @@
+.header {
+    background-color: #ffffff;
+    padding: 2rem 0;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: #6b7280;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.socialLinks {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.icon:hover {
+    transform: translateY(-2px);
+}
+
+.mailIcon {
+    color: #ef4444;
+}
+
+.mailIcon:hover {
+    color: #b91c1c;
+}
+
+.githubIcon {
+    color: #1f2937;
+}
+
+.githubIcon:hover {
+    color: #111827;
+}
+
+.twitterIcon {
+    color: #60a5fa;
+}
+
+.twitterIcon:hover {
+    color: #2563eb;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 1.5rem 0;
+    }
+
+    .socialLinks {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        text-align: center;
+    }
+}
