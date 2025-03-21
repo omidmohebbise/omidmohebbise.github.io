@@ -10,15 +10,15 @@ export default function NavBar() {
 
     return (
         <Navbar expanded={expanded} expand="md" className={styles.navbar‌}>
-            <Container>
-                <Navbar.Toggle 
-                    aria-controls="navbar-nav" 
+            <Container className='pt-0 pb-2'>
+                <Navbar.Toggle
+                    aria-controls="navbar-nav"
                     onClick={() => setExpanded(!expanded)}
                     className={styles.navbarToggle}
                 >
                     <Menu className={styles.menuIcon} />
                 </Navbar.Toggle>
-                
+
                 <Navbar.Collapse id="navbar-nav">
                     <Nav className={styles.navContent}>
                         <Nav.Link href="/" className={styles.navLink}>
@@ -60,9 +60,17 @@ export default function NavBar() {
                             Cloud
                         </Nav.Link>
 
-                        <Nav.Link href="/ai" className={styles.navLink}>
-                            AI
-                        </Nav.Link>
+                        <Dropdown >
+                            <Dropdown.Toggle as="span" className={styles.dropdownToggle}>
+                                AI
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu className={styles.dropdownMenu}>
+                                <Dropdown.Item href="/ai/main-concepts" className={styles.dropdownItem}>Main Concepts</Dropdown.Item>
+                                <Dropdown.Item href="/ai/tools" className={styles.dropdownItem}>Tools</Dropdown.Item>
+                                <Dropdown.Item href="/ai/libraries" className={styles.dropdownItem}>Libraries</Dropdown.Item>
+                                {/* <Dropdown.Item href="/ai/gans" className={styles.dropdownItem}>GANS</Dropdown.Item> */}
+                            </Dropdown.Menu>
+                        </Dropdown>
 
                         <Dropdown>
                             <Dropdown.Toggle as="span" className={styles.dropdownToggle}>

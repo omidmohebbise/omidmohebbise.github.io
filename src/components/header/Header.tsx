@@ -5,8 +5,8 @@ import styles from './Header.module.css';
 
 export default function Header() {
     return (
-        <section className={styles.header}>
-            <div className="container">
+        <section className={styles.header} >
+            <div className="container ">
                 <div className="row align-items-center">
                     <div className="col-12 col-md-6">
                         <h1 className={styles.title}>O.Mohebbi</h1>
