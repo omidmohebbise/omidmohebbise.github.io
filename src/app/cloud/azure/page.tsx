@@ -1,7 +1,7 @@
 import { azureServices } from './data.js';
 export default function Azure() {
     return <div className="container my-4">
-        <h2 className=""><a className="text-decoration-none" href='/cloud'>Cloud</a>/ Azure Services</h2>
+        <h2 className="">Azure Services</h2>
         {azureServices.map(categoryAndService =>
             <div className="service-category px-3">
                 <h4 className='py-3'>{categoryAndService.title}</h4>
