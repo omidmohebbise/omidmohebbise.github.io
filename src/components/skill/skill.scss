@@ -1,0 +1,13 @@
+.custom-bullet-list {
+    list-style-type: disc; /* Sets bullet type to filled circle */
+    margin-left: 30px; /* Adds space to the left */
+    padding: 0; /* Removes default padding */
+}
+
+.custom-bullet-list li {
+    margin-bottom: 5px; /* Adds space between items */
+}
+
+.small-font-li{
+    font-size: 14px;
+}
