@@ -1,0 +1,330 @@
+AWS Part
+
+<ul class="list-group">
+    <li class="list-group-item"><strong>Services by Category</strong></li>
+    <li class="list-group-item"><strong>Compute</strong>
+        <ul>
+            <li>EC2</li>
+            <li>Lightsail</li>
+            <li>Lambda</li>
+            <li>Batch</li>
+            <li>Elastic Beanstalk</li>
+            <li>Serverless Application Repository</li>
+            <li>AWS Outposts</li>
+            <li>EC2 Image Builder</li>
+            <li>AWS App Runner</li>
+            <li>AWS SimSpace Weaver</li>
+            <li>Parallel Computing Service</li>
+            <li>EC2 Global View</li>
+        </ul>
+    </li>
+    <li class="list-group-item"><strong>Containers</strong>
+        <ul>
+            <li>Elastic Container Service</li>
+            <li>Elastic Kubernetes Service</li>
+            <li>Red Hat OpenShift Service on AWS</li>
+            <li>Elastic Container Registry</li>
+        </ul>
+    </li>
+    <li class="list-group-item"><strong>Storage</strong>
+        <ul>
+            <li>S3</li>
+            <li>EFS</li>
+            <li>FSx</li>
+            <li>S3 Glacier</li>
+            <li>Storage Gateway</li>
+            <li>AWS Backup</li>
+            <li>AWS Elastic Disaster Recovery</li>
+        </ul>
+    </li>
+    <li class="list-group-item"><strong>Database</strong>
+        <ul>
+            <li>Aurora and RDS</li>
+            <li>ElastiCache</li>
+            <li>Neptune</li>
+            <li>Amazon QLDB</li>
+            <li>Amazon DocumentDB</li>
+            <li>Amazon Keyspaces</li>
+            <li>Amazon Timestream</li>
+            <li>DynamoDB</li>
+            <li>Aurora DSQL</li>
+            <li>Amazon MemoryDB</li>
+            <li>Oracle Database@AWS</li>
+        </ul>
+    </li>
+    <li class="list-group-item"><strong>Migration & Transfer</strong>
+        <ul>
+            <li>AWS Migration Hub</li>
+            <li>AWS Application Migration Service</li>
+            <li>Application Discovery Service</li>
+            <li>Database Migration Service</li>
+            <li>AWS Transfer Family</li>
+            <li>AWS Snow Family</li>
+            <li>DataSync</li>
+            <li>AWS Transform</li>
+            <li>AWS Mainframe Modernization</li>
+            <li>Amazon Elastic VMware Service (Preview)</li>
+        </ul>
+    </li>
+    <li class="list-group-item"><strong>Networking & Content Delivery</strong>
+        <ul>
+            <li>VPC</li>
+            <li>CloudFront</li>
+            <li>API Gateway</li>
+            <li>Direct Connect</li>
+            <li>AWS App Mesh</li>
+            <li>Global Accelerator</li>
+            <li>Route 53</li>
+            <li>AWS Data Transfer Terminal</li>
+            <li>AWS Cloud Map</li>
+            <li>Application Recovery Controller</li>
+        </ul>
+    </li>
+    <li class="list-group-item"><strong>Developer Tools</strong>
+        <ul>
+            <li>CodeCommit</li>
+            <li>CodeBuild</li>
+            <li>CodeDeploy</li>
+            <li>CodePipeline</li>
+            <li>Cloud9</li>
+            <li>CloudShell</li>
+            <li>X-Ray</li>
+            <li>AWS FIS</li>
+            <li>Infrastructure Composer</li>
+            <li>AWS App Studio</li>
+            <li>AWS AppConfig</li>
+            <li>CodeArtifact</li>
+            <li>Amazon CodeCatalyst</li>
+            <li>Amazon Q Developer (Including Amazon CodeWhisperer)</li>
+        </ul>
+    </li>
+    <li class="list-group-item"><strong>Customer Enablement</strong>
+        <ul>
+            <li>AWS IQ</li>
+            <li>Managed Services</li>
+            <li>Activate for Startups</li>
+            <li>AWS re:Post Private</li>
+        </ul>
+    </li>
+    <li class="list-group-item"><strong>Robotics</strong>
+        <ul>
+            <li>AWS RoboMaker</li>
+        </ul>
+    </li>
+    <li class="list-group-item"><strong>Blockchain</strong>
+        <ul>
+            <li>Amazon Managed Blockchain</li>
+        </ul>
+    </li>
+    <li class="list-group-item"><strong>Satellite</strong>
+        <ul>
+            <li>Ground Station</li>
+        </ul>
+    </li>
+    <li class="list-group-item"><strong>Quantum Technologies</strong>
+        <ul>
+            <li>Amazon Braket</li>
+        </ul>
+    </li>
+    <li class="list-group-item"><strong>Management & Governance</strong>
+        <ul>
+            <li>AWS Organizations</li>
+            <li>CloudWatch</li>
+            <li>AWS Auto Scaling</li>
+            <li>CloudFormation</li>
+            <li>AWS Config</li>
+            <li>OpsWorks</li>
+            <li>Service Catalog</li>
+            <li>Systems Manager</li>
+            <li>Trusted Advisor</li>
+            <li>Control Tower</li>
+            <li>AWS Well-Architected Tool</li>
+            <li>Amazon Q Developer in chat applications (previously AWS Chatbot)</li>
+            <li>Launch Wizard</li>
+            <li>AWS Compute Optimizer</li>
+            <li>Resource Groups & Tag Editor</li>
+            <li>Amazon Grafana</li>
+            <li>Amazon Prometheus</li>
+            <li>AWS Resilience Hub</li>
+            <li>Incident Manager</li>
+            <li>AWS Telco Network Builder</li>
+            <li>AWS Health Dashboard</li>
+            <li>AWS Proton</li>
+            <li>AWS User Notifications</li>
+            <li>CloudTrail</li>
+            <li>AWS License Manager</li>
+            <li>AWS Resource Explorer</li>
+            <li>Service Quotas</li>
+        </ul>
+    </li>
+    <li class="list-group-item"><strong>Media Services</strong>
+        <ul>
+            <li>Kinesis Video Streams</li>
+            <li>MediaConvert</li>
+            <li>MediaLive</li>
+            <li>MediaPackage</li>
+            <li>MediaStore</li>
+            <li>MediaTailor</li>
+            <li>Elemental Appliances & Software</li>
+            <li>Elastic Transcoder</li>
+            <li>Amazon Interactive Video Service</li>
+            <li>AWS Deadline Cloud</li>
+            <li>MediaConnect</li>
+        </ul>
+    </li>
+    <li class="list-group-item"><strong>Machine Learning</strong>
+        <ul>
+            <li>Amazon SageMaker AI</li>
+            <li>Amazon Augmented AI</li>
+            <li>Amazon CodeGuru</li>
+            <li>Amazon DevOps Guru</li>
+            <li>Amazon Comprehend</li>
+            <li>Amazon Forecast</li>
+            <li>Amazon Fraud Detector</li>
+            <li>Amazon Kendra</li>
+            <li>Amazon Personalize</li>
+            <li>Amazon Polly</li>
+            <li>Amazon Rekognition</li>
+            <li>Amazon Textract</li>
+            <li>Amazon Transcribe</li>
+            <li>Amazon Translate</li>
+            <li>AWS DeepComposer</li>
+            <li>AWS DeepRacer</li>
+            <li>AWS Panorama</li>
+            <li>Amazon Monitron</li>
+            <li>AWS HealthLake</li>
+            <li>Amazon Lookout for Vision</li>
+            <li>Amazon Lookout for Equipment</li>
+            <li>Amazon Lookout for Metrics</li>
+            <li>Amazon Q Business</li>
+            <li>AWS HealthOmics</li>
+            <li>Amazon Bedrock</li>
+            <li>Amazon Q</li>
+            <li>Amazon Comprehend Medical</li>
+            <li>Amazon Lex</li>
+            <li>AWS HealthImaging</li>
+        </ul>
+    </li>
+    <li class="list-group-item"><strong>Analytics</strong>
+        <ul>
+            <li>Athena</li>
+            <li>Amazon Redshift</li>
+            <li>CloudSearch</li>
+            <li>Amazon OpenSearch Service</li>
+            <li>Kinesis</li>
+            <li>QuickSight</li>
+            <li>AWS Data Exchange</li>
+            <li>AWS Lake Formation</li>
+            <li>MSK</li>
+            <li>AWS Glue DataBrew</li>
+            <li>Amazon FinSpace</li>
+            <li>Managed Apache Flink</li>
+            <li>EMR</li>
+            <li>AWS Clean Rooms</li>
+            <li>Amazon SageMaker</li>
+            <li>AWS Entity Resolution</li>
+            <li>AWS Glue</li>
+            <li>Amazon Data Firehose</li>
+            <li>Amazon DataZone</li>
+        </ul>
+    </li>
+    <li class="list-group-item"><strong>Security, Identity, & Compliance</strong>
+        <ul>
+            <li>Resource Access Manager</li>
+            <li>Cognito</li>
+            <li>Secrets Manager</li>
+            <li>GuardDuty</li>
+            <li>Amazon Inspector</li>
+            <li>Amazon Macie</li>
+            <li>IAM Identity Center</li>
+            <li>Certificate Manager</li>
+            <li>Key Management Service</li>
+            <li>CloudHSM</li>
+            <li>Directory Service</li>
+            <li>AWS Firewall Manager</li>
+            <li>AWS Artifact</li>
+            <li>Detective</li>
+            <li>AWS Signer</li>
+            <li>Security Lake</li>
+            <li>WAF & Shield</li>
+            <li>Amazon Verified Permissions</li>
+            <li>AWS Audit Manager</li>
+            <li>Security Hub</li>
+            <li>IAM</li>
+            <li>AWS Private Certificate Authority</li>
+            <li>AWS Payment Cryptography</li>
+            <li>AWS Security Incident Response</li>
+        </ul>
+    </li>
+    <li class="list-group-item"><strong>Cloud Financial Management</strong>
+        <ul>
+            <li>AWS Marketplace</li>
+            <li>AWS Billing Conductor</li>
+            <li>Billing and Cost Management</li>
+        </ul>
+    </li>
+    <li class="list-group-item"><strong>Front-end Web & Mobile</strong>
+        <ul>
+            <li>AWS Amplify</li>
+            <li>AWS AppSync</li>
+            <li>Device Farm</li>
+            <li>Amazon Location Service</li>
+        </ul>
+    </li>
+    <li class="list-group-item"><strong>Application Integration</strong>
+        <ul>
+            <li>Step Functions</li>
+            <li>Amazon AppFlow</li>
+            <li>Amazon MQ</li>
+            <li>Simple Notification Service</li>
+            <li>Simple Queue Service</li>
+            <li>SWF</li>
+            <li>Managed Apache Airflow</li>
+            <li>AWS B2B Data Interchange</li>
+            <li>Amazon EventBridge</li>
+        </ul>
+    </li>
+    <li class="list-group-item"><strong>Business Applications</strong>
+        <ul>
+            <li>Amazon Connect</li>
+            <li>Amazon Chime</li>
+            <li>Amazon Simple Email Service</li>
+            <li>Amazon WorkDocs</li>
+            <li>Amazon WorkMail</li>
+            <li>AWS Supply Chain</li>
+            <li>Amazon Pinpoint</li>
+            <li>Amazon One Enterprise</li>
+            <li>AWS Wickr</li>
+            <li>AWS AppFabric</li>
+            <li>AWS End User Messaging</li>
+            <li>Amazon Chime SDK</li>
+        </ul>
+    </li>
+    <li class="list-group-item"><strong>End User Computing</strong>
+        <ul>
+            <li>WorkSpaces</li>
+            <li>AppStream 2.0</li>
+            <li>WorkSpaces Thin Client</li>
+            <li>WorkSpaces Secure Browser</li>
+        </ul>
+    </li>
+    <li class="list-group-item"><strong>Internet of Things</strong>
+        <ul>
+            <li>IoT Analytics</li>
+            <li>IoT Device Defender</li>
+            <li>IoT Device Management</li>
+            <li>IoT Greengrass</li>
+            <li>IoT SiteWise</li>
+            <li>IoT Core</li>
+            <li>IoT TwinMaker</li>
+            <li>IoT Events</li>
+            <li>AWS IoT FleetWise</li>
+        </ul>
+    </li>
+    <li class="list-group-item"><strong>Game Development</strong>
+        <ul>
+            <li>Amazon GameLift Servers</li>
+            <li>Amazon GameLift Streams</li>
+        </ul>
+    </li>
+</ul>
