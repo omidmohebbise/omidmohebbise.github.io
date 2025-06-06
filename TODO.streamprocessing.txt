@@ -1,0 +1,74 @@
+
+
+import React from 'react';
+import { Container, Row, Col, Card } from 'react-bootstrap';
+
+interface StreamingProduct {
+  name: string;
+  description: string;
+}
+
+const streamingProducts: StreamingProduct[] = [
+  {
+    name: 'Apache Flink',
+    description: 'A stream processing framework that provides high-throughput and low-latency processing.',
+  },
+  {
+    name: 'Apache Spark Streaming',
+    description: 'An extension of Apache Spark that allows for processing real-time data streams.',
+  },
+  {
+    name: 'Apache Pulsar',
+    description: 'A distributed pub-sub messaging system that supports stream processing with Pulsar Functions.',
+  },
+  {
+    name: 'Apache Beam',
+    description: 'A unified model for defining both batch and streaming data processing jobs.',
+  },
+  {
+    name: 'Confluent KSQL',
+    description: 'A SQL-like streaming query language for Apache Kafka that allows for real-time data processing.',
+  },
+  {
+    name: 'Amazon Kinesis',
+    description: 'A set of services for real-time data processing in the AWS ecosystem.',
+  },
+  {
+    name: 'Azure Stream Analytics',
+    description: 'A real-time analytics service designed to process and analyze streaming data.',
+  },
+  {
+    name: 'Google Cloud Dataflow',
+    description: 'A fully managed service for stream and batch data processing.',
+  },
+  {
+    name: 'Redis Streams',
+    description: 'A data structure in Redis that supports streaming data and allows for real-time processing.',
+  },
+  {
+    name: 'Apache NiFi',
+    description: 'A data integration tool that supports data flow automation and can handle streaming data.',
+  },
+];
+
+const StreamingProductsList: React.FC = () => {
+  return (
+    <Container className="mt-5">
+      <h1 className="text-center mb-4">Streaming Data Processing Products</h1>
+      <Row>
+        {streamingProducts.map((product, index) => (
+          <Col key={index} md={6} lg={4} className="mb-4">
+            <Card>
+              <Card.Body>
+                <Card.Title>{product.name}</Card.Title>
+                <Card.Text>{product.description}</Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    </Container>
+  );
+};
+
+export default StreamingProductsList;
