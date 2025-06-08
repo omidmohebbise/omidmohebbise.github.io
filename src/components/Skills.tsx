@@ -58,16 +58,6 @@ export default function Skills() {
                         </ul>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col-12">
-                        <h4 className="bg-light p-2">Other:</h4>
-                        <ul>
-                            <li>Good Knowledge of Microservices, SOA, Integration patterns, and Security Principles</li>
-                            <li>Hands-On ActiveMQ, Redis, ELK Stack, GraphQL, Quarkus, Kotlin, Android</li>
-                            <li>Good Knowledge of TDD, DDD, SOLID, and Agile Principles</li>
-                        </ul>
-                    </div>
-                </div>
             </div>
         </section>
     )
