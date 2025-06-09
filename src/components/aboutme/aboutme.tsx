@@ -3,7 +3,9 @@ export default function AboutMe() {
     return (<section id="about">
         <div className="container">
             
-            <p>I currently work at Rabobank, where I am responsible for initiating, developing, and delivering over 8 Java, Spring, and React applications from the ground up, as well as designing new microservice-based architectures. I work extensively with Java 17 and the latest version of Spring, utilizing Azure DevOps, AWS, and event-driven architecture to deliver high-quality, scalable solutions. I am passionate about translating business needs into technical solutions that create real value and drive innovation within a professional team and tribe</p>
+            <p>
+                I am a Senior Software Engineer specializing in Java, Spring, Cloud, and microservices, with a focus on event-driven solutions. My background includes experience in ERP systems and fintech applications, where I have built a reputation as a reliable team player and collaborator. I have a deep passion for software architecture and strive to stay up to date with the latest technologies as I pursue a progressive career path. I am also a music lover and musician, as well as an avid board game player.
+            </p>
         </div>
     </section>)
 }
