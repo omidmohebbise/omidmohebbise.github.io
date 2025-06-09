@@ -3,7 +3,7 @@ export const positions = [
             title: "Senior Software Engineer",
             company: "RABOBANK, Consultant for Maxima Europe",
             location: "Amsterdam, Netherlands",
-            period: "Feb 2024 - Present",
+            period: "Feb 2024 - Until Now",
             responsibilities: [
                 "Spearheading the enhancement of event-driven loan solutions to ensure optimal performance and reliability.",
                 "Leveraging a diverse technology stack, such as AWS, Azure, Splunk, Spring, and MongoDB, to create and deploy scalable services tailored to Rabobank's specific needs.",

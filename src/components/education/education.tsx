@@ -1,6 +1,6 @@
 export default function Educations() {
     return (
-        <section id="education" className="bg-light py-5">
+        <section id="education" className="bg-light py-1">
             <div className="container py-1">
                 <h2 className="section-title py-0 ">Education</h2>
                 <div className="row g-4">
