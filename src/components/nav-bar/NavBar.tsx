@@ -41,8 +41,12 @@ export default function NavBar() {
                                                className={`${styles.dropdownItem} ${styles.subSubItem}`}>
                                     Java 8 to 23 versions
                                 </Dropdown.Item>
-                                <Dropdown.Item href="/development/spring"
+                                <Dropdown.Item href="/development/java/concurrency"
                                                className={`${styles.dropdownItem} ${styles.subSubItem}`}>
+                                    Concurrency
+                                </Dropdown.Item>
+                                <Dropdown.Item href="/development/spring"
+                                               className={`${styles.dropdownItem}`}>
                                     Spring
                                 </Dropdown.Item>
                                 <Dropdown.Item href="/kotlin"

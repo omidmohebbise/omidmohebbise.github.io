@@ -7,22 +7,22 @@ const JavaVersions = () => {
   return (
     <div className="d-flex align-items-start">
       <div className="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <button className={"m-1 bg-light nav-link" + (activeTab === 0 ? " active " : " ")} onClick={() => setActiveTab(0)} id="v-pills-23-tab" >Java 23</button>
-        <button className={"m-1 bg-light nav-link" + (activeTab === 1 ? " active " : " ")} onClick={() => setActiveTab(1)} id="v-pills-22-tab" >Java 22</button>
-        <button className={"m-1 bg-light nav-link " + (activeTab === 2 ? " active " : " ")} onClick={() => setActiveTab(2)} id="v-pills-21-tab" >Java 21</button>
-        <button className={"m-1 bg-light nav-link" + (activeTab === 3 ? " active " : " ")} onClick={() => setActiveTab(3)} id="v-pills-20-tab" >Java 20</button>
-        <button className={"m-1 bg-light nav-link" + (activeTab === 4 ? " active " : " ")} onClick={() => setActiveTab(4)} id="v-pills-19-tab" >Java 19</button>
-        <button className={"m-1 bg-light nav-link" + (activeTab === 5 ? " active " : " ")} onClick={() => setActiveTab(5)} id="v-pills-18-tab" >Java 18</button>
-        <button className={"m-1 bg-light nav-link" + (activeTab === 6 ? " active " : " ")} onClick={() => setActiveTab(6)} id="v-pills-17-tab" >Java 17</button>
-        <button className={"m-1 bg-light nav-link" + (activeTab === 7 ? " active " : " ")} onClick={() => setActiveTab(7)} id="v-pills-16-tab" >Java 16</button>
-        <button className={"m-1 bg-light nav-link" + (activeTab === 8 ? " active " : " ")} onClick={() => setActiveTab(8)} id="v-pills-15-tab" >Java 15</button>
-        <button className={"m-1 bg-light nav-link" + (activeTab === 9 ? " active " : " ")} onClick={() => setActiveTab(9)} id="v-pills-14-tab" >Java 14</button>
-        <button className={"m-1 bg-light nav-link" + (activeTab === 10 ? " active " : " ")} onClick={() => setActiveTab(10)} id="v-pills-13-tab" >Java 13</button>
-        <button className={"m-1 bg-light nav-link" + (activeTab === 11 ? " active " : " ")} onClick={() => setActiveTab(11)} id="v-pills-12-tab" >Java 12</button>
-        <button className={"m-1 bg-light nav-link" + (activeTab === 12 ? " active " : " ")} onClick={() => setActiveTab(12)} id="v-pills-11-tab" >Java 11</button>
-        <button className={"m-1 bg-light nav-link" + (activeTab === 13 ? " active " : " ")} onClick={() => setActiveTab(13)} id="v-pills-10-tab" >Java 10</button>
-        <button className={"m-1 bg-light nav-link" + (activeTab === 14 ? " active " : " ")} onClick={() => setActiveTab(14)} id="v-pills-9-tab"  >Java 9</button>
-        <button className={"m-1 bg-light nav-link" + (activeTab === 15 ? " active " : " ")} onClick={() => setActiveTab(15)} id="v-pills-8-tab"  >Java 8</button>
+        <button className={"min-width m-1 bg-light nav-link" + (activeTab === 0 ? " active " : " ")} onClick={() => setActiveTab(0)} id="v-pills-23-tab" >Java 23</button>
+        <button className={"min-width m-1 bg-light nav-link" + (activeTab === 1 ? " active " : " ")} onClick={() => setActiveTab(1)} id="v-pills-22-tab" >Java 22</button>
+        <button className={"min-width m-1 bg-light nav-link " + (activeTab === 2 ? " active " : " ")} onClick={() => setActiveTab(2)} id="v-pills-21-tab" >Java 21</button>
+        <button className={"min-width m-1 bg-light nav-link" + (activeTab === 3 ? " active " : " ")} onClick={() => setActiveTab(3)} id="v-pills-20-tab" >Java 20</button>
+        <button className={"min-width m-1 bg-light nav-link" + (activeTab === 4 ? " active " : " ")} onClick={() => setActiveTab(4)} id="v-pills-19-tab" >Java 19</button>
+        <button className={"min-width m-1 bg-light nav-link" + (activeTab === 5 ? " active " : " ")} onClick={() => setActiveTab(5)} id="v-pills-18-tab" >Java 18</button>
+        <button className={"min-width m-1 bg-light nav-link" + (activeTab === 6 ? " active " : " ")} onClick={() => setActiveTab(6)} id="v-pills-17-tab" >Java 17</button>
+        <button className={"min-width m-1 bg-light nav-link" + (activeTab === 7 ? " active " : " ")} onClick={() => setActiveTab(7)} id="v-pills-16-tab" >Java 16</button>
+        <button className={"min-width m-1 bg-light nav-link" + (activeTab === 8 ? " active " : " ")} onClick={() => setActiveTab(8)} id="v-pills-15-tab" >Java 15</button>
+        <button className={"min-width m-1 bg-light nav-link" + (activeTab === 9 ? " active " : " ")} onClick={() => setActiveTab(9)} id="v-pills-14-tab" >Java 14</button>
+        <button className={"min-width m-1 bg-light nav-link" + (activeTab === 10 ? " active " : " ")} onClick={() => setActiveTab(10)} id="v-pills-13-tab" >Java 13</button>
+        <button className={"min-width m-1 bg-light nav-link" + (activeTab === 11 ? " active " : " ")} onClick={() => setActiveTab(11)} id="v-pills-12-tab" >Java 12</button>
+        <button className={"min-width m-1 bg-light nav-link" + (activeTab === 12 ? " active " : " ")} onClick={() => setActiveTab(12)} id="v-pills-11-tab" >Java 11</button>
+        <button className={"min-width m-1 bg-light nav-link" + (activeTab === 13 ? " active " : " ")} onClick={() => setActiveTab(13)} id="v-pills-10-tab" >Java 10</button>
+        <button className={"min-width m-1 bg-light nav-link" + (activeTab === 14 ? " active " : " ")} onClick={() => setActiveTab(14)} id="v-pills-9-tab"  >Java 9</button>
+        <button className={"min-width m-1 bg-light nav-link" + (activeTab === 15 ? " active " : " ")} onClick={() => setActiveTab(15)} id="v-pills-8-tab"  >Java 8</button>
       </div>
       <div className="tab-content" id="v-pills-tabContent">
         <div className={"tab-pane fade show " + (activeTab === 0 ? " active " : " ")} id="v-pills-23" role="tabpanel" aria-labelledby="v-pills-23-tab">

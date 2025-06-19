@@ -1,0 +1,77 @@
+[
+  {
+    "title": "1. Process vs Thread",
+    "body": "A Process is an independent program with its own memory. A Thread is a lightweight unit of execution within a process, sharing memory with other threads.",
+    "code": "// Creating a thread by extending Thread\nclass MyThread extends Thread {\n    public void run() {\n        System.out.println(\"Running in thread\");\n    }\n}\n\n// Using the thread\nnew MyThread().start();"
+  },
+  {
+    "title": "2. Concurrency vs Parallelism",
+    "body": "Concurrency: multiple tasks make progress simultaneously (not necessarily at the same time).\nParallelism: multiple tasks run literally at the same time using multiple cores.",
+    "code": "ExecutorService executor = Executors.newFixedThreadPool(2);\nexecutor.submit(() -> System.out.println(\"Task 1\"));\nexecutor.submit(() -> System.out.println(\"Task 2\"));"
+  },
+  {
+    "title": "3. Thread Lifecycle",
+    "body": "Thread states: NEW → RUNNABLE → RUNNING → BLOCKED/WAITING → TERMINATED.",
+    "code": "Thread t = new Thread(() -> {});\nSystem.out.println(t.getState()); // NEW\nt.start();\nSystem.out.println(t.getState()); // RUNNABLE"
+  },
+  {
+    "title": "4. Race Condition",
+    "body": "Occurs when threads change shared data at the same time, leading to incorrect results.",
+    "code": "// Unsafe increment\nint counter = 0;\nRunnable r = () -> counter++;\nnew Thread(r).start();\nnew Thread(r).start();"
+  },
+  {
+    "title": "5. Thread Safety",
+    "body": "Thread-safe means results are correct when accessed by multiple threads. Achieved via synchronization or atomic classes.",
+    "code": "public synchronized void increment() {\n    counter++;\n}"
+  },
+  {
+    "title": "6. Mutual Exclusion (Mutex)",
+    "body": "Ensures only one thread enters a critical section at a time.",
+    "code": "synchronized(this) {\n    // critical section\n}"
+  },
+  {
+    "title": "7. Deadlock",
+    "body": "Two threads hold locks and wait for each other, causing both to block forever.",
+    "code": "synchronized(lock1) {\n    synchronized(lock2) {\n        // Do something\n    }\n}\n// Another thread reverses the lock order -> Deadlock"
+  },
+  {
+    "title": "8. Livelock",
+    "body": "Threads keep responding to each other but can't make progress.",
+    "code": "// Both threads keep yielding for the other, but never proceed\nwhile (true) {\n    if (other.isTrying()) {\n        Thread.yield();\n    } else {\n        proceed();\n    }\n}"
+  },
+  {
+    "title": "9. Starvation",
+    "body": "A thread is continually denied access to resources due to high-priority threads.",
+    "code": "// Caused by unfair locks or high-priority loops\nwhile (true) {\n    // hogs CPU\n}"
+  },
+  {
+    "title": "10. Thread Communication",
+    "body": "Threads can coordinate using wait()/notify() or higher-level concurrency APIs.",
+    "code": "synchronized (lock) {\n    while (!condition) {\n        lock.wait();\n    }\n    // do work\n    lock.notifyAll();\n}"
+  },
+  {
+    "title": "11. Volatile",
+    "body": "Volatile ensures visibility of changes to variables across threads.",
+    "code": "private volatile boolean flag = true;\nwhile (flag) {\n    // work\n}"
+  },
+  {
+    "title": "12. Atomicity, Visibility, Ordering",
+    "body": "Atomicity: indivisible actions.\nVisibility: one thread sees changes made by another.\nOrdering: prevents reordering via synchronized or volatile.",
+    "code": "AtomicInteger count = new AtomicInteger(0);\ncount.incrementAndGet(); // atomic operation"
+  },
+  {
+    "title": "13. Thread Pooling",
+    "body": "Uses a pool of reusable threads to execute tasks efficiently.",
+    "code": "ExecutorService pool = Executors.newFixedThreadPool(4);\npool.submit(() -> System.out.println(\"task\"));"
+  },
+  {
+    "title": "14. Futures and Callables",
+    "body": "Allow asynchronous task execution with a return value. Futures represent the result of an asynchronous computation that may not be available immediately. Callables are similar to Runnables but can return values.",
+    "code": "// Basic Future example\nFuture<Integer> future = pool.submit(() -> 42);\nSystem.out.println(future.get());\n\n// Future with timeout\nFuture<String> future2 = pool.submit(() -> {\n    Thread.sleep(1000);\n    return \"Hello\";\n});\nString result = future2.get(2, TimeUnit.SECONDS);\n\n// Using Callable explicitly\nCallable<Double> task = () -> Math.random();\nFuture<Double> future3 = pool.submit(task);\nDouble random = future3.get();"
+  },
+  {
+    "title": "15. Locks and Sync Tools",
+    "body": "Advanced locking tools provide more flexibility than synchronized.",
+    "code": "Lock lock = new ReentrantLock();\nlock.lock();\ntry {\n    // critical section\n} finally {\n    lock.unlock();\n}"
+  }
+]
