@@ -1,0 +1,623 @@
+[
+  {
+    "library": "Apache Commons Lang",
+    "provider": "Apache",
+    "classes": [
+      {
+        "StringUtils": "advanced String operations (trim, split, isEmpty)"
+      },
+      {
+        "NumberUtils": "number parsing and validation"
+      },
+      {
+        "ReflectionToStringBuilder": "reflectively builds string representation of objects"
+      },
+      {
+        "RandomStringUtils": "generates random strings"
+      },
+      {
+        "ObjectUtils": "null-safe object operations"
+      }
+    ]
+  },
+  {
+    "library": "Google Guava",
+    "provider": "Google",
+    "classes": [
+      {
+        "ImmutableList": "creates immutable List"
+      },
+      {
+        "CacheBuilder": "configurable in‑memory cache"
+      },
+      {
+        "Preconditions": "method input validation utilities"
+      },
+      {
+        "Optional": "null-safe optional values"
+      },
+      {
+        "Splitter": "string splitting utilities"
+      },
+      {
+        "Joiner": "string joining utilities"
+      }
+    ]
+  },
+  {
+    "library": "Jackson",
+    "provider": "FasterXML",
+    "classes": [
+      {
+        "ObjectMapper": "core JSON serializer/deserializer"
+      },
+      {
+        "JsonNode": "tree‑style traversal of JSON"
+      },
+      {
+        "@JsonProperty": "maps JSON property to Java field"
+      },
+      {
+        "@JsonIgnore": "excludes field from serialization"
+      },
+      {
+        "@JsonFormat": "customizes property serialization"
+      },
+      {
+        "@JsonInclude": "configures when to include properties"
+      }
+    ]
+  },
+  {
+    "library": "Gson",
+    "provider": "Google",
+    "classes": [
+      {
+        "Gson": "main JSON (de)serialization class"
+      },
+      {
+        "TypeToken": "handles generic type JSON conversion"
+      },
+      {
+        "JsonElement": "represents JSON elements"
+      },
+      {
+        "JsonParser": "parses JSON strings"
+      },
+      {
+        "JsonSerializer": "custom serialization logic"
+      }
+    ]
+  },
+  {
+    "library": "SLF4J",
+    "provider": "QOS.ch",
+    "classes": [
+      {
+        "Logger": "logging interface"
+      },
+      {
+        "LoggerFactory": "creates Logger instances"
+      },
+      {
+        "MDC": "mapped diagnostic context"
+      },
+      {
+        "Marker": "adds metadata for filtering"
+      },
+      {
+        "ILoggerFactory": "creates logger instances"
+      }
+    ]
+  },
+  {
+    "library": "Log4j",
+    "provider": "Apache",
+    "classes": [
+      {
+        "Logger": "logging tool"
+      },
+      {
+        "PatternLayout": "configurable log formatting"
+      },
+      {
+        "RollingFileAppender": "rotating log files automatically"
+      },
+      {
+        "FileAppender": "writes to log files"
+      },
+      {
+        "ConsoleAppender": "writes to console"
+      },
+      {
+        "LogManager": "manages logger hierarchy"
+      }
+    ]
+  },
+  {
+    "library": "Logback",
+    "provider": "QOS.ch",
+    "classes": [
+      {
+        "LoggerContext": "configures logback programmatically"
+      },
+      {
+        "PatternLayoutEncoder": "encodes log messages"
+      },
+      {
+        "FileAppender": "appends to files"
+      },
+      {
+        "RollingFileAppender": "rotates log files"
+      },
+      {
+        "AsyncAppender": "asynchronous logging"
+      }
+    ]
+  },
+  {
+    "library": "JUnit 5",
+    "provider": "JUnit Team",
+    "classes": [
+      {
+        "@Test": "marks a test method"
+      },
+      {
+        "Assertions": "static assertion methods"
+      },
+      {
+        "@ExtendWith": "register test extensions"
+      },
+      {
+        "@BeforeEach": "setup before each test"
+      },
+      {
+        "@AfterEach": "cleanup after each test"
+      },
+      {
+        "@ParameterizedTest": "data-driven tests"
+      }
+    ]
+  },
+  {
+    "library": "Mockito",
+    "provider": "Mockito",
+    "classes": [
+      {
+        "Mockito": "mock creation and configuration"
+      },
+      {
+        "ArgumentCaptor": "captures arguments passed to mock"
+      },
+      {
+        "@Mock": "creates mock object"
+      },
+      {
+        "@InjectMocks": "injects mocks"
+      },
+      {
+        "@Spy": "partial mock object"
+      },
+      {
+        "verify": "verifies mock interactions"
+      }
+    ]
+  },
+  {
+    "library": "AssertJ",
+    "provider": "AssertJ",
+    "classes": [
+      {
+        "Assertions": "fluent assertion entry point"
+      },
+      {
+        "SoftAssertions": "accumulates multiple failures"
+      },
+      {
+        "BDDAssertions": "BDD style assertions"
+      },
+      {
+        "FilterOperator": "collection filtering"
+      },
+      {
+        "AbstractAssert": "custom assertion base"
+      }
+    ]
+  },
+  {
+    "library": "Apache HttpClient",
+    "provider": "Apache",
+    "classes": [
+      {
+        "CloseableHttpClient": "build/send HTTP requests"
+      },
+      {
+        "HttpGet": "executes GET requests"
+      },
+      {
+        "HttpPost": "executes POST requests"
+      },
+      {
+        "HttpDelete": "executes DELETE requests"
+      },
+      {
+        "RequestConfig": "configures request settings"
+      },
+      {
+        "HttpClientBuilder": "builds HTTP clients"
+      }
+    ]
+  },
+  {
+    "library": "OkHttp",
+    "provider": "Square",
+    "classes": [
+      {
+        "OkHttpClient": "HTTP/2 client & connection pooling"
+      },
+      {
+        "Request": "defines HTTP request"
+      },
+      {
+        "Response": "HTTP response handling"
+      },
+      {
+        "Interceptor": "modifies requests/responses"
+      },
+      {
+        "WebSocket": "WebSocket connections"
+      },
+      {
+        "CacheControl": "caching behavior"
+      }
+    ]
+  },
+  {
+    "library": "Retrofit",
+    "provider": "Square",
+    "classes": [
+      {
+        "Retrofit": "builder for REST API clients"
+      },
+      {
+        "@GET": "annotates GET request method"
+      },
+      {
+        "ConverterFactory": "handles JSON/mapping"
+      },
+      {
+        "@POST": "annotates POST method"
+      },
+      {
+        "@Path": "URL path parameters"
+      },
+      {
+        "@Query": "URL query parameters"
+      }
+    ]
+  },
+  {
+    "library": "Hibernate ORM",
+    "provider": "Red Hat",
+    "classes": [
+      {
+        "SessionFactory": "creates DB sessions"
+      },
+      {
+        "@Entity": "maps Java class to table"
+      },
+      {
+        "CriteriaBuilder": "builds type‑safe queries"
+      },
+      {
+        "@Id": "marks primary key"
+      },
+      {
+        "@Column": "maps field to column"
+      },
+      {
+        "@ManyToOne": "entity relationships"
+      }
+    ]
+  },
+  {
+    "library": "JPA (Jakarta Persistence API)",
+    "provider": "Eclipse Foundation",
+    "classes": [
+      {
+        "EntityManager": "manage entity life‑cycle"
+      },
+      {
+        "@Transaction": "declarative tx management"
+      },
+      {
+        "@Entity": "JPA entity annotation"
+      },
+      {
+        "@Id": "primary key annotation"
+      },
+      {
+        "@GeneratedValue": "key generation"
+      },
+      {
+        "Query": "JPQL queries"
+      }
+    ]
+  },
+  {
+    "library": "Lombok",
+    "provider": "Project Lombok",
+    "classes": [
+      {
+        "@Getter/@Setter": "auto‑generate getters/setters"
+      },
+      {
+        "@Builder": "builder‑pattern code generator"
+      },
+      {
+        "@Slf4j": "injects SLF4J logger field"
+      },
+      {
+        "@Data": "all-args constructor & toString"
+      },
+      {
+        "@NoArgsConstructor": "no-args constructor"
+      },
+      {
+        "@AllArgsConstructor": "all-args constructor"
+      }
+    ]
+  },
+  {
+    "library": "MapStruct",
+    "provider": "MapStruct",
+    "classes": [
+      {
+        "@Mapper": "annotation for mapping interface"
+      },
+      {
+        "Mappers": "factory for mapper implementation"
+      },
+      {
+        "@Mapping": "configures field mapping"
+      },
+      {
+        "@MappingTarget": "update existing instance"
+      },
+      {
+        "@InheritConfiguration": "reuse mappings"
+      }
+    ]
+  },
+  {
+    "library": "Flyway",
+    "provider": "Red Gate",
+    "classes": [
+      {
+        "Flyway": "run DB migrations via migrations folder"
+      },
+      {
+        "MigrationVersion": "version control"
+      },
+      {
+        "Callback": "migration hooks"
+      },
+      {
+        "Configuration": "flyway settings"
+      },
+      {
+        "FlywayException": "migration errors"
+      }
+    ]
+  },
+  {
+    "library": "Liquibase",
+    "provider": "Liquibase",
+    "classes": [
+      {
+        "Liquibase": "manages DB change sets"
+      },
+      {
+        "DatabaseChangeLog": "defines change‑log representation"
+      },
+      {
+        "ChangeSet": "atomic DB changes"
+      },
+      {
+        "SqlCommand": "raw SQL changes"
+      },
+      {
+        "Precondition": "change conditions"
+      }
+    ]
+  },
+  {
+    "library": "Apache Commons IO",
+    "provider": "Apache",
+    "classes": [
+      {
+        "FileUtils": "file read/write/copy utilities"
+      },
+      {
+        "IOUtils": "stream operations like close quietly"
+      },
+      {
+        "FilenameUtils": "filename operations"
+      },
+      {
+        "DirectoryWalker": "directory traversal"
+      },
+      {
+        "FileSystemUtils": "disk space operations"
+      }
+    ]
+  },
+  {
+    "library": "Apache Commons Collections",
+    "provider": "Apache",
+    "classes": [
+      {
+        "Bag": "collection counting occurrences"
+      },
+      {
+        "TransformerUtils": "iterative transformations"
+      },
+      {
+        "SetUtils": "set operations"
+      },
+      {
+        "CollectionUtils": "collection utilities"
+      },
+      {
+        "MapUtils": "map utilities"
+      }
+    ]
+  },
+  {
+    "library": "Micrometer",
+    "provider": "Micrometer",
+    "classes": [
+      {
+        "MeterRegistry": "application‑wide metrics registry"
+      },
+      {
+        "Counter": "incremental counter metric"
+      },
+      {
+        "Timer": "timing metrics"
+      },
+      {
+        "Gauge": "current value metrics"
+      },
+      {
+        "DistributionSummary": "distribution metrics"
+      }
+    ]
+  },
+  {
+    "library": "Eclipse Vert.x",
+    "provider": "Eclipse",
+    "classes": [
+      {
+        "Vertx": "entry point to create vert.x instances"
+      },
+      {
+        "EventBus": "in‑process asynchronous messaging"
+      },
+      {
+        "Router": "HTTP request routing"
+      },
+      {
+        "WebClient": "HTTP client"
+      },
+      {
+        "Future": "async operations"
+      }
+    ]
+  },
+  {
+    "library": "Apache Kafka",
+    "provider": "Apache",
+    "classes": [
+      {
+        "KafkaProducer": "send messages to Kafka brokers"
+      },
+      {
+        "KafkaConsumer": "consume messages from topics"
+      },
+      {
+        "AdminClient": "manage Kafka resources"
+      },
+      {
+        "TopicPartition": "topic partitioning"
+      },
+      {
+        "ConsumerRecord": "consumed messages"
+      }
+    ]
+  },
+  {
+    "library": "JWT (Java JWT)",
+    "provider": "Auth0",
+    "classes": [
+      {
+        "JWT": "builder and verifier of tokens"
+      },
+      {
+        "Algorithm": "specifies signing algorithm"
+      },
+      {
+        "JWTVerifier": "token verification"
+      },
+      {
+        "DecodedJWT": "decoded token data"
+      },
+      {
+        "Claim": "token claims"
+      }
+    ]
+  },
+  {
+    "library": "Apache POI",
+    "provider": "Apache",
+    "classes": [
+      {
+        "XSSFWorkbook": "create/read .xlsx files"
+      },
+      {
+        "HSSFWorkbook": "create/read .xls files"
+      },
+      {
+        "Cell": "spreadsheet cell"
+      },
+      {
+        "Row": "spreadsheet row"
+      },
+      {
+        "Sheet": "spreadsheet sheet"
+      }
+    ]
+  },
+  {
+    "library": "jsoup",
+    "provider": "Jonathan Hedley",
+    "classes": [
+      {
+        "Jsoup": "parse HTML from URL/string"
+      },
+      {
+        "Document": "DOM traversal and manipulation"
+      },
+      {
+        "Element": "HTML element"
+      },
+      {
+        "Elements": "element collection"
+      },
+      {
+        "Connection": "HTTP connection"
+      }
+    ]
+  },
+  {
+    "library": "Quartz",
+    "provider": "Quartz Scheduler",
+    "classes": [
+      {
+        "Scheduler": "schedule and run jobs"
+      },
+      {
+        "JobDetail": "defines job to be executed"
+      },
+      {
+        "Trigger": "job scheduling"
+      },
+      {
+        "JobBuilder": "job configuration"
+      },
+      {
+        "TriggerBuilder": "trigger configuration"
+      }
+    ]
+  }
+]

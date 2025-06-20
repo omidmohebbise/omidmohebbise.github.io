@@ -41,6 +41,10 @@ export default function NavBar() {
                                                className={`${styles.dropdownItem} ${styles.subSubItem}`}>
                                     Java 8 to 23 versions
                                 </Dropdown.Item>
+                                <Dropdown.Item href="/development/java/common-libs"
+                                               className={`${styles.dropdownItem} ${styles.subSubItem}`}>
+                                    Common Libraries
+                                </Dropdown.Item>
                                 <Dropdown.Item href="/development/java/concurrency"
                                                className={`${styles.dropdownItem} ${styles.subSubItem}`}>
                                     Concurrency
@@ -126,7 +130,19 @@ export default function NavBar() {
                                 DevOps
                             </Dropdown.Toggle>
                             <Dropdown.Menu className={styles.dropdownMenu}>
-                                <Nav.Link href="/cloud" className={styles.navLink}> K8S </Nav.Link>
+                                <Dropdown.Item href="/devops/k8s"
+                                               className={`${styles.dropdownItem}`}>
+                                    K8S
+                                </Dropdown.Item>
+                                <Dropdown.Item href="/devops/k8s"
+                                               className={`${styles.dropdownItem} ${styles.subSubItem}`}>
+                                    Architecture
+                                </Dropdown.Item>
+                                <Dropdown.Item href="/devops/k8s/yaml-files"
+                                               className={`${styles.dropdownItem} ${styles.subSubItem}`}>
+                                    Yaml Files
+                                </Dropdown.Item>
+
                                 <Nav.Link href="/cloud" className={styles.navLink}> Docker </Nav.Link>
 
                             </Dropdown.Menu>
