@@ -30,10 +30,7 @@ export default function NavBar() {
                                 Development
                             </Dropdown.Toggle>
                             <Dropdown.Menu className={styles.dropdownMenu}>
-                                <Dropdown.Item href="/development/concepts" className={styles.dropdownItem}>
-                                    Concepts
-                                </Dropdown.Item>
-                                <Dropdown.Item href="/#"
+                                <Dropdown.Item href="/development/java/java-8-23"
                                                className={`${styles.dropdownItem}`}>
                                     Java
                                 </Dropdown.Item>

@@ -1,100 +1,67 @@
+import React from "react";
+import './page.scss';
 
-import './page.scss'
+const AiLibrariesPage: React.FC = () => {
+    const librariesByCategory = [
+        {
+            title: "Machine Learning",
+            items: ["Scikit-learn", "TensorFlow", "PyTorch", "Keras", "XGBoost"],
+        },
+        {
+            title: "Deep Learning",
+            items: ["TensorFlow", "PyTorch", "Keras", "OpenCV"],
+        },
+        {
+            title: "Natural Language Processing",
+            items: ["NLTK", "spaCy", "Transformers", "Gensim"],
+        },
+        {
+            title: "Reinforcement Learning",
+            items: ["OpenAI Gym", "Stable-Baselines3", "Ray RLlib"],
+        },
+        {
+            title: "Computer Vision",
+            items: [
+                "OpenCV",
+                "TensorFlow Object Detection API",
+                "Detectron2",
+                "YOLO",
+            ],
+        },
+        {
+            title: "Data Handling",
+            items: ["Pandas", "NumPy", "Matplotlib", "Seaborn"],
+        },
+        {
+            title: "AutoML",
+            items: ["TPOT", "H2O.ai", "AutoKeras", "MLJar"],
+        },
+    ];
 
-
-const AiPage = () => {
-   
-    const getLibraries = () => {
-        return <>
-            <div className="row mt-4">
-                <div className="col-md-6">
-                    <h3 className="category-title">Machine Learning</h3>
-                    <ul className="category-list">
-                        <li>Scikit-learn</li>
-                        <li>TensorFlow</li>
-                        <li>PyTorch</li>
-                        <li>Keras</li>
-                        <li>XGBoost</li>
-                    </ul>
-                </div>
-
-                <div className="col-md-6">
-                    <h3 className="category-title">Deep Learning</h3>
-                    <ul className="category-list">
-                        <li>TensorFlow</li>
-                        <li>PyTorch</li>
-                        <li>Keras</li>
-                        <li>OpenCV</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div className="row">
-                <div className="col-md-6">
-                    <h3 className="category-title">Natural Language Processing</h3>
-                    <ul className="category-list">
-                        <li>NLTK</li>
-                        <li>spaCy</li>
-                        <li>Transformers</li>
-                        <li>Gensim</li>
-                    </ul>
-                </div>
-
-                <div className="col-md-6">
-                    <h3 className="category-title">Reinforcement Learning</h3>
-                    <ul className="category-list">
-                        <li>OpenAI Gym</li>
-                        <li>Stable-Baselines3</li>
-                        <li>Ray RLlib</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div className="row">
-                <div className="col-md-6">
-                    <h3 className="category-title">Computer Vision</h3>
-                    <ul className="category-list">
-                        <li>OpenCV</li>
-                        <li>TensorFlow Object Detection API</li>
-                        <li>Detectron2</li>
-                        <li>YOLO</li>
-                    </ul>
-                </div>
-
-                <div className="col-md-6">
-                    <h3 className="category-title">Data Handling</h3>
-                    <ul className="category-list">
-                        <li>Pandas</li>
-                        <li>NumPy</li>
-                        <li>Matplotlib</li>
-                        <li>Seaborn</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div className="row">
-                <div className="col-md-6">
-                    <h3 className="category-title">AutoML</h3>
-                    <ul className="category-list">
-                        <li>TPOT</li>
-                        <li>H2O.ai</li>
-                        <li>AutoKeras</li>
-                        <li>MLJar</li>
-                    </ul>
-                </div>
-            </div>
-        </>
-    }
-
-   
     return (
-        <div className="">
-            <h1 className="p-2 mb-5 bg-light rounded">AI Libraries</h1>
-          
-            {getLibraries()}
+        <div className="container py-4">
+            <h1 className="p-3 mb-5 bg-light rounded text-center">🤖 AI Libraries</h1>
+
+            {librariesByCategory.map((category, idx) => (
+                <div className="row mb-4" key={category.title}>
+                    <div className={category.title === "AutoML" ? "col-md-6" : "col-md-6"}>
+                        <h3 className="category-title">{category.title}</h3>
+                        <ul className="category-list list-unstyled ps-3">
+                            {category.items.map((lib) => (
+                                <li key={lib} className="mb-1">
+                                    • {lib}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    {/* For odd count categories that don't fill two columns, leave blank col */}
+                    {category.title !== "AutoML" && idx % 2 === 0 ? (
+                        <div className="col-md-6"></div>
+                    ) : null}
+                </div>
+            ))}
         </div>
-    )
-}
+    );
+};
 
-
-export default AiPage;
+export default AiLibrariesPage;
