@@ -1,10 +1,22 @@
 import React from 'react';
 import data from './data.json';
 
+interface ClassItem {
+    [key: string]: string | number;
+}
+
+interface LibraryItem {
+    library: string;
+    provider: string;
+    classes: ClassItem[];
+    id: string; // Add unique identifier
+}
+
 const CommonLibraries = () => {
+    const javaLibs: LibraryItem[] = data as unknown as LibraryItem[];
     return (
         <div className="container py-5">
-            {data.map((item, index) => (
+            {javaLibs.map((item: LibraryItem, index:number) => (
                 <div key={index} className="card shadow-sm mb-5">
                     <div className="card-header bg-primary text-white">
                         <h2 className="h4 mb-0">{item.library}</h2>
@@ -19,10 +31,10 @@ const CommonLibraries = () => {
                                     <div key={i} className="col-md-6 mb-4">
                                         <div className="card h-100 border-light">
                                             <div className="card-body">
-                                                {Object.entries(classItem).map(([key, value]) => (
+                                                {Object.entries(classItem).map(([key, value1]) => (
                                                     <div key={key} className="mb-3">
                                                         <h5 className="h6 text-secondary">{key}</h5>
-                                                        <p className="text-muted small mb-0">{value}</p>
+                                                        <p className="text-muted small mb-0">{value1}</p>
                                                     </div>
                                                 ))}
                                             </div>
