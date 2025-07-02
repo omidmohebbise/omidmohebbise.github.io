@@ -1,0 +1,66 @@
+InheritableThreadLocal is a subclass of ThreadLocal in Java that allows child threads to inherit the values from their parent thread. This can be particularly useful in scenarios where you want to maintain context information that is relevant to a thread’s lifecycle, but you also want that context to be accessible in any threads spawned by the parent thread.
+
+Example of InheritableThreadLocal
+Here’s a simple example demonstrating the use of InheritableThreadLocal:
+
+java
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class InheritableThreadLocalExample {
+
+    // Create an InheritableThreadLocal variable to hold the context information
+    private static InheritableThreadLocal<String> contextHolder = new InheritableThreadLocal<>();
+
+    public static void main(String[] args) {
+        // Set a value in the parent thread
+        contextHolder.set("Parent Thread Context");
+
+        // Create an ExecutorService to manage threads
+        ExecutorService executor = Executors.newFixedThreadPool(2);
+
+        // Submit a task that will run in a child thread
+        executor.submit(() -> {
+            // Access the context in the child thread
+            String childContext = contextHolder.get();
+            System.out.println("Child Thread Context: " + childContext);
+        });
+
+        // Access the context in the parent thread
+        String parentContext = contextHolder.get();
+        System.out.println("Parent Thread Context: " + parentContext);
+
+        // Shutdown the executor service
+        executor.shutdown();
+    }
+}
+Output
+When you run this code, you should see output similar to:
+
+mathematica
+Parent Thread Context: Parent Thread Context
+Child Thread Context: Parent Thread Context
+Explanation
+InheritableThreadLocal Creation: We create an InheritableThreadLocal instance named contextHolder to hold context information.
+
+Setting Context in Parent Thread: In the main thread (parent thread), we set a value (“Parent Thread Context”) in contextHolder.
+
+Child Thread Creation: We create a child thread using an ExecutorService. When this child thread runs, it can access the value set in the parent thread.
+
+Accessing Context: In the child thread, we retrieve the value from contextHolder, which is inherited from the parent thread.
+
+Use Cases for InheritableThreadLocal
+Context Propagation: When you have a web application or a microservice where you want to pass contextual information (like user sessions, request IDs) from a parent thread (like the main request handling thread) to child threads (like background tasks).
+
+Logging Context: When performing logging, you may want to include contextual information that is relevant to the thread handling the request. This can be useful for tracing logs across multiple threads.
+
+Transaction Management: In scenarios where transactions are initiated in a parent thread and need to be available in child threads for operations like database access.
+
+Thread-specific Configuration: When different threads need to have their own configuration settings that are derived from a parent thread’s settings.
+
+Important Considerations
+Memory Leaks: Using InheritableThreadLocal can lead to memory leaks if not handled properly, especially in environments with long-lived threads (like application servers). Always ensure that you clean up the values when they are no longer needed.
+
+Performance: There might be a performance overhead associated with using InheritableThreadLocal, so it should be used judiciously and only when necessary.
+
+In summary, InheritableThreadLocal is a powerful tool for managing shared context across threads in Java, but it requires careful management to avoid potential pitfalls.
