@@ -46,6 +46,15 @@ export default function NavBar() {
                                                className={`${styles.dropdownItem} ${styles.subSubItem}`}>
                                     Concurrency
                                 </Dropdown.Item>
+                                <Dropdown.Item href="/development/java/concurrency/thread-local"
+                                               className={`${styles.dropdownItem} ${styles.subSubItem}`}>
+                                    Thread Local
+                                </Dropdown.Item>
+                                <Dropdown.Item href="/development/java/concurrency/inheritable-thread-local"
+                                               className={`${styles.dropdownItem} ${styles.subSubItem}`}>
+                                    Inheritable Thread Local
+                                </Dropdown.Item>
+
                                 <Dropdown.Item href="/development/spring"
                                                className={`${styles.dropdownItem}`}>
                                     Spring
