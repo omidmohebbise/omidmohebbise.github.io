@@ -1,0 +1,321 @@
+import React from "react";
+
+const MultithreadingConcepts = () => {
+  return (
+    <div className="container mt-5 text-right">
+      <h1 className="mb-4">Core Concepts of Multithreading in Java</h1>
+
+      <div className="card mb-3">
+        <div className="card-header">
+          <h5>Threads</h5>
+        </div>
+        <div className="card-body">
+          <h6>Basics of Creating and Managing Threads</h6>
+          <p>
+            In Java, threads can be created and managed using either the{" "}
+            <code>Thread</code> class or the <code>Runnable</code> interface.
+          </p>
+          <h6>Thread Class</h6>
+          <pre>
+            <code>{`class MyThread extends Thread {
+  public void run() {
+    System.out.println("Thread is running.");
+  }
+}
+
+MyThread thread = new MyThread();
+thread.start();`}</code>
+          </pre>
+          <h6>Runnable Interface</h6>
+          <pre>
+            <code>{`class MyRunnable implements Runnable {
+  public void run() {
+    System.out.println("Runnable is running.");
+  }
+}
+
+Thread thread = new Thread(new MyRunnable());
+thread.start();`}</code>
+          </pre>
+          <h6>Thread Lifecycle and States</h6>
+          <p>
+            A thread in Java can exist in several states throughout its
+            lifecycle: New, Runnable, Blocked, Waiting, Timed Waiting, and
+            Terminated.
+          </p>
+        </div>
+      </div>
+
+      <div className="card mb-3">
+        <div className="card-header">
+          <h5>Synchronization</h5>
+        </div>
+        <div className="card-body">
+          <h6>synchronized Keyword</h6>
+          <p>
+            To ensure thread safety when multiple threads access shared
+            resources, Java provides the <code>synchronized</code> keyword.
+          </p>
+          <h6>Synchronized Method</h6>
+          <pre>
+            <code>{`public synchronized void increment() {
+  count++;
+}`}</code>
+          </pre>
+          <h6>Synchronized Block</h6>
+          <pre>
+            <code>{`public void increment() {
+  synchronized(this) {
+    count++;
+  }
+}`}</code>
+          </pre>
+          <h6>Intrinsic Locks and Monitor Objects</h6>
+          <p>Every object in Java has an intrinsic lock (or monitor).</p>
+        </div>
+      </div>
+
+      <div className="card mb-3">
+        <div className="card-header">
+          <h5>Volatile</h5>
+        </div>
+        <div className="card-body">
+          <h6>volatile Keyword</h6>
+          <p>
+            The <code>volatile</code> keyword is used to indicate that a
+            variable's value may be changed by different threads.
+          </p>
+          <pre>
+            <code>{`private volatile boolean running = true;
+
+public void run() {
+  while (running) {
+    // Do something
+  }
+}`}</code>
+          </pre>
+        </div>
+      </div>
+
+      <div className="card mb-3">
+        <div className="card-header">
+          <h5>Thread Communication</h5>
+        </div>
+        <div className="card-body">
+          <h6>wait(), notify(), and notifyAll()</h6>
+          <p>These methods are used for inter-thread communication.</p>
+          <pre>
+            <code>{`synchronized (lock) {
+  while (!condition) {
+    lock.wait();
+  }
+  // Proceed when condition is true
+}
+
+synchronized (lock) {
+  condition = true;
+  lock.notifyAll();
+}`}</code>
+          </pre>
+        </div>
+      </div>
+
+      <div className="card mb-3">
+        <div className="card-header">
+          <h5>Thread Safety</h5>
+        </div>
+        <div className="card-body">
+          <h6>Immutable Objects</h6>
+          <p>
+            Creating immutable objects can help in making a class thread-safe.
+          </p>
+          <pre>
+            <code>{`public final class ImmutablePoint {
+  private final int x;
+  private final int y;
+
+  public ImmutablePoint(int x, int y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  public int getX() {
+    return x;
+  }
+
+  public int getY() {
+    return y;
+  }
+}`}</code>
+          </pre>
+          <h6>Thread-safe Classes</h6>
+          <p>
+            Java provides several thread-safe classes, such as{" "}
+            <code>ConcurrentHashMap</code> and <code>CopyOnWriteArrayList</code>
+            .
+          </p>
+          <pre>
+            <code>{`ConcurrentHashMap<String, String> map = new ConcurrentHashMap<>();
+map.put("key", "value");`}</code>
+          </pre>
+        </div>
+      </div>
+
+      <div className="card mb-3">
+        <div className="card-header">
+          <h5>Advanced Topics</h5>
+        </div>
+        <div className="card-body">
+          <h6>Executor Framework</h6>
+          <p>
+            The Executor framework provides a higher-level replacement for
+            managing threads.
+          </p>
+          <pre>
+            <code>{`ExecutorService executor = Executors.newFixedThreadPool(10);
+executor.submit(() -> {
+    // Task to run
+});
+executor.shutdown();`}</code>
+          </pre>
+
+          <h6>Fork/Join Framework</h6>
+          <p>
+            The Fork/Join framework is designed for parallel processing using a
+            work-stealing algorithm.
+          </p>
+          <pre>
+            <code>{`ForkJoinPool pool = new ForkJoinPool();
+int result = pool.invoke(new RecursiveTask<Integer>() {
+    @Override
+    protected Integer compute() {
+        if (n <= THRESHOLD) {
+            return computeDirectly();
+        } else {
+            RecursiveTask<Integer> task = new RecursiveTask<>();
+            task.fork();
+            return task.join();
+        }
+    }
+});`}</code>
+          </pre>
+
+          <h6>CompletableFuture</h6>
+          <p>
+            <code>CompletableFuture</code> allows you to write non-blocking
+            asynchronous code.
+          </p>
+          <pre>
+            <code>{`CompletableFuture.supplyAsync(() -> {
+    // Long-running task
+    return result;
+}).thenAccept(result -> {
+    // Process the result
+});`}</code>
+          </pre>
+
+          <h6>Locks</h6>
+          <p>
+            Explicit locks provide more control over synchronization compared to
+            the <code>synchronized</code> keyword.
+          </p>
+          <pre>
+            <code>{`ReentrantLock lock = new ReentrantLock();
+lock.lock();
+try {
+    // Critical section
+} finally {
+    lock.unlock();
+}`}</code>
+          </pre>
+
+          <h6>Atomic Variables</h6>
+          <p>
+            Atomic classes provide lock-free thread-safe operations on single
+            variables.
+          </p>
+          <pre>
+            <code>{`AtomicInteger atomicInt = new AtomicInteger(0);
+atomicInt.incrementAndGet();`}</code>
+          </pre>
+
+          <h6>Concurrency Utilities</h6>
+          <p>
+            Java provides several utilities for managing concurrency, such as{" "}
+            <code>CountDownLatch</code>, <code>CyclicBarrier</code>,{" "}
+            <code>Semaphore</code>, and <code>Exchanger</code>.
+          </p>
+
+          <h6>Parallel Streams</h6>
+          <p>
+            Java Streams API allows you to process collections in parallel with
+            minimal overhead.
+          </p>
+          <pre>
+            <code>{`List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+int sum = numbers.parallelStream().mapToInt(Integer::intValue).sum();`}</code>
+          </pre>
+
+          <h6>Deadlocks</h6>
+          <p>
+            A deadlock occurs when two or more threads are blocked forever, each
+            waiting for the other to release a lock.
+          </p>
+
+          <h6>Race Conditions</h6>
+          <p>
+            Race conditions occur when multiple threads access shared data and
+            try to change it at the same time.
+          </p>
+
+          <h6>ThreadLocal</h6>
+          <p>
+            <code>ThreadLocal</code> provides thread-specific variables.
+          </p>
+          <pre>
+            <code>{`ThreadLocal<Integer> threadLocalValue = ThreadLocal.withInitial(() -> 1);`}</code>
+          </pre>
+
+          <h6>Memory Consistency</h6>
+          <p>
+            The Java Memory Model (JMM) defines how threads interact through
+            memory and what behaviors are allowed in concurrent programming.
+          </p>
+
+          <h6>Future and Callable</h6>
+          <p>
+            <code>Callable</code> is similar to <code>Runnable</code>, but it
+            can return a result and throw checked exceptions.
+          </p>
+          <pre>
+            <code>{`ExecutorService executor = Executors.newCachedThreadPool();
+Future<Integer> future = executor.submit(() -> {
+    return 42; // Perform some computation
+});
+Integer result = future.get(); // Blocks until the result is available`}</code>
+          </pre>
+
+          <h6>Scheduled Tasks</h6>
+          <p>
+            Tasks can be scheduled for execution at a later time using{" "}
+            <code>ScheduledExecutorService</code>.
+          </p>
+          <pre>
+            <code>{`ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+scheduler.schedule(() -> {
+    // Task to run after a delay
+}, 5, TimeUnit.SECONDS);`}</code>
+          </pre>
+
+          <h6>Best Practices</h6>
+          <p>
+            - Avoiding thread starvation and priority inversion.
+            <br />- Proper exception handling in multithreaded code.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default MultithreadingConcepts;
