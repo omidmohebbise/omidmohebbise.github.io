@@ -1,0 +1,40 @@
+import React from 'react';
+
+const SpringSleuthInfo = () => {
+  return (
+    <div>
+      <h1>Spring Sleuth</h1>
+      <p>
+        Spring Sleuth is a library from the Spring Cloud ecosystem that provides distributed tracing capabilities for Spring Boot applications. It helps developers trace requests as they propagate through microservices, making it easier to debug and monitor distributed systems.
+      </p>
+      <h2>Key Features:</h2>
+      <ul>
+        <li>Distributed Tracing: Adds unique trace and span IDs to requests, enabling tracking of requests across multiple services.</li>
+        <li>Integration with Logging: Automatically adds trace and span IDs to logs, making it easier to correlate logs from different services.</li>
+        <li>Supports Popular Tracing Tools: Works with tools like Zipkin, Jaeger, and OpenTelemetry for visualizing traces.</li>
+        <li>Automatic Instrumentation: Automatically instruments common Spring components like <code>RestTemplate</code>, <code>WebClient</code>, and messaging systems like Kafka or RabbitMQ.</li>
+        <li>Customizable: Allows developers to create custom spans and add metadata to traces.</li>
+      </ul>
+      <h2>Example Configuration:</h2>
+      <p>To use Spring Sleuth, include the dependency in your <code>build.gradle</code> or <code>pom.xml</code>:</p>
+      <h3>Gradle:</h3>
+      <pre>
+        <code>
+          implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
+        </code>
+      </pre>
+      <h3>Maven:</h3>
+      <pre>
+        <code>
+          &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-cloud-starter-sleuth&lt;/artifactId&gt;
+          &lt;/dependency&gt;
+        </code>
+      </pre>
+      <p>Once added, Sleuth automatically starts tracing requests in your Spring Boot application.</p>
+    </div>
+  );
+};
+
+export default SpringSleuthInfo;
