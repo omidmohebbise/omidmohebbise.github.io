@@ -1,0 +1,93 @@
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+const SecurityProtocols: React.FC = () => {
+  return (
+    <div className="container mt-4">
+      <h2>Security Protocols</h2>
+
+      <div className="card mb-3">
+        <div className="card-header">
+          <h5>1. SSL (Secure Sockets Layer)</h5>
+        </div>
+        <div className="card-body">
+          <p>
+            SSL is a cryptographic protocol designed to provide secure
+            communication over a network. It ensures data encryption,
+            integrity, and authentication between a client and a server.
+          </p>
+          <p>
+            SSL is an older protocol and has been deprecated in favor of TLS
+            due to security vulnerabilities.
+          </p>
+          <p>
+            <strong>Example:</strong> SSL 3.0 is the last version of SSL, but it
+            is no longer considered secure.
+          </p>
+        </div>
+      </div>
+
+      <div className="card mb-3">
+        <div className="card-header">
+          <h5>2. TLS (Transport Layer Security)</h5>
+        </div>
+        <div className="card-body">
+          <p>
+            TLS is the successor to SSL and is more secure and efficient. It
+            provides the same functionality as SSL (encryption, integrity, and
+            authentication) but with stronger encryption algorithms and
+            improved security features.
+          </p>
+          <p>
+            TLS is widely used today, with versions like TLS 1.2 and TLS 1.3
+            being the most common.
+          </p>
+          <p>
+            <strong>Example:</strong> HTTPS uses TLS to secure communication
+            between a web browser and a server.
+          </p>
+        </div>
+      </div>
+
+      <div className="card mb-3">
+        <div className="card-header">
+          <h5>3. mTLS (Mutual TLS)</h5>
+        </div>
+        <div className="card-body">
+          <p>
+            mTLS is an extension of TLS where both the client and the server
+            authenticate each other. In standard TLS, only the server is
+            authenticated (e.g., via a server certificate). In mTLS, the client
+            also presents a certificate to prove its identity.
+          </p>
+          <p>
+            mTLS is commonly used in secure API communication, microservices,
+            and zero-trust architectures.
+          </p>
+          <p>
+            <strong>Example:</strong> A client application and a server both
+            verify each other's certificates before establishing a connection.
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-4">
+        <h3>Summary</h3>
+        <ul>
+          <li>
+            <strong>SSL:</strong> Outdated protocol for secure communication.
+          </li>
+          <li>
+            <strong>TLS:</strong> Modern, secure protocol replacing SSL.
+          </li>
+          <li>
+            <strong>mTLS:</strong> A mutual authentication mechanism using TLS
+            where both client and server verify each other.
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default SecurityProtocols;
