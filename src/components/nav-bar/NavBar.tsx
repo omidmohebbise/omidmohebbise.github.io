@@ -77,12 +77,30 @@ export default function NavBar() {
                                 Architecture
                             </Dropdown.Toggle>
                             <Dropdown.Menu className={styles.dropdownMenu}>
-                                <Nav.Link href="/architecture/concepts"
-                                          className={styles.dropdownItem}> Concepts </Nav.Link>
-                                <Nav.Link href="/architecture/principles"
-                                          className={styles.dropdownItem}> Principles </Nav.Link>
-                                <Nav.Link href="/architecture/challenges"
-                                          className={styles.dropdownItem}> Challenges </Nav.Link>
+                                <Dropdown.Item href="/architecture/software-architecture/definition" className={styles.dropdownItem}>Software Architecture</Dropdown.Item>
+                                <Dropdown.Item href="/architecture/software-architecture/key-components" className={`${styles.dropdownItem} ${styles.subSubItem}`}>Key Components</Dropdown.Item>
+                                <Dropdown.Item href="/architecture/software-architecture/roles-responsibilities" className={`${styles.dropdownItem} ${styles.subSubItem}`}>Roles & Responsibilities</Dropdown.Item>
+                                <Dropdown.Item href="/architecture/software-architecture/common-patterns" className={`${styles.dropdownItem} ${styles.subSubItem}`}>Common Patterns</Dropdown.Item>
+                                <Dropdown.Item href="/architecture/software-architecture/real-world-examples" className={`${styles.dropdownItem} ${styles.subSubItem}`}>Real-World Examples</Dropdown.Item>
+
+                                <Dropdown.Item href="/architecture/data-architecture-detailed/source-systems" className={styles.dropdownItem}>Data Architecture</Dropdown.Item>
+                                <Dropdown.Item href="/architecture/data-architecture-detailed/data-ingestion" className={`${styles.dropdownItem} ${styles.subSubItem}`}>Data Ingestion</Dropdown.Item>
+                                <Dropdown.Item href="/architecture/data-architecture-detailed/storage-layers" className={`${styles.dropdownItem} ${styles.subSubItem}`}>Storage Layers</Dropdown.Item>
+                                <Dropdown.Item href="/architecture/data-architecture-detailed/metadata-catalog" className={`${styles.dropdownItem} ${styles.subSubItem}`}>Metadata & Catalog</Dropdown.Item>
+                                <Dropdown.Item href="/architecture/data-architecture-detailed/quality-governance" className={`${styles.dropdownItem} ${styles.subSubItem}`}>Quality & Governance</Dropdown.Item>
+
+                                <Dropdown.Item href="/architecture/enterprise-architecture/overview" className={styles.dropdownItem}>Enterprise Architecture</Dropdown.Item>
+                                <Dropdown.Item href="/architecture/enterprise-architecture/business-architecture" className={`${styles.dropdownItem} ${styles.subSubItem}`}>Business Architecture</Dropdown.Item>
+                                <Dropdown.Item href="/architecture/enterprise-architecture/application-architecture" className={`${styles.dropdownItem} ${styles.subSubItem}`}>Application Architecture</Dropdown.Item>
+                                <Dropdown.Item href="/architecture/enterprise-architecture/technology-architecture" className={`${styles.dropdownItem} ${styles.subSubItem}`}>Technology Architecture</Dropdown.Item>
+                                <Dropdown.Item href="/architecture/enterprise-architecture/governance" className={`${styles.dropdownItem} ${styles.subSubItem}`}>Governance</Dropdown.Item>
+
+                                <Dropdown.Item href="/architecture/integration-architecture" className={styles.dropdownItem}>Integration Architecture</Dropdown.Item>
+                                <Dropdown.Item href="/architecture/security-architecture" className={styles.dropdownItem}>Security Architecture</Dropdown.Item>
+                                <Dropdown.Item href="/architecture/devops-platform-architecture" className={styles.dropdownItem}>DevOps & Platform Architecture</Dropdown.Item>
+                                <Dropdown.Item href="/architecture/analytics-bi-architecture" className={styles.dropdownItem}>Analytics & BI Architecture</Dropdown.Item>
+                                <Dropdown.Item href="/architecture/big-data-architecture" className={styles.dropdownItem}>Big Data Architecture</Dropdown.Item>
+                                <Dropdown.Item href="/architecture/ai-ml-architecture" className={styles.dropdownItem}>AI/ML Architecture</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
 
