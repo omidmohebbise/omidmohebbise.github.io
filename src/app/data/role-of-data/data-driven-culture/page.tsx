@@ -1,85 +1,88 @@
 export default function DataDrivenCulturePage() {
     return (
-        <div className='pt-2'>
-            <h2 className="mb-4 mt-3">Data-Driven Culture</h2>
+        <div className="pt-4">
+            <div className="card mb-4 shadow-sm">
+                <div className="card-body">
+                    <h2 className="card-title mb-3">Data-Driven Culture</h2>
 
-            <div className="row">
-                <div className="col-md-6">
-                    <h3>What "Data-Driven" Means</h3>
-                    <p>A data-driven culture prioritizes evidence and metrics over opinion and intuition when making decisions. Key characteristics include:</p>
-                    <ul>
-                        <li><strong>Evidence-Based Decisions:</strong> All major decisions are supported by data and analysis</li>
-                        <li><strong>Transparency:</strong> Data and insights are shared across departments openly</li>
-                        <li><strong>Accountability:</strong> Performance is measured objectively against data metrics</li>
-                        <li><strong>Continuous Improvement:</strong> Data insights drive iterative improvements</li>
-                        <li><strong>Experimentation:</strong> A/B testing and controlled experiments validate hypotheses</li>
-                    </ul>
-                </div>
+                    <div className="row">
+                        <div className="col-md-6">
+                            <h5 className="mb-2">What "Data-Driven" Means</h5>
+                            <p className="lead">A data-driven culture prioritizes evidence and metrics over opinion and intuition when making decisions.</p>
+                            <ul className="list-group list-group-flush mb-3">
+                                <li className="list-group-item"><strong>Evidence-Based Decisions:</strong> Decisions supported by analysis</li>
+                                <li className="list-group-item"><strong>Transparency:</strong> Share data and insights across teams</li>
+                                <li className="list-group-item"><strong>Accountability:</strong> Measure performance against data metrics</li>
+                                <li className="list-group-item"><strong>Continuous Improvement:</strong> Learn and iterate with data</li>
+                                <li className="list-group-item"><strong>Experimentation:</strong> A/B tests and controlled experiments</li>
+                            </ul>
+                        </div>
 
-                <div className="col-md-6">
-                    <h3>Building Data Culture</h3>
-                    <ul>
-                        <li><strong>Leadership Buy-In:</strong> Executive sponsorship signals importance</li>
-                        <li><strong>Data Literacy:</strong> Invest in training employees to understand data</li>
-                        <li><strong>Accessibility:</strong> Make data tools easy to use for non-technical users</li>
-                        <li><strong>Incentives:</strong> Reward data-driven decision-making and insights</li>
-                        <li><strong>Failure Tolerance:</strong> Allow experimentation with low-risk failures</li>
-                    </ul>
-                </div>
-            </div>
+                        <div className="col-md-6">
+                            <h5 className="mb-2">Building Data Culture</h5>
+                            <ul className="list-group list-group-flush mb-3">
+                                <li className="list-group-item"><strong>Leadership Buy-In:</strong> Executive sponsorship</li>
+                                <li className="list-group-item"><strong>Data Literacy:</strong> Train employees to understand data</li>
+                                <li className="list-group-item"><strong>Accessibility:</strong> Make tools easy for non-technical users</li>
+                                <li className="list-group-item"><strong>Incentives:</strong> Reward data-driven outcomes</li>
+                                <li className="list-group-item"><strong>Failure Tolerance:</strong> Allow low-risk experiments</li>
+                            </ul>
+                        </div>
+                    </div>
 
-            <div className="row mt-5">
-                <div className="col-md-6">
-                    <h3>Roles & Responsibilities</h3>
+                    <div className="row mt-4">
+                        <div className="col-md-6">
+                            <h5>Roles & Responsibilities</h5>
+                            <div className="mb-3">
+                                <h6 className="mb-1">Business Users</h6>
+                                <ul>
+                                    <li>Define data needs and questions</li>
+                                    <li>Interpret insights and act</li>
+                                    <li>Provide domain expertise</li>
+                                </ul>
+                            </div>
 
-                    <h4><strong>Business Users</strong></h4>
-                    <ul>
-                        <li>Define data needs and analytical questions</li>
-                        <li>Interpret insights and act on recommendations</li>
-                        <li>Provide domain expertise to validate findings</li>
-                        <li>Champion data usage in their departments</li>
-                    </ul>
+                            <div>
+                                <h6 className="mb-1">Data Teams</h6>
+                                <ul>
+                                    <li>Design analytical solutions</li>
+                                    <li>Ensure data quality</li>
+                                    <li>Communicate findings</li>
+                                </ul>
+                            </div>
+                        </div>
 
-                    <h4><strong>Data Teams (Analytics, Scientists)</strong></h4>
-                    <ul>
-                        <li>Design and implement analytical solutions</li>
-                        <li>Ensure data quality and accuracy</li>
-                        <li>Communicate findings to non-technical stakeholders</li>
-                        <li>Stay current with analytical techniques</li>
-                    </ul>
-                </div>
+                        <div className="col-md-6">
+                            <h5>Org Roles Continued</h5>
+                            <div className="mb-3">
+                                <h6 className="mb-1">IT & Engineering</h6>
+                                <ul>
+                                    <li>Build and maintain infrastructure</li>
+                                    <li>Ensure security and compliance</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h6 className="mb-1">Leadership</h6>
+                                <ul>
+                                    <li>Set strategy and allocate resources</li>
+                                    <li>Model data-driven decision-making</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 
-                <div className="col-md-6">
-                    <h3>Organizational Roles Continued</h3>
-
-                    <h4><strong>IT & Engineering</strong></h4>
-                    <ul>
-                        <li>Build and maintain data infrastructure</li>
-                        <li>Ensure data security and compliance</li>
-                        <li>Integrate systems and enable data flow</li>
-                        <li>Provide technical support for data tools</li>
-                    </ul>
-
-                    <h4><strong>Leadership</strong></h4>
-                    <ul>
-                        <li>Set data strategy and goals</li>
-                        <li>Allocate budget and resources</li>
-                        <li>Model data-driven thinking in decisions</li>
-                        <li>Foster psychological safety for experimentation</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div className="row mt-5">
-                <div className="col-12">
-                    <h3>Challenges in Building Data Culture</h3>
-                    <ul>
-                        <li><strong>Resistance to Change:</strong> Not all employees embrace new ways of working</li>
-                        <li><strong>Data Silos:</strong> Departments hoard data instead of sharing</li>
-                        <li><strong>Tool Complexity:</strong> Complex tools can overwhelm non-technical users</li>
-                        <li><strong>Time to Insight:</strong> Slow analytics slow down decision-making</li>
-                        <li><strong>Skill Gaps:</strong> Limited data literacy and technical skills</li>
-                    </ul>
+                    <div className="row mt-4">
+                        <div className="col-12">
+                            <h5>Challenges in Building Data Culture</h5>
+                            <ul className="list-group list-group-flush">
+                                <li className="list-group-item"><strong>Resistance to Change:</strong> Not all employees embrace new ways</li>
+                                <li className="list-group-item"><strong>Data Silos:</strong> Departments hoard data</li>
+                                <li className="list-group-item"><strong>Tool Complexity:</strong> Tools overwhelm non-technical users</li>
+                                <li className="list-group-item"><strong>Time to Insight:</strong> Slow analytics delay decisions</li>
+                                <li className="list-group-item"><strong>Skill Gaps:</strong> Limited data literacy</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
