@@ -153,6 +153,35 @@ export default function NavBar() {
 
                             </Dropdown.Menu>
                         </Dropdown>
+                        <Dropdown>
+                            <Dropdown.Toggle as="span" className={styles.dropdownToggle}>
+                                Data
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu className={styles.dropdownMenu}>
+                                <Dropdown.Item href="/data" className={styles.dropdownItem}>Overview</Dropdown.Item>
+                                <Dropdown.Item href="/data/role-of-data/why-data-matters" className={styles.dropdownItem}>Why Data Matters</Dropdown.Item>
+                                <Dropdown.Item href="/data/role-of-data/data-driven-culture" className={`${styles.dropdownItem} ${styles.subSubItem}`}>Data-Driven Culture</Dropdown.Item>
+                                <Dropdown.Item href="/data/role-of-data/data-in-business-functions" className={`${styles.dropdownItem} ${styles.subSubItem}`}>Data in Business Functions</Dropdown.Item>
+                                <Dropdown.Item href="/data/role-of-data/data-governance-ethics" className={`${styles.dropdownItem} ${styles.subSubItem}`}>Data Governance & Ethics</Dropdown.Item>
+
+                                <Dropdown.Item href="/data/databases-storage/overview" className={styles.dropdownItem}>Databases vs Storage</Dropdown.Item>
+                                <Dropdown.Item href="/data/databases-storage/types-of-databases" className={`${styles.dropdownItem} ${styles.subSubItem}`}>Types of Databases</Dropdown.Item>
+                                <Dropdown.Item href="/data/databases-storage/storage-options" className={`${styles.dropdownItem} ${styles.subSubItem}`}>Storage Options</Dropdown.Item>
+                                <Dropdown.Item href="/data/databases-storage/choosing-right-option" className={`${styles.dropdownItem} ${styles.subSubItem}`}>Choosing the Right Option</Dropdown.Item>
+
+                                <Dropdown.Item href="/data/data-processing/batch-processing" className={styles.dropdownItem}>Batch Processing</Dropdown.Item>
+                                <Dropdown.Item href="/data/data-processing/real-time-streaming" className={`${styles.dropdownItem} ${styles.subSubItem}`}>Real-Time / Streaming</Dropdown.Item>
+                                <Dropdown.Item href="/data/data-processing/etl-elt" className={`${styles.dropdownItem} ${styles.subSubItem}`}>ETL & ELT</Dropdown.Item>
+                                <Dropdown.Item href="/data/data-processing/data-integration" className={`${styles.dropdownItem} ${styles.subSubItem}`}>Data Integration</Dropdown.Item>
+                                <Dropdown.Item href="/data/data-processing/analytics-bi" className={`${styles.dropdownItem} ${styles.subSubItem}`}>Analytics & BI</Dropdown.Item>
+
+                                <Dropdown.Item href="/data/data-architecture/overview" className={styles.dropdownItem}>Data Architecture</Dropdown.Item>
+                                <Dropdown.Item href="/data/data-architecture/reference-architectures" className={`${styles.dropdownItem} ${styles.subSubItem}`}>Reference Architectures</Dropdown.Item>
+                                <Dropdown.Item href="/data/data-architecture/core-components" className={`${styles.dropdownItem} ${styles.subSubItem}`}>Core Components</Dropdown.Item>
+                                <Dropdown.Item href="/data/data-architecture/data-management-practices" className={`${styles.dropdownItem} ${styles.subSubItem}`}>Data Management Practices</Dropdown.Item>
+                                <Dropdown.Item href="/data/data-architecture/modern-trends" className={`${styles.dropdownItem} ${styles.subSubItem}`}>Modern Trends</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
