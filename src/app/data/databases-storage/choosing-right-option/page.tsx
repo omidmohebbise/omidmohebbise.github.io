@@ -98,59 +98,94 @@ export default function ChoosingRightOptionPage() {
                                 <li className="list-group-item"><strong>OLAP:</strong> Data warehouse (Snowflake)</li>
                                 <li className="list-group-item"><strong>Full-Text Search:</strong> Elasticsearch</li>
                                 <li className="list-group-item"><strong>Key-Value:</strong> Redis, DynamoDB</li>
+                                <li className="list-group-item"><strong>Real-time Streaming:</strong> Kafka + Stream processor</li>
                             </ul>
                         </div>
                     </div>
 
                     <div className="row mt-4">
-                        <div className="col-12">
-                            <h5>Decision Matrix</h5>
+                        <div className="col-md-6">
+                            <h5>Decision Framework</h5>
+
+                            <h6>Quick Decision Tree</h6>
+                            <ol>
+                                <li><strong>Is data highly structured and ACID critical?</strong>
+                                    <ul>
+                                        <li>Yes → Relational Database (PostgreSQL, MySQL)</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Do you need to scale to massive volumes?</strong>
+                                    <ul>
+                                        <li>Yes → Consider NoSQL or Data Lake</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Is this primarily for analytics?</strong>
+                                    <ul>
+                                        <li>Yes → Data Warehouse (Snowflake)</li>
+                                        <li>No, need raw data exploration → Data Lake</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Need ultra-fast access?</strong>
+                                    <ul>
+                                        <li>Yes → Add In-Memory cache (Redis)</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div className="col-md-6">
+                            <h5>Technology Selection Matrix</h5>
                             <div className="table-responsive">
                                 <table className="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Scenario</th>
-                                            <th>Data Volume</th>
-                                            <th>Query Type</th>
-                                            <th>Recommended</th>
+                                            <th>Use Case</th>
+                                            <th>Primary Technology</th>
+                                            <th>Rationale</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><strong>E-commerce Catalog</strong></td>
-                                            <td>GB-TB</td>
-                                            <td>OLTP + Search</td>
-                                            <td>PostgreSQL + Elasticsearch</td>
+                                            <td><strong>E-commerce transactions</strong></td>
+                                            <td>PostgreSQL</td>
+                                            <td>ACID, relationships, proven reliability</td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Financial Reporting</strong></td>
-                                            <td>TB</td>
-                                            <td>OLAP</td>
-                                            <td>Data Warehouse (Snowflake)</td>
+                                            <td><strong>Mobile app data</strong></td>
+                                            <td>MongoDB/Firebase</td>
+                                            <td>Flexible schema, real-time sync</td>
                                         </tr>
                                         <tr>
-                                            <td><strong>IoT Time-Series</strong></td>
-                                            <td>PB</td>
-                                            <td>Analytical</td>
-                                            <td>TimescaleDB or Data Lake</td>
+                                            <td><strong>Analytics/BI</strong></td>
+                                            <td>Snowflake/BigQuery</td>
+                                            <td>Analytics-optimized, scales with data</td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Social Network</strong></td>
-                                            <td>PB</td>
-                                            <td>Relationships</td>
-                                            <td>Neo4j + MongoDB + Cache</td>
+                                            <td><strong>Data exploration</strong></td>
+                                            <td>Data Lake + Spark</td>
+                                            <td>Schema flexibility, cost-effective</td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Real-time Analytics</strong></td>
-                                            <td>TB</td>
-                                            <td>Stream + Analytics</td>
-                                            <td>Kafka + Spark + ClickHouse</td>
+                                            <td><strong>Session caching</strong></td>
+                                            <td>Redis</td>
+                                            <td>Ultra-fast, perfect for sessions</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>File backups</strong></td>
+                                            <td>Object Storage (S3)</td>
+                                            <td>Scalable, durable, cost-effective</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Real-time recommendations</strong></td>
+                                            <td>Neo4j</td>
+                                            <td>Graph relationships, relationship traversal</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
