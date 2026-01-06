@@ -5,7 +5,13 @@ import { useState } from 'react'
 const PageStates = {
     Overview: 1,
     CoreFoundations: 2,
-    Cryptography: 3
+    Cryptography: 3,
+    Authentication: 4,
+    TLS: 5,
+    SecureCoding: 6,
+    WebSecurity: 7,
+    JVMSecurity: 8,
+    Advanced: 9
 }
 
 export default function JavaSecurityPage() {
@@ -31,6 +37,42 @@ export default function JavaSecurityPage() {
                     onClick={() => setPageState(PageStates.Cryptography)}
                 >
                     Cryptography
+                </button>
+                <button
+                    className={`btn ${pageState === PageStates.Authentication ? 'btn-primary' : 'btn-outline-primary'}`}
+                    onClick={() => setPageState(PageStates.Authentication)}
+                >
+                    Authentication & Authorization
+                </button>
+                <button
+                    className={`btn ${pageState === PageStates.TLS ? 'btn-primary' : 'btn-outline-primary'}`}
+                    onClick={() => setPageState(PageStates.TLS)}
+                >
+                    TLS & Network Security
+                </button>
+                <button
+                    className={`btn ${pageState === PageStates.SecureCoding ? 'btn-primary' : 'btn-outline-primary'}`}
+                    onClick={() => setPageState(PageStates.SecureCoding)}
+                >
+                    Secure Coding Practices
+                </button>
+                <button
+                    className={`btn ${pageState === PageStates.WebSecurity ? 'btn-primary' : 'btn-outline-primary'}`}
+                    onClick={() => setPageState(PageStates.WebSecurity)}
+                >
+                    Web & Framework Security
+                </button>
+                <button
+                    className={`btn ${pageState === PageStates.JVMSecurity ? 'btn-primary' : 'btn-outline-primary'}`}
+                    onClick={() => setPageState(PageStates.JVMSecurity)}
+                >
+                    JVM & Runtime Security
+                </button>
+                <button
+                    className={`btn ${pageState === PageStates.Advanced ? 'btn-primary' : 'btn-outline-primary'}`}
+                    onClick={() => setPageState(PageStates.Advanced)}
+                >
+                    Advanced Topics
                 </button>
             </div>
 
@@ -788,6 +830,698 @@ export default function JavaSecurityPage() {
                                             </ul>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {pageState === PageStates.Authentication && (
+                <div className="card mb-4 shadow-sm">
+                    <div className="card-body">
+                        <h2 className="card-title mb-3">Authentication & Authorization</h2>
+                        <p className="lead">Understanding identity verification and access control in Java applications.</p>
+
+                        <div className="row mt-4">
+                            <div className="col-12">
+                                <h5>JAAS (Java Authentication and Authorization Service)</h5>
+                                <p>Pluggable authentication and authorization framework for Java applications.</p>
+
+                                <div className="row mt-3">
+                                    <div className="col-md-4">
+                                        <h6>Principals</h6>
+                                        <ul className="list-group list-group-flush">
+                                            <li className="list-group-item">
+                                                <strong>Definition:</strong> Represents an identity (user, group, role)
+                                            </li>
+                                            <li className="list-group-item">
+                                                <strong>Examples:</strong> UserPrincipal, GroupPrincipal, RolePrincipal
+                                            </li>
+                                            <li className="list-group-item">
+                                                <strong>Usage:</strong> Retrieved from authenticated Subject
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="col-md-4">
+                                        <h6>Subjects</h6>
+                                        <ul className="list-group list-group-flush">
+                                            <li className="list-group-item">
+                                                <strong>Definition:</strong> Represents an authenticated entity
+                                            </li>
+                                            <li className="list-group-item">
+                                                <strong>Contains:</strong> Principals, public credentials, private credentials
+                                            </li>
+                                            <li className="list-group-item">
+                                                <strong>Usage:</strong> Central point for all authentication info
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="col-md-4">
+                                        <h6>Credentials</h6>
+                                        <ul className="list-group list-group-flush">
+                                            <li className="list-group-item">
+                                                <strong>Public:</strong> Certificates, Kerberos tickets
+                                            </li>
+                                            <li className="list-group-item">
+                                                <strong>Private:</strong> Passwords, private keys
+                                            </li>
+                                            <li className="list-group-item">
+                                                <strong>Security:</strong> Private credentials are sensitive
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="row mt-4">
+                            <div className="col-md-6">
+                                <h5>Role-Based Access Control (RBAC)</h5>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item">
+                                        <strong>Concept:</strong> Permissions assigned to roles, roles assigned to users
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Example Roles:</strong> ADMIN, USER, MODERATOR, GUEST
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Advantages:</strong>
+                                        <ul className="mt-2">
+                                            <li>Simple to understand and implement</li>
+                                            <li>Easy to manage at scale</li>
+                                            <li>Industry standard approach</li>
+                                        </ul>
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Use Cases:</strong> Most enterprise applications, REST APIs, web apps
+                                    </li>
+                                </ul>
+
+                                <div className="alert alert-info" role="alert">
+                                    <strong>Example:</strong><br/>
+                                    User "Alice" has role "ADMIN"<br/>
+                                    Role "ADMIN" has permissions: [READ, WRITE, DELETE]<br/>
+                                    → Alice can READ, WRITE, DELETE
+                                </div>
+                            </div>
+
+                            <div className="col-md-6">
+                                <h5>Claim-Based Access Control</h5>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item">
+                                        <strong>Concept:</strong> Permissions based on attributes (claims) about the user
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Example Claims:</strong> department=engineering, clearance_level=5, region=US
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Advantages:</strong>
+                                        <ul className="mt-2">
+                                            <li>Fine-grained access control</li>
+                                            <li>Flexible policy decisions</li>
+                                            <li>Better for complex scenarios</li>
+                                        </ul>
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Use Cases:</strong> Federation, SSO, microservices, ABAC systems
+                                    </li>
+                                </ul>
+
+                                <div className="alert alert-info" role="alert">
+                                    <strong>Example:</strong><br/>
+                                    User has claims: {`{department: "sales", region: "EU"}`}<br/>
+                                    Policy: Allow if department="sales" AND region="EU"<br/>
+                                    → User is authorized
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="row mt-4">
+                            <div className="col-12">
+                                <h5>OAuth 2.0 / OpenID Connect</h5>
+                                <div className="alert alert-warning" role="alert">
+                                    <strong>Key Distinction:</strong><br/>
+                                    • <strong>OAuth 2.0:</strong> Authorization protocol (what you can access)<br/>
+                                    • <strong>OpenID Connect:</strong> Authentication layer on top of OAuth 2.0 (who you are)
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="row mt-3">
+                            <div className="col-md-6">
+                                <h6>OAuth 2.0 Concepts</h6>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item">
+                                        <strong>Resource Owner:</strong> The user who owns the data
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Client:</strong> Application requesting access (your app)
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Authorization Server:</strong> Issues access tokens (e.g., Auth0, Keycloak)
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Resource Server:</strong> API server protecting resources
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Access Token:</strong> Credential to access protected resources
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Refresh Token:</strong> Long-lived token to get new access tokens
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div className="col-md-6">
+                                <h6>OAuth 2.0 Grant Types</h6>
+                                <div className="table-responsive">
+                                    <table className="table table-sm">
+                                        <thead>
+                                            <tr>
+                                                <th>Grant Type</th>
+                                                <th>Use Case</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>Authorization Code</strong></td>
+                                                <td>Web apps with backend</td>
+                                                <td>✅ Recommended</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Authorization Code + PKCE</strong></td>
+                                                <td>Mobile apps, SPAs</td>
+                                                <td>✅ Best Practice</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Client Credentials</strong></td>
+                                                <td>Machine-to-machine</td>
+                                                <td>✅ Server to server</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Implicit</strong></td>
+                                                <td>Legacy SPAs</td>
+                                                <td>❌ Deprecated</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Password</strong></td>
+                                                <td>Legacy apps</td>
+                                                <td>❌ Not recommended</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="row mt-4">
+                            <div className="col-md-6">
+                                <h6>OpenID Connect (OIDC)</h6>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item">
+                                        <strong>ID Token:</strong> JWT containing user identity information
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>UserInfo Endpoint:</strong> Get additional user profile data
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Standard Claims:</strong> sub (subject), name, email, picture, etc.
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Scopes:</strong> openid (required), profile, email, address, phone
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div className="col-md-6">
+                                <h6>Authentication Flow (OIDC)</h6>
+                                <ol className="list-group list-group-numbered">
+                                    <li className="list-group-item">User clicks "Login"</li>
+                                    <li className="list-group-item">Redirect to authorization server</li>
+                                    <li className="list-group-item">User authenticates (username/password, MFA)</li>
+                                    <li className="list-group-item">User consents to requested scopes</li>
+                                    <li className="list-group-item">Redirect back with authorization code</li>
+                                    <li className="list-group-item">Exchange code for tokens (ID token + access token)</li>
+                                    <li className="list-group-item">Validate ID token signature and claims</li>
+                                    <li className="list-group-item">Extract user identity from ID token</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div className="row mt-4">
+                            <div className="col-12">
+                                <h6>Common Java Libraries/Frameworks</h6>
+                                <div className="table-responsive">
+                                    <table className="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Library/Framework</th>
+                                                <th>Purpose</th>
+                                                <th>Use Case</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>Spring Security</strong></td>
+                                                <td>Complete security framework</td>
+                                                <td>Authentication, authorization, OAuth2, OIDC</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Spring Security OAuth2</strong></td>
+                                                <td>OAuth2/OIDC client & resource server</td>
+                                                <td>Integrate with OAuth2 providers</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Keycloak</strong></td>
+                                                <td>Identity & access management</td>
+                                                <td>Self-hosted auth server, SSO</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Auth0 SDK</strong></td>
+                                                <td>Cloud auth service integration</td>
+                                                <td>Managed authentication</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Pac4j</strong></td>
+                                                <td>Multi-protocol auth library</td>
+                                                <td>SAML, OAuth, OIDC, CAS</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Apache Shiro</strong></td>
+                                                <td>Lightweight security framework</td>
+                                                <td>Simple authentication & authorization</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="row mt-4">
+                            <div className="col-12">
+                                <div className="alert alert-success" role="alert">
+                                    <h6 className="alert-heading">Best Practices</h6>
+                                    <div className="row">
+                                        <div className="col-md-6">
+                                            <p className="mb-2"><strong>✅ DO:</strong></p>
+                                            <ul>
+                                                <li>Use established frameworks (Spring Security)</li>
+                                                <li>Implement MFA for sensitive operations</li>
+                                                <li>Use Authorization Code + PKCE for SPAs</li>
+                                                <li>Validate tokens on every request</li>
+                                                <li>Use short-lived access tokens (15 min)</li>
+                                                <li>Store tokens securely (HttpOnly cookies)</li>
+                                            </ul>
+                                        </div>
+                                        <div className="col-md-6">
+                                            <p className="mb-2"><strong>❌ DON'T:</strong></p>
+                                            <ul>
+                                                <li>Roll your own authentication</li>
+                                                <li>Store passwords in plain text</li>
+                                                <li>Use Implicit grant flow</li>
+                                                <li>Store tokens in localStorage (XSS risk)</li>
+                                                <li>Share secrets in client-side code</li>
+                                                <li>Skip token validation</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {pageState === PageStates.TLS && (
+                <div className="card mb-4 shadow-sm">
+                    <div className="card-body">
+                        <h2 className="card-title mb-3">TLS & Network Security</h2>
+                        <p className="lead">Practical guide to securing network communications in Java applications.</p>
+
+                        <div className="row mt-4">
+                            <div className="col-12">
+                                <h5>How TLS Works</h5>
+                                <p><strong>TLS (Transport Layer Security)</strong> - Cryptographic protocol for secure communication over networks.</p>
+                            </div>
+                        </div>
+
+                        <div className="row mt-3">
+                            <div className="col-md-6">
+                                <h6>TLS Handshake Process</h6>
+                                <ol className="list-group list-group-numbered">
+                                    <li className="list-group-item">
+                                        <strong>Client Hello:</strong> Client sends supported TLS versions, cipher suites
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Server Hello:</strong> Server chooses TLS version, cipher suite
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Server Certificate:</strong> Server sends its certificate
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Certificate Validation:</strong> Client verifies server certificate
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Key Exchange:</strong> Client and server establish shared secret
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Finished:</strong> Both sides confirm handshake completion
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Encrypted Communication:</strong> Application data encrypted with session keys
+                                    </li>
+                                </ol>
+                            </div>
+
+                            <div className="col-md-6">
+                                <h6>TLS Versions</h6>
+                                <div className="table-responsive">
+                                    <table className="table table-sm">
+                                        <thead>
+                                            <tr>
+                                                <th>Version</th>
+                                                <th>Year</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>TLS 1.3</strong></td>
+                                                <td>2018</td>
+                                                <td>✅ Current - Use this</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>TLS 1.2</strong></td>
+                                                <td>2008</td>
+                                                <td>✅ Still acceptable</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>TLS 1.1</strong></td>
+                                                <td>2006</td>
+                                                <td>❌ Deprecated 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>TLS 1.0</strong></td>
+                                                <td>1999</td>
+                                                <td>❌ Deprecated 2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>SSL 3.0</strong></td>
+                                                <td>1996</td>
+                                                <td>❌ Insecure - Never use</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div className="alert alert-success mt-3" role="alert">
+                                    <strong>Recommendation:</strong> Use TLS 1.3, fallback to TLS 1.2 if needed for compatibility
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="row mt-4">
+                            <div className="col-12">
+                                <h5>Certificates & Trust Chains</h5>
+                            </div>
+                        </div>
+
+                        <div className="row mt-3">
+                            <div className="col-md-6">
+                                <h6>Certificate Components</h6>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item">
+                                        <strong>Subject:</strong> Who the certificate belongs to (Common Name, Organization)
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Issuer:</strong> Who issued the certificate (Certificate Authority)
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Public Key:</strong> Server's public key for encryption
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Validity Period:</strong> Not before / Not after dates
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Signature:</strong> CA's digital signature on the certificate
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Serial Number:</strong> Unique identifier
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Extensions:</strong> SAN (Subject Alternative Names), Key Usage, etc.
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div className="col-md-6">
+                                <h6>Trust Chain Validation</h6>
+                                <ol className="list-group list-group-numbered">
+                                    <li className="list-group-item">
+                                        <strong>Check Validity:</strong> Certificate not expired
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Verify Signature:</strong> CA signature is valid
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Chain of Trust:</strong>
+                                        <ul className="mt-2">
+                                            <li>Server Certificate → signed by</li>
+                                            <li>Intermediate CA → signed by</li>
+                                            <li>Root CA (in TrustStore)</li>
+                                        </ul>
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Hostname Verification:</strong> Certificate matches server hostname
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Revocation Check:</strong> Check CRL or OCSP
+                                    </li>
+                                </ol>
+
+                                <div className="alert alert-warning mt-3" role="alert">
+                                    <strong>Common Issue:</strong> Missing intermediate certificates causes validation failures
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="row mt-4">
+                            <div className="col-md-6">
+                                <h5>mTLS (Mutual TLS)</h5>
+                                <p><strong>Both client and server authenticate each other with certificates</strong></p>
+
+                                <h6 className="mt-3">How mTLS Works</h6>
+                                <ol className="list-group list-group-numbered mb-3">
+                                    <li className="list-group-item">Server sends its certificate</li>
+                                    <li className="list-group-item">Client validates server certificate</li>
+                                    <li className="list-group-item">Server requests client certificate</li>
+                                    <li className="list-group-item">Client sends its certificate</li>
+                                    <li className="list-group-item">Server validates client certificate</li>
+                                    <li className="list-group-item">Both sides authenticated</li>
+                                </ol>
+
+                                <h6>Use Cases</h6>
+                                <ul className="list-unstyled">
+                                    <li className="mb-2">✅ Microservice-to-microservice communication</li>
+                                    <li className="mb-2">✅ API authentication (machine-to-machine)</li>
+                                    <li className="mb-2">✅ Zero-trust networks</li>
+                                    <li className="mb-2">✅ High-security environments</li>
+                                </ul>
+                            </div>
+
+                            <div className="col-md-6">
+                                <h5>Hostname Verification</h5>
+                                <p><strong>Ensures certificate matches the server you're connecting to</strong></p>
+
+                                <h6 className="mt-3">Verification Process</h6>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item">
+                                        <strong>Check CN:</strong> Common Name in subject
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Check SAN:</strong> Subject Alternative Names (preferred)
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Wildcard Support:</strong> *.example.com matches api.example.com
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>IP Addresses:</strong> Can be in SAN, not in CN
+                                    </li>
+                                </ul>
+
+                                <div className="alert alert-danger" role="alert">
+                                    <strong>⚠️ Critical Security Issue:</strong><br/>
+                                    <strong>NEVER</strong> disable hostname verification in production!<br/>
+                                    <code>SSLContext.setHostnameVerifier(NoopHostnameVerifier.INSTANCE)</code> ← ❌ DON'T DO THIS
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="row mt-4">
+                            <div className="col-12">
+                                <h5>Common TLS Misconfigurations in Java</h5>
+                            </div>
+                        </div>
+
+                        <div className="row mt-3">
+                            <div className="col-md-6">
+                                <h6>❌ Mistake #1: Trusting All Certificates</h6>
+                                <div className="bg-light p-3 rounded mb-3">
+                                    <code className="text-danger d-block">// NEVER DO THIS IN PRODUCTION!</code>
+                                    <code className="d-block">TrustManager[] trustAllCerts = new TrustManager[] {`{`}</code>
+                                    <code className="d-block">    new X509TrustManager() {`{`}</code>
+                                    <code className="d-block">        public void checkClientTrusted(X509Certificate[] certs, String authType) {`{}`}</code>
+                                    <code className="d-block">        public void checkServerTrusted(X509Certificate[] certs, String authType) {`{}`}</code>
+                                    <code className="d-block">        public X509Certificate[] getAcceptedIssuers() {`{ return null; }`}</code>
+                                    <code className="d-block">    {`}`}</code>
+                                    <code className="d-block">{`}`};</code>
+                                </div>
+                                <p><strong>Why it's bad:</strong> Allows man-in-the-middle attacks</p>
+
+                                <h6 className="mt-4">❌ Mistake #2: Disabling Hostname Verification</h6>
+                                <div className="bg-light p-3 rounded mb-3">
+                                    <code className="text-danger d-block">// INSECURE!</code>
+                                    <code className="d-block">HttpsURLConnection.setDefaultHostnameVerifier(</code>
+                                    <code className="d-block">    (hostname, session) -&gt; true);</code>
+                                </div>
+
+                                <h6 className="mt-4">❌ Mistake #3: Using Weak Cipher Suites</h6>
+                                <div className="bg-light p-3 rounded mb-3">
+                                    <code className="text-danger d-block">// Weak ciphers</code>
+                                    <code className="d-block">sslContext.setEnabledCipherSuites(</code>
+                                    <code className="d-block">    new String[]{`{"TLS_RSA_WITH_DES_CBC_SHA"}`});</code>
+                                </div>
+                            </div>
+
+                            <div className="col-md-6">
+                                <h6>✅ Correct Approach: Proper TLS Configuration</h6>
+                                <div className="bg-light p-3 rounded mb-3">
+                                    <code className="d-block">// Load truststore</code>
+                                    <code className="d-block">KeyStore trustStore = KeyStore.getInstance("PKCS12");</code>
+                                    <code className="d-block">trustStore.load(new FileInputStream("truststore.p12"),</code>
+                                    <code className="d-block">    "password".toCharArray());</code>
+                                    <code className="d-block"></code>
+                                    <code className="d-block">// Initialize TrustManagerFactory</code>
+                                    <code className="d-block">TrustManagerFactory tmf =</code>
+                                    <code className="d-block">    TrustManagerFactory.getInstance("PKIX");</code>
+                                    <code className="d-block">tmf.init(trustStore);</code>
+                                    <code className="d-block"></code>
+                                    <code className="d-block">// Create SSLContext with TLS 1.3</code>
+                                    <code className="d-block">SSLContext sslContext = SSLContext.getInstance("TLSv1.3");</code>
+                                    <code className="d-block">sslContext.init(null, tmf.getTrustManagers(), new SecureRandom());</code>
+                                    <code className="d-block"></code>
+                                    <code className="d-block">// Keep hostname verification enabled (default)</code>
+                                </div>
+
+                                <h6 className="mt-4">Recommended Cipher Suites (TLS 1.3)</h6>
+                                <ul className="list-unstyled">
+                                    <li className="mb-2">✅ TLS_AES_256_GCM_SHA384</li>
+                                    <li className="mb-2">✅ TLS_AES_128_GCM_SHA256</li>
+                                    <li className="mb-2">✅ TLS_CHACHA20_POLY1305_SHA256</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div className="row mt-4">
+                            <div className="col-md-6">
+                                <h6>❌ Mistake #4: Not Handling Certificate Expiration</h6>
+                                <ul className="list-unstyled">
+                                    <li className="mb-2">• Monitor certificate expiration dates</li>
+                                    <li className="mb-2">• Automate certificate renewal (Let's Encrypt, cert-manager)</li>
+                                    <li className="mb-2">• Set up alerts 30 days before expiration</li>
+                                </ul>
+                            </div>
+
+                            <div className="col-md-6">
+                                <h6>❌ Mistake #5: Using Self-Signed Certs in Production</h6>
+                                <ul className="list-unstyled">
+                                    <li className="mb-2">✅ Dev/Test: OK for self-signed</li>
+                                    <li className="mb-2">❌ Production: Use CA-signed certificates</li>
+                                    <li className="mb-2">💡 Free options: Let's Encrypt, AWS Certificate Manager</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div className="row mt-4">
+                            <div className="col-12">
+                                <div className="alert alert-success" role="alert">
+                                    <h6 className="alert-heading">TLS Configuration Checklist</h6>
+                                    <div className="row">
+                                        <div className="col-md-6">
+                                            <p className="mb-2"><strong>✅ Must Do:</strong></p>
+                                            <ul>
+                                                <li>Use TLS 1.3 (or minimum TLS 1.2)</li>
+                                                <li>Use strong cipher suites</li>
+                                                <li>Validate certificates properly</li>
+                                                <li>Enable hostname verification</li>
+                                                <li>Use proper TrustStore</li>
+                                                <li>Monitor certificate expiration</li>
+                                            </ul>
+                                        </div>
+                                        <div className="col-md-6">
+                                            <p className="mb-2"><strong>🔒 For mTLS:</strong></p>
+                                            <ul>
+                                                <li>Use separate KeyStores per service</li>
+                                                <li>Implement certificate rotation</li>
+                                                <li>Use short-lived certificates</li>
+                                                <li>Consider service mesh (Istio, Linkerd)</li>
+                                                <li>Monitor certificate chain validity</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="row mt-4">
+                            <div className="col-12">
+                                <h6>Java System Properties for TLS</h6>
+                                <div className="table-responsive">
+                                    <table className="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Property</th>
+                                                <th>Purpose</th>
+                                                <th>Example</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><code>javax.net.ssl.trustStore</code></td>
+                                                <td>Path to truststore file</td>
+                                                <td>/path/to/truststore.p12</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>javax.net.ssl.trustStorePassword</code></td>
+                                                <td>Truststore password</td>
+                                                <td>changeit</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>javax.net.ssl.keyStore</code></td>
+                                                <td>Path to keystore file</td>
+                                                <td>/path/to/keystore.p12</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>javax.net.ssl.keyStorePassword</code></td>
+                                                <td>Keystore password</td>
+                                                <td>secret</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>https.protocols</code></td>
+                                                <td>Enabled TLS versions</td>
+                                                <td>TLSv1.3,TLSv1.2</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>jdk.tls.client.protocols</code></td>
+                                                <td>Client TLS protocols</td>
+                                                <td>TLSv1.3</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
