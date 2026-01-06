@@ -1371,7 +1371,7 @@ export default function JavaSecurityPage() {
                             <div className="col-md-6">
                                 <h6>❌ Mistake #1: Trusting All Certificates</h6>
                                 <div className="bg-light p-3 rounded mb-3">
-                                    <code className="text-danger d-block">// NEVER DO THIS IN PRODUCTION!</code>
+                                    <code className="text-danger d-block">{`// NEVER DO THIS IN PRODUCTION!`}</code>
                                     <code className="d-block">TrustManager[] trustAllCerts = new TrustManager[] {`{`}</code>
                                     <code className="d-block">    new X509TrustManager() {`{`}</code>
                                     <code className="d-block">        public void checkClientTrusted(X509Certificate[] certs, String authType) {`{}`}</code>
@@ -1384,14 +1384,14 @@ export default function JavaSecurityPage() {
 
                                 <h6 className="mt-4">❌ Mistake #2: Disabling Hostname Verification</h6>
                                 <div className="bg-light p-3 rounded mb-3">
-                                    <code className="text-danger d-block">// INSECURE!</code>
+                                    <code className="text-danger d-block">{`// INSECURE!`}</code>
                                     <code className="d-block">HttpsURLConnection.setDefaultHostnameVerifier(</code>
                                     <code className="d-block">    (hostname, session) -&gt; true);</code>
                                 </div>
 
                                 <h6 className="mt-4">❌ Mistake #3: Using Weak Cipher Suites</h6>
                                 <div className="bg-light p-3 rounded mb-3">
-                                    <code className="text-danger d-block">// Weak ciphers</code>
+                                    <code className="text-danger d-block">{`// Weak ciphers`}</code>
                                     <code className="d-block">sslContext.setEnabledCipherSuites(</code>
                                     <code className="d-block">    new String[]{`{"TLS_RSA_WITH_DES_CBC_SHA"}`});</code>
                                 </div>
@@ -1400,21 +1400,21 @@ export default function JavaSecurityPage() {
                             <div className="col-md-6">
                                 <h6>✅ Correct Approach: Proper TLS Configuration</h6>
                                 <div className="bg-light p-3 rounded mb-3">
-                                    <code className="d-block">// Load truststore</code>
+                                    <code className="d-block">{`// Load truststore`}</code>
                                     <code className="d-block">KeyStore trustStore = KeyStore.getInstance("PKCS12");</code>
                                     <code className="d-block">trustStore.load(new FileInputStream("truststore.p12"),</code>
                                     <code className="d-block">    "password".toCharArray());</code>
                                     <code className="d-block"></code>
-                                    <code className="d-block">// Initialize TrustManagerFactory</code>
+                                    <code className="d-block">{`// Initialize TrustManagerFactory`}</code>
                                     <code className="d-block">TrustManagerFactory tmf =</code>
                                     <code className="d-block">    TrustManagerFactory.getInstance("PKIX");</code>
                                     <code className="d-block">tmf.init(trustStore);</code>
                                     <code className="d-block"></code>
-                                    <code className="d-block">// Create SSLContext with TLS 1.3</code>
+                                    <code className="d-block">{`// Create SSLContext with TLS 1.3`}</code>
                                     <code className="d-block">SSLContext sslContext = SSLContext.getInstance("TLSv1.3");</code>
                                     <code className="d-block">sslContext.init(null, tmf.getTrustManagers(), new SecureRandom());</code>
                                     <code className="d-block"></code>
-                                    <code className="d-block">// Keep hostname verification enabled (default)</code>
+                                    <code className="d-block">{`// Keep hostname verification enabled (default)`}</code>
                                 </div>
 
                                 <h6 className="mt-4">Recommended Cipher Suites (TLS 1.3)</h6>
@@ -1524,6 +1524,729 @@ export default function JavaSecurityPage() {
                                     </table>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {pageState === PageStates.SecureCoding && (
+                <div>
+                    <h2 className="mb-4">Secure Coding Practices</h2>
+
+                    <div className="card mb-4">
+                        <div className="card-header">
+                            <h4>Input Validation & Encoding</h4>
+                        </div>
+                        <div className="card-body">
+                            <div className="alert alert-info">
+                                <strong>Key Principle:</strong> Never trust user input - validate, sanitize, and encode all data
+                            </div>
+
+                            <h5 className="mt-3">Validation Strategies</h5>
+                            <table className="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Technique</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Whitelist Validation</td>
+                                        <td>Accept only known-good patterns</td>
+                                        <td><code>Pattern.compile("^[a-zA-Z0-9_]+$")</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Type Conversion</td>
+                                        <td>Use strict parsing with error handling</td>
+                                        <td><code>Integer.parseInt()</code> with try-catch</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Length Limits</td>
+                                        <td>Enforce maximum input size</td>
+                                        <td><code>if (input.length() &gt; MAX_LENGTH)</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Contextual Encoding</td>
+                                        <td>Encode based on output context</td>
+                                        <td>HTML, SQL, JavaScript, URL encoding</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h5 className="mt-4">Common Vulnerabilities</h5>
+                            <ul className="list-group">
+                                <li className="list-group-item">
+                                    <strong>SQL Injection:</strong> Use PreparedStatement, never string concatenation
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>XSS (Cross-Site Scripting):</strong> Escape HTML output with libraries like OWASP Java Encoder
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Path Traversal:</strong> Validate file paths, use canonical paths
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Command Injection:</strong> Avoid Runtime.exec() with user input
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div className="card mb-4">
+                        <div className="card-header">
+                            <h4>Deserialization Vulnerabilities</h4>
+                        </div>
+                        <div className="card-body">
+                            <div className="alert alert-danger">
+                                <strong>Critical Risk:</strong> Java deserialization can lead to remote code execution
+                            </div>
+
+                            <h5>Mitigation Strategies</h5>
+                            <table className="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Approach</th>
+                                        <th>Description</th>
+                                        <th>Implementation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Avoid ObjectInputStream</td>
+                                        <td>Don't deserialize untrusted data</td>
+                                        <td>Use JSON, XML, or Protocol Buffers instead</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Object Filter</td>
+                                        <td>Whitelist allowed classes (Java 9+)</td>
+                                        <td><code>ObjectInputFilter.Config.setSerialFilter()</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Custom Deserialization</td>
+                                        <td>Override readObject() method</td>
+                                        <td>Validate object state during deserialization</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Security Manager</td>
+                                        <td>Restrict permissions (legacy approach)</td>
+                                        <td>Limited effectiveness, deprecated in JDK 17+</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h5 className="mt-4">Popular Deserialization Attacks</h5>
+                            <ul className="list-group">
+                                <li className="list-group-item">Apache Commons Collections gadget chains</li>
+                                <li className="list-group-item">Spring Framework vulnerabilities</li>
+                                <li className="list-group-item">Jackson JSON processor unsafe typing</li>
+                                <li className="list-group-item">JNDI injection via LDAP/RMI</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div className="card mb-4">
+                        <div className="card-header">
+                            <h4>Timing Attacks & Secure Comparisons</h4>
+                        </div>
+                        <div className="card-body">
+                            <div className="alert alert-warning">
+                                <strong>Timing Attack:</strong> Attackers measure response time to extract sensitive information
+                            </div>
+
+                            <h5>Vulnerable vs Secure Comparison</h5>
+                            <div className="row">
+                                <div className="col-md-6">
+                                    <h6>❌ Vulnerable (Short-Circuit)</h6>
+                                    <pre className="bg-light p-3">
+{`// Stops at first mismatch
+if (password.equals(userInput)) {
+    // Timing varies based on position
+}`}
+                                    </pre>
+                                </div>
+                                <div className="col-md-6">
+                                    <h6>✅ Secure (Constant-Time)</h6>
+                                    <pre className="bg-light p-3">
+{`// Always checks all characters
+import java.security.MessageDigest;
+
+MessageDigest.isEqual(
+    hash1.getBytes(),
+    hash2.getBytes()
+);`}
+                                    </pre>
+                                </div>
+                            </div>
+
+                            <h5 className="mt-4">Applications</h5>
+                            <ul className="list-group">
+                                <li className="list-group-item">Password/token comparison</li>
+                                <li className="list-group-item">HMAC verification</li>
+                                <li className="list-group-item">Cryptographic signature validation</li>
+                                <li className="list-group-item">Session token comparison</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div className="card mb-4">
+                        <div className="card-header">
+                            <h4>Secure Randomness (SecureRandom)</h4>
+                        </div>
+                        <div className="card-body">
+                            <div className="alert alert-warning">
+                                <strong>Never use Math.random() or Random() for security!</strong>
+                            </div>
+
+                            <h5>SecureRandom Best Practices</h5>
+                            <table className="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Use Case</th>
+                                        <th>Recommendation</th>
+                                        <th>Code Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>General Purpose</td>
+                                        <td>Use default instance</td>
+                                        <td><code>SecureRandom sr = new SecureRandom();</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cryptographic Keys</td>
+                                        <td>Use strong algorithm</td>
+                                        <td><code>SecureRandom.getInstanceStrong()</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Linux/Unix</td>
+                                        <td>Use NativePRNG</td>
+                                        <td><code>SecureRandom.getInstance("NativePRNG")</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Token Generation</td>
+                                        <td>Use sufficient bytes</td>
+                                        <td><code>byte[] token = new byte[32]; sr.nextBytes(token);</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h5 className="mt-4">Common Applications</h5>
+                            <ul className="list-group">
+                                <li className="list-group-item">Session token generation</li>
+                                <li className="list-group-item">Password salts</li>
+                                <li className="list-group-item">Initialization vectors (IVs) for encryption</li>
+                                <li className="list-group-item">CSRF tokens</li>
+                                <li className="list-group-item">API keys and nonces</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div className="card mb-4">
+                        <div className="card-header">
+                            <h4>Secrets Handling & Credential Management</h4>
+                        </div>
+                        <div className="card-body">
+                            <div className="alert alert-danger">
+                                <strong>Critical:</strong> Never hard-code credentials or secrets in source code
+                            </div>
+
+                            <h5>Secure Secrets Management</h5>
+                            <table className="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Method</th>
+                                        <th>Description</th>
+                                        <th>Tools/Services</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Environment Variables</td>
+                                        <td>Store secrets outside codebase</td>
+                                        <td>System.getenv("DB_PASSWORD")</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Secret Managers</td>
+                                        <td>Centralized vault services</td>
+                                        <td>AWS Secrets Manager, Azure Key Vault, HashiCorp Vault</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Configuration Encryption</td>
+                                        <td>Encrypt config files</td>
+                                        <td>Spring Cloud Config with encryption</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Memory Protection</td>
+                                        <td>Clear secrets after use</td>
+                                        <td>Use char[] instead of String, Arrays.fill()</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h5 className="mt-4">Best Practices</h5>
+                            <ul className="list-group">
+                                <li className="list-group-item">
+                                    <strong>Use char[] for passwords:</strong> Strings are immutable and remain in memory
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Rotate credentials regularly:</strong> Implement key rotation policies
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Principle of Least Privilege:</strong> Grant minimal necessary permissions
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Audit access:</strong> Log secret retrieval and usage
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Avoid logging secrets:</strong> Mask sensitive data in logs
+                                </li>
+                            </ul>
+
+                            <h5 className="mt-4">Memory Clearing Example</h5>
+                            <pre className="bg-light p-3">
+{`// Good practice
+char[] password = getPassword();
+try {
+    // Use password
+    authenticate(password);
+} finally {
+    // Clear from memory
+    Arrays.fill(password, '\\0');
+}`}
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {pageState === PageStates.WebSecurity && (
+                <div>
+                    <h2 className="mb-4">Java Web & Framework Security</h2>
+
+                    <div className="card mb-4">
+                        <div className="card-header">
+                            <h4>Spring Security Internals</h4>
+                        </div>
+                        <div className="card-body">
+                            <h5>Core Components</h5>
+                            <table className="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Component</th>
+                                        <th>Purpose</th>
+                                        <th>Key Interfaces</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>SecurityContextHolder</td>
+                                        <td>Stores authentication details</td>
+                                        <td>SecurityContext, Authentication</td>
+                                    </tr>
+                                    <tr>
+                                        <td>AuthenticationManager</td>
+                                        <td>Coordinates authentication</td>
+                                        <td>ProviderManager, AuthenticationProvider</td>
+                                    </tr>
+                                    <tr>
+                                        <td>UserDetailsService</td>
+                                        <td>Loads user data</td>
+                                        <td>loadUserByUsername()</td>
+                                    </tr>
+                                    <tr>
+                                        <td>GrantedAuthority</td>
+                                        <td>Represents permissions</td>
+                                        <td>getAuthority()</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h5 className="mt-4">Authentication Flow</h5>
+                            <ol className="list-group list-group-numbered">
+                                <li className="list-group-item">User submits credentials</li>
+                                <li className="list-group-item">Filter creates Authentication object (unauthenticated)</li>
+                                <li className="list-group-item">AuthenticationManager delegates to providers</li>
+                                <li className="list-group-item">Provider validates with UserDetailsService</li>
+                                <li className="list-group-item">Success: Authentication object stored in SecurityContext</li>
+                                <li className="list-group-item">Failure: AuthenticationException thrown</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div className="card mb-4">
+                        <div className="card-header">
+                            <h4>Security Filter Chain</h4>
+                        </div>
+                        <div className="card-body">
+                            <h5>Default Filter Order</h5>
+                            <table className="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Order</th>
+                                        <th>Filter</th>
+                                        <th>Function</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>SecurityContextPersistenceFilter</td>
+                                        <td>Loads SecurityContext from session</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>CsrfFilter</td>
+                                        <td>CSRF token validation</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>LogoutFilter</td>
+                                        <td>Handles logout requests</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>UsernamePasswordAuthenticationFilter</td>
+                                        <td>Processes login form</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>BasicAuthenticationFilter</td>
+                                        <td>HTTP Basic authentication</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>ExceptionTranslationFilter</td>
+                                        <td>Handles security exceptions</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>FilterSecurityInterceptor</td>
+                                        <td>Authorization decisions</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h5 className="mt-4">Custom Filter Example</h5>
+                            <pre className="bg-light p-3">
+{`@Bean
+public SecurityFilterChain filterChain(HttpSecurity http) {
+    return http
+        .addFilterBefore(jwtFilter, 
+            UsernamePasswordAuthenticationFilter.class)
+        .authorizeHttpRequests(auth -> auth
+            .requestMatchers("/api/public/**").permitAll()
+            .anyRequest().authenticated()
+        )
+        .build();
+}`}
+                            </pre>
+                        </div>
+                    </div>
+
+                    <div className="card mb-4">
+                        <div className="card-header">
+                            <h4>CSRF (Cross-Site Request Forgery) Protection</h4>
+                        </div>
+                        <div className="card-body">
+                            <div className="alert alert-info">
+                                <strong>CSRF Attack:</strong> Tricks user into executing unwanted actions while authenticated
+                            </div>
+
+                            <h5>Spring Security CSRF Configuration</h5>
+                            <table className="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Scenario</th>
+                                        <th>Configuration</th>
+                                        <th>Rationale</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Traditional Web Apps</td>
+                                        <td>Enable CSRF (default)</td>
+                                        <td>Session-based, vulnerable to CSRF</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Stateless REST APIs</td>
+                                        <td>Disable CSRF</td>
+                                        <td>JWT/token-based, not cookie-based</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mixed Applications</td>
+                                        <td>Selective protection</td>
+                                        <td>CSRF on forms, disabled for API endpoints</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h5 className="mt-4">Implementation Patterns</h5>
+                            <div className="row">
+                                <div className="col-md-6">
+                                    <h6>Synchronizer Token</h6>
+                                    <ul className="list-group">
+                                        <li className="list-group-item">Server generates unique token</li>
+                                        <li className="list-group-item">Token sent with each form</li>
+                                        <li className="list-group-item">Server validates on submission</li>
+                                    </ul>
+                                </div>
+                                <div className="col-md-6">
+                                    <h6>Double Submit Cookie</h6>
+                                    <ul className="list-group">
+                                        <li className="list-group-item">Token in both cookie and request</li>
+                                        <li className="list-group-item">Server compares both values</li>
+                                        <li className="list-group-item">No server-side state needed</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="card mb-4">
+                        <div className="card-header">
+                            <h4>CORS (Cross-Origin Resource Sharing)</h4>
+                        </div>
+                        <div className="card-body">
+                            <h5>Configuration Levels</h5>
+                            <table className="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Level</th>
+                                        <th>Method</th>
+                                        <th>Use Case</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Global</td>
+                                        <td>@CrossOrigin on @RestController</td>
+                                        <td>All endpoints in controller</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Method-Level</td>
+                                        <td>@CrossOrigin on individual methods</td>
+                                        <td>Specific endpoints</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Security Config</td>
+                                        <td>http.cors()</td>
+                                        <td>Integration with Spring Security</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h5 className="mt-4">Secure Configuration Example</h5>
+                            <pre className="bg-light p-3">
+{`@Bean
+public CorsConfigurationSource corsConfigurationSource() {
+    CorsConfiguration config = new CorsConfiguration();
+    config.setAllowedOrigins(List.of("https://trusted-domain.com"));
+    config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE"));
+    config.setAllowedHeaders(List.of("Authorization", "Content-Type"));
+    config.setAllowCredentials(true);
+    config.setMaxAge(3600L);
+    
+    UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+    source.registerCorsConfiguration("/api/**", config);
+    return source;
+}`}
+                            </pre>
+
+                            <div className="alert alert-warning mt-3">
+                                <strong>Security Warning:</strong> Never use <code>setAllowedOrigins("*")</code> with <code>setAllowCredentials(true)</code>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="card mb-4">
+                        <div className="card-header">
+                            <h4>Session vs Stateless Security</h4>
+                        </div>
+                        <div className="card-body">
+                            <h5>Comparison</h5>
+                            <table className="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Aspect</th>
+                                        <th>Session-Based</th>
+                                        <th>Stateless (Token-Based)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Storage</td>
+                                        <td>Server-side session</td>
+                                        <td>Client holds token</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Scalability</td>
+                                        <td>Requires sticky sessions or shared cache</td>
+                                        <td>Horizontally scalable</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Security</td>
+                                        <td>CSRF protection required</td>
+                                        <td>Token theft risk</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Logout</td>
+                                        <td>Server invalidates session</td>
+                                        <td>Token expiration or blacklist</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Use Case</td>
+                                        <td>Traditional web applications</td>
+                                        <td>APIs, microservices, SPAs</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h5 className="mt-4">Stateless Configuration</h5>
+                            <pre className="bg-light p-3">
+{`http
+    .sessionManagement(session -> session
+        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+    )
+    .csrf(csrf -> csrf.disable())`}
+                            </pre>
+                        </div>
+                    </div>
+
+                    <div className="card mb-4">
+                        <div className="card-header">
+                            <h4>JWT Pitfalls & Best Practices</h4>
+                        </div>
+                        <div className="card-body">
+                            <div className="alert alert-danger">
+                                <strong>Common JWT Mistakes</strong>
+                            </div>
+
+                            <h5>Security Pitfalls</h5>
+                            <table className="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Pitfall</th>
+                                        <th>Risk</th>
+                                        <th>Mitigation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Algorithm Confusion (alg: none)</td>
+                                        <td>Bypass signature verification</td>
+                                        <td>Explicitly require signing algorithm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Weak Secret Keys</td>
+                                        <td>Brute-force signature</td>
+                                        <td>Use strong keys (256+ bits)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>No Expiration (exp claim)</td>
+                                        <td>Token never expires</td>
+                                        <td>Always set short expiration times</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Storing Sensitive Data</td>
+                                        <td>JWT is base64, not encrypted</td>
+                                        <td>Store only non-sensitive claims</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Not Validating Claims</td>
+                                        <td>Accept tampered tokens</td>
+                                        <td>Validate iss, aud, exp, nbf</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h5 className="mt-4">Best Practices</h5>
+                            <ul className="list-group">
+                                <li className="list-group-item">
+                                    <strong>Short-lived access tokens:</strong> 15-30 minutes maximum
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Refresh token rotation:</strong> Issue new refresh token on each use
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Token revocation:</strong> Maintain blacklist for critical events
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Use RS256 (asymmetric):</strong> Public key verification, private signing
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Secure storage:</strong> HttpOnly cookies or secure storage APIs
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div className="card mb-4">
+                        <div className="card-header">
+                            <h4>Method-Level Security</h4>
+                        </div>
+                        <div className="card-body">
+                            <h5>Annotations</h5>
+                            <table className="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Annotation</th>
+                                        <th>Type</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>@PreAuthorize</td>
+                                        <td>Before method execution</td>
+                                        <td><code>@PreAuthorize("hasRole('ADMIN')")</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>@PostAuthorize</td>
+                                        <td>After method execution</td>
+                                        <td><code>@PostAuthorize("returnObject.owner == authentication.name")</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>@Secured</td>
+                                        <td>Simple role checking</td>
+                                        <td><code>@Secured("ROLE_USER")</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>@RolesAllowed</td>
+                                        <td>JSR-250 standard</td>
+                                        <td><code>@RolesAllowed(&#123;"ADMIN", "MANAGER"&#125;)</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h5 className="mt-4">SpEL (Spring Expression Language) Examples</h5>
+                            <pre className="bg-light p-3">
+{`// Role-based
+@PreAuthorize("hasRole('ADMIN')")
+
+// Permission-based
+@PreAuthorize("hasAuthority('DELETE_USER')")
+
+// Multiple conditions
+@PreAuthorize("hasRole('USER') and #userId == authentication.principal.id")
+
+// Method parameter access
+@PreAuthorize("#user.email == authentication.name")
+public void updateUser(@Param("user") User user)
+
+// Object ownership
+@PostAuthorize("returnObject.createdBy == authentication.name")
+public Document getDocument(Long id)`}
+                            </pre>
+
+                            <h5 className="mt-4">Enable Method Security</h5>
+                            <pre className="bg-light p-3">
+{`@Configuration
+@EnableMethodSecurity(prePostEnabled = true)
+public class SecurityConfig {
+    // Configuration
+}`}
+                            </pre>
                         </div>
                     </div>
                 </div>
