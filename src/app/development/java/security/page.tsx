@@ -2251,6 +2251,775 @@ public class SecurityConfig {
                     </div>
                 </div>
             )}
+
+            {pageState === PageStates.JVMSecurity && (
+                <div>
+                    <h2 className="mb-4">JVM & Runtime Security</h2>
+
+                    <div className="card mb-4">
+                        <div className="card-header">
+                            <h4>Process Isolation</h4>
+                        </div>
+                        <div className="card-body">
+                            <div className="alert alert-info">
+                                <strong>Key Principle:</strong> Each Java process should be isolated to limit the blast radius of security incidents
+                            </div>
+
+                            <h5>Isolation Strategies</h5>
+                            <table className="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Technique</th>
+                                        <th>Description</th>
+                                        <th>Implementation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Separate JVM Processes</td>
+                                        <td>Run different applications in isolated JVMs</td>
+                                        <td>Prevents memory-based attacks across apps</td>
+                                    </tr>
+                                    <tr>
+                                        <td>OS-Level Isolation</td>
+                                        <td>Use separate user accounts per service</td>
+                                        <td>Principle of least privilege at OS level</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Resource Limits</td>
+                                        <td>Constrain CPU, memory, file descriptors</td>
+                                        <td>cgroups, ulimit, JVM flags (-Xmx, -Xms)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Network Segmentation</td>
+                                        <td>Isolate application networks</td>
+                                        <td>VPCs, firewall rules, network policies</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h5 className="mt-4">ClassLoader Isolation</h5>
+                            <ul className="list-group">
+                                <li className="list-group-item">
+                                    <strong>Bootstrap ClassLoader:</strong> Core Java classes (java.*, javax.*)
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Platform ClassLoader:</strong> Platform-specific extensions (Java 9+)
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Application ClassLoader:</strong> Application classes and libraries
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Custom ClassLoaders:</strong> Plugin systems, OSGi, application servers
+                                </li>
+                            </ul>
+
+                            <h5 className="mt-4">Module System (Java 9+)</h5>
+                            <div className="row">
+                                <div className="col-md-6">
+                                    <h6>Benefits</h6>
+                                    <ul className="list-group">
+                                        <li className="list-group-item">Strong encapsulation of internal APIs</li>
+                                        <li className="list-group-item">Reduced attack surface</li>
+                                        <li className="list-group-item">Explicit dependencies</li>
+                                    </ul>
+                                </div>
+                                <div className="col-md-6">
+                                    <h6>Security-Relevant Flags</h6>
+                                    <ul className="list-group">
+                                        <li className="list-group-item"><code>--illegal-access=deny</code></li>
+                                        <li className="list-group-item"><code>--add-opens</code> (use sparingly)</li>
+                                        <li className="list-group-item"><code>--add-exports</code> (controlled exposure)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="card mb-4">
+                        <div className="card-header">
+                            <h4>Native Code Risks (JNI)</h4>
+                        </div>
+                        <div className="card-body">
+                            <div className="alert alert-danger">
+                                <strong>Critical Risk:</strong> JNI bypasses JVM safety guarantees and introduces C/C++ vulnerabilities
+                            </div>
+
+                            <h5>Common JNI Security Risks</h5>
+                            <table className="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Risk</th>
+                                        <th>Description</th>
+                                        <th>Impact</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Buffer Overflows</td>
+                                        <td>Native code doesn't have array bounds checking</td>
+                                        <td>Memory corruption, code execution</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Memory Leaks</td>
+                                        <td>Manual memory management errors</td>
+                                        <td>Denial of service, process crash</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Use After Free</td>
+                                        <td>Accessing freed memory</td>
+                                        <td>Unpredictable behavior, exploits</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Race Conditions</td>
+                                        <td>Concurrent access without proper locking</td>
+                                        <td>Data corruption, security bypass</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Type Confusion</td>
+                                        <td>Incorrect JNI type mappings</td>
+                                        <td>Crashes, security vulnerabilities</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h5 className="mt-4">JNI Security Best Practices</h5>
+                            <ul className="list-group">
+                                <li className="list-group-item">
+                                    <strong>Minimize JNI Usage:</strong> Use pure Java alternatives when possible
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Input Validation:</strong> Validate all data crossing JNI boundary
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Memory Management:</strong> Always release JNI references (DeleteLocalRef)
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Error Handling:</strong> Check for exceptions after JNI calls
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Security Reviews:</strong> Thorough code review and static analysis
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Library Vetting:</strong> Use trusted, well-maintained native libraries
+                                </li>
+                            </ul>
+
+                            <h5 className="mt-4">Alternatives to JNI</h5>
+                            <table className="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Technology</th>
+                                        <th>Use Case</th>
+                                        <th>Security Benefits</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Foreign Function & Memory API (Java 21+)</td>
+                                        <td>Modern replacement for JNI</td>
+                                        <td>Type-safe, better memory safety</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Process Execution</td>
+                                        <td>Call external programs</td>
+                                        <td>Complete process isolation</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pure Java Libraries</td>
+                                        <td>Platform-independent solutions</td>
+                                        <td>Full JVM safety guarantees</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div className="card mb-4">
+                        <div className="card-header">
+                            <h4>Container Security Considerations</h4>
+                        </div>
+                        <div className="card-body">
+                            <h5>Container-Specific Java Challenges</h5>
+                            <table className="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Challenge</th>
+                                        <th>Issue</th>
+                                        <th>Solution</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Memory Detection</td>
+                                        <td>JVM sees host memory, not container limits</td>
+                                        <td>Use <code>-XX:MaxRAMPercentage</code> (Java 8u191+)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CPU Detection</td>
+                                        <td>JVM may not respect CPU limits</td>
+                                        <td><code>-XX:ActiveProcessorCount</code> or <code>-XX:+UseContainerSupport</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Entropy Sources</td>
+                                        <td>Limited entropy in containers</td>
+                                        <td><code>-Djava.security.egd=file:/dev/urandom</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Signal Handling</td>
+                                        <td>Graceful shutdown on SIGTERM</td>
+                                        <td>Implement shutdown hooks, use init systems</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h5 className="mt-4">Docker Security Best Practices</h5>
+                            <ul className="list-group">
+                                <li className="list-group-item">
+                                    <strong>Minimal Base Images:</strong> Use distroless or Alpine-based images
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Non-Root User:</strong> Run JVM as non-privileged user
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Read-Only Filesystem:</strong> Mount root filesystem as read-only
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Drop Capabilities:</strong> Remove unnecessary Linux capabilities
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Security Scanning:</strong> Scan images for vulnerabilities (Trivy, Snyk)
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Resource Limits:</strong> Set memory and CPU limits
+                                </li>
+                            </ul>
+
+                            <h5 className="mt-4">Example Secure Dockerfile</h5>
+                            <pre className="bg-light p-3">
+{`FROM eclipse-temurin:21-jre-alpine
+
+# Run as non-root
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+USER appuser:appgroup
+
+# Copy application
+COPY --chown=appuser:appgroup app.jar /app/app.jar
+
+# Set working directory
+WORKDIR /app
+
+# Security-focused JVM flags
+ENV JAVA_OPTS="-XX:MaxRAMPercentage=75.0 \\
+    -XX:+UseContainerSupport \\
+    -Djava.security.egd=file:/dev/urandom \\
+    -Duser.name=appuser"
+
+ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]`}
+                            </pre>
+                        </div>
+                    </div>
+
+                    <div className="card mb-4">
+                        <div className="card-header">
+                            <h4>JVM Flags with Security Impact</h4>
+                        </div>
+                        <div className="card-body">
+                            <h5>Critical Security Flags</h5>
+                            <table className="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Flag</th>
+                                        <th>Purpose</th>
+                                        <th>Security Impact</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>-Djava.security.manager</code></td>
+                                        <td>Enable SecurityManager (deprecated JDK 17+)</td>
+                                        <td>Enforce security policies (legacy)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>-Djava.security.policy</code></td>
+                                        <td>Specify security policy file</td>
+                                        <td>Control permissions</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>-XX:+HeapDumpOnOutOfMemoryError</code></td>
+                                        <td>Dump heap on OOM</td>
+                                        <td>⚠️ May expose sensitive data in dumps</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>-XX:HeapDumpPath</code></td>
+                                        <td>Set dump location</td>
+                                        <td>Secure location with restricted access</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>-Dcom.sun.management.jmxremote</code></td>
+                                        <td>Enable JMX monitoring</td>
+                                        <td>⚠️ Requires authentication & encryption</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>-XX:+UnlockExperimentalVMOptions</code></td>
+                                        <td>Enable experimental features</td>
+                                        <td>⚠️ Avoid in production (unstable)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>-Djava.rmi.server.hostname</code></td>
+                                        <td>Set RMI hostname</td>
+                                        <td>Prevent hostname leaks</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h5 className="mt-4">Recommended Production Flags</h5>
+                            <pre className="bg-light p-3">
+{`# Memory management
+-Xms2g -Xmx2g
+-XX:MaxRAMPercentage=75.0
+-XX:+UseG1GC
+
+# Security
+-Djava.security.egd=file:/dev/urandom
+-Duser.timezone=UTC
+
+# Monitoring (secure configuration required)
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:HeapDumpPath=/secure/dumps
+-XX:+ExitOnOutOfMemoryError
+
+# Network
+-Djava.net.preferIPv4Stack=true
+
+# Module system (Java 9+)
+--illegal-access=deny`}
+                            </pre>
+
+                            <div className="alert alert-warning mt-3">
+                                <strong>JMX Security:</strong> If using JMX, always enable authentication and SSL:
+                                <br />
+                                <code>-Dcom.sun.management.jmxremote.authenticate=true</code>
+                                <br />
+                                <code>-Dcom.sun.management.jmxremote.ssl=true</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {pageState === PageStates.Advanced && (
+                <div>
+                    <h2 className="mb-4">Advanced & Defensive Security Topics</h2>
+
+                    <div className="card mb-4">
+                        <div className="card-header">
+                            <h4>Threat Modeling</h4>
+                        </div>
+                        <div className="card-body">
+                            <h5>STRIDE Framework</h5>
+                            <table className="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Threat</th>
+                                        <th>Description</th>
+                                        <th>Java Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>S</strong>poofing</td>
+                                        <td>Impersonating someone/something</td>
+                                        <td>Weak authentication, session hijacking</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>T</strong>ampering</td>
+                                        <td>Modifying data or code</td>
+                                        <td>SQL injection, insecure deserialization</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>R</strong>epudiation</td>
+                                        <td>Denying actions performed</td>
+                                        <td>Insufficient logging and auditing</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>I</strong>nformation Disclosure</td>
+                                        <td>Exposing sensitive information</td>
+                                        <td>Stack traces, verbose errors, heap dumps</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>D</strong>enial of Service</td>
+                                        <td>Consuming resources</td>
+                                        <td>ReDoS, XML bombs, resource exhaustion</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>E</strong>levation of Privilege</td>
+                                        <td>Gaining unauthorized access</td>
+                                        <td>Path traversal, insecure defaults</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h5 className="mt-4">Threat Modeling Process</h5>
+                            <ol className="list-group list-group-numbered">
+                                <li className="list-group-item">Identify assets (data, systems, services)</li>
+                                <li className="list-group-item">Create architecture diagrams (data flow, trust boundaries)</li>
+                                <li className="list-group-item">Identify threats using STRIDE or other frameworks</li>
+                                <li className="list-group-item">Rate threats by likelihood and impact</li>
+                                <li className="list-group-item">Design mitigations and controls</li>
+                                <li className="list-group-item">Validate with security testing</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div className="card mb-4">
+                        <div className="card-header">
+                            <h4>Secure Architecture Design</h4>
+                        </div>
+                        <div className="card-body">
+                            <h5>Security Design Principles</h5>
+                            <table className="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Principle</th>
+                                        <th>Description</th>
+                                        <th>Java Implementation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Defense in Depth</td>
+                                        <td>Multiple layers of security controls</td>
+                                        <td>Network security + authentication + authorization + encryption</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Least Privilege</td>
+                                        <td>Minimal necessary permissions</td>
+                                        <td>Fine-grained Spring Security roles, database user permissions</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fail Securely</td>
+                                        <td>Default to secure state on error</td>
+                                        <td>Deny access on exception, close connections on failure</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Complete Mediation</td>
+                                        <td>Check every access request</td>
+                                        <td>@PreAuthorize on all protected methods</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Separation of Duties</td>
+                                        <td>Distribute privileges across roles</td>
+                                        <td>Separate admin, operator, and user roles</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Secure by Default</td>
+                                        <td>Default configuration is secure</td>
+                                        <td>HTTPS enforced, security headers enabled</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h5 className="mt-4">Architectural Patterns</h5>
+                            <ul className="list-group">
+                                <li className="list-group-item">
+                                    <strong>API Gateway:</strong> Centralized authentication, rate limiting, validation
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Zero Trust Architecture:</strong> Never trust, always verify (mTLS, token validation)
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Service Mesh:</strong> Encrypted service-to-service communication (Istio, Linkerd)
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Circuit Breaker:</strong> Prevent cascading failures (Resilience4j)
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div className="card mb-4">
+                        <div className="card-header">
+                            <h4>OWASP Top 10 (Java Perspective)</h4>
+                        </div>
+                        <div className="card-body">
+                            <h5>OWASP Top 10 - 2021</h5>
+                            <table className="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Vulnerability</th>
+                                        <th>Java Mitigation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>A01</td>
+                                        <td>Broken Access Control</td>
+                                        <td>Spring Security @PreAuthorize, path-based authorization</td>
+                                    </tr>
+                                    <tr>
+                                        <td>A02</td>
+                                        <td>Cryptographic Failures</td>
+                                        <td>Use strong algorithms (AES-256, RSA-2048), secure key storage</td>
+                                    </tr>
+                                    <tr>
+                                        <td>A03</td>
+                                        <td>Injection</td>
+                                        <td>PreparedStatement, parameterized queries, input validation</td>
+                                    </tr>
+                                    <tr>
+                                        <td>A04</td>
+                                        <td>Insecure Design</td>
+                                        <td>Threat modeling, secure architecture patterns</td>
+                                    </tr>
+                                    <tr>
+                                        <td>A05</td>
+                                        <td>Security Misconfiguration</td>
+                                        <td>Secure Spring Boot defaults, disable debug endpoints in prod</td>
+                                    </tr>
+                                    <tr>
+                                        <td>A06</td>
+                                        <td>Vulnerable Components</td>
+                                        <td>Dependency scanning (OWASP Dependency-Check, Snyk)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>A07</td>
+                                        <td>Identification & Authentication Failures</td>
+                                        <td>Multi-factor auth, secure session management, password policies</td>
+                                    </tr>
+                                    <tr>
+                                        <td>A08</td>
+                                        <td>Software & Data Integrity Failures</td>
+                                        <td>Verify JAR signatures, avoid untrusted deserialization</td>
+                                    </tr>
+                                    <tr>
+                                        <td>A09</td>
+                                        <td>Security Logging & Monitoring Failures</td>
+                                        <td>SLF4J/Logback with proper log levels, centralized logging</td>
+                                    </tr>
+                                    <tr>
+                                        <td>A10</td>
+                                        <td>Server-Side Request Forgery (SSRF)</td>
+                                        <td>Whitelist allowed URLs, validate and sanitize user-supplied URLs</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div className="card mb-4">
+                        <div className="card-header">
+                            <h4>Dependency Security & Supply Chain</h4>
+                        </div>
+                        <div className="card-body">
+                            <h5>Dependency Risks</h5>
+                            <table className="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Risk Type</th>
+                                        <th>Description</th>
+                                        <th>Mitigation</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Known Vulnerabilities (CVEs)</td>
+                                        <td>Dependencies with disclosed security flaws</td>
+                                        <td>Regular scanning, prompt updates</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Transitive Dependencies</td>
+                                        <td>Vulnerabilities in dependencies of dependencies</td>
+                                        <td>Dependency tree analysis, version pinning</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Unmaintained Libraries</td>
+                                        <td>Abandoned projects with no security patches</td>
+                                        <td>Replace with maintained alternatives</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Malicious Packages</td>
+                                        <td>Typosquatting, compromised packages</td>
+                                        <td>Verify package names, use private repositories</td>
+                                    </tr>
+                                    <tr>
+                                        <td>License Compliance</td>
+                                        <td>Incompatible or restrictive licenses</td>
+                                        <td>License scanning tools</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h5 className="mt-4">Security Tools</h5>
+                            <table className="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Tool</th>
+                                        <th>Type</th>
+                                        <th>Use Case</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>OWASP Dependency-Check</td>
+                                        <td>Maven/Gradle plugin</td>
+                                        <td>CVE scanning in build pipeline</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Snyk</td>
+                                        <td>SaaS platform</td>
+                                        <td>Real-time vulnerability monitoring, fix suggestions</td>
+                                    </tr>
+                                    <tr>
+                                        <td>JFrog Xray</td>
+                                        <td>Artifact repository scanner</td>
+                                        <td>Deep binary analysis, license compliance</td>
+                                    </tr>
+                                    <tr>
+                                        <td>GitHub Dependabot</td>
+                                        <td>Automated PR generator</td>
+                                        <td>Automatic dependency updates</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Trivy</td>
+                                        <td>Container scanner</td>
+                                        <td>Scan container images for vulnerabilities</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h5 className="mt-4">Best Practices</h5>
+                            <ul className="list-group">
+                                <li className="list-group-item">
+                                    <strong>Dependency Scanning in CI/CD:</strong> Fail builds on high-severity CVEs
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Software Bill of Materials (SBOM):</strong> Generate and maintain SBOMs
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Version Pinning:</strong> Lock dependency versions, avoid wildcards
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Private Repository:</strong> Use Nexus/Artifactory to control dependencies
+                                </li>
+                                <li className="list-group-item">
+                                    <strong>Regular Updates:</strong> Keep dependencies current with security patches
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div className="card mb-4">
+                        <div className="card-header">
+                            <h4>Security Testing</h4>
+                        </div>
+                        <div className="card-body">
+                            <h5>Testing Approaches</h5>
+                            <table className="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Description</th>
+                                        <th>Tools/Techniques</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Static Analysis (SAST)</td>
+                                        <td>Analyze source code without execution</td>
+                                        <td>SpotBugs, SonarQube, Checkmarx, Fortify</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dynamic Analysis (DAST)</td>
+                                        <td>Test running application</td>
+                                        <td>OWASP ZAP, Burp Suite, Nessus</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Interactive Analysis (IAST)</td>
+                                        <td>Runtime instrumentation</td>
+                                        <td>Contrast Security, Hdiv Security</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Penetration Testing</td>
+                                        <td>Simulated attacks by experts</td>
+                                        <td>Manual testing, automated tools</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fuzzing</td>
+                                        <td>Random input testing</td>
+                                        <td>JQF, Jazzer (OSS-Fuzz), AFL</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h5 className="mt-4">Static Analysis Tools</h5>
+                            <div className="row">
+                                <div className="col-md-6">
+                                    <h6>SpotBugs Configuration</h6>
+                                    <pre className="bg-light p-3">
+{`<!-- Maven pom.xml -->
+<plugin>
+  <groupId>com.github.spotbugs</groupId>
+  <artifactId>spotbugs-maven-plugin</artifactId>
+  <configuration>
+    <effort>Max</effort>
+    <threshold>Low</threshold>
+    <includeFilterFile>
+      spotbugs-security.xml
+    </includeFilterFile>
+  </configuration>
+</plugin>`}
+                                    </pre>
+                                </div>
+                                <div className="col-md-6">
+                                    <h6>Common Security Bugs Detected</h6>
+                                    <ul className="list-group">
+                                        <li className="list-group-item">SQL injection vulnerabilities</li>
+                                        <li className="list-group-item">Hard-coded passwords</li>
+                                        <li className="list-group-item">Weak random number generation</li>
+                                        <li className="list-group-item">Insecure cookie usage</li>
+                                        <li className="list-group-item">Path traversal risks</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <h5 className="mt-4">Fuzzing Basics (Java)</h5>
+                            <div className="alert alert-info">
+                                <strong>Fuzzing:</strong> Automated testing with random, malformed, or unexpected inputs
+                            </div>
+
+                            <h6>Jazzer Example (Coverage-Guided Fuzzing)</h6>
+                            <pre className="bg-light p-3">
+{`import com.code_intelligence.jazzer.api.FuzzedDataProvider;
+
+public class JsonParserFuzzer {
+    public static void fuzzerTestOneInput(FuzzedDataProvider data) {
+        String json = data.consumeRemainingAsString();
+        try {
+            // Fuzz your JSON parser
+            MyJsonParser.parse(json);
+        } catch (IllegalArgumentException | JsonException e) {
+            // Expected exceptions
+        }
+    }
+}`}
+                            </pre>
+
+                            <h5 className="mt-4">Security Testing Checklist</h5>
+                            <ul className="list-group">
+                                <li className="list-group-item">✅ Static analysis in CI/CD pipeline</li>
+                                <li className="list-group-item">✅ Dependency vulnerability scanning</li>
+                                <li className="list-group-item">✅ Unit tests for security logic (auth, encryption)</li>
+                                <li className="list-group-item">✅ Integration tests for authorization</li>
+                                <li className="list-group-item">✅ DAST scans on staging environment</li>
+                                <li className="list-group-item">✅ Periodic penetration testing</li>
+                                <li className="list-group-item">✅ Code review with security focus</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
