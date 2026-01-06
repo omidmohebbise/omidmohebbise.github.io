@@ -4,7 +4,8 @@ import { useState } from 'react'
 
 const PageStates = {
     Overview: 1,
-    CoreFoundations: 2
+    CoreFoundations: 2,
+    Cryptography: 3
 }
 
 export default function JavaSecurityPage() {
@@ -24,6 +25,12 @@ export default function JavaSecurityPage() {
                     onClick={() => setPageState(PageStates.CoreFoundations)}
                 >
                     Core Foundations
+                </button>
+                <button
+                    className={`btn ${pageState === PageStates.Cryptography ? 'btn-primary' : 'btn-outline-primary'}`}
+                    onClick={() => setPageState(PageStates.Cryptography)}
+                >
+                    Cryptography
                 </button>
             </div>
 
@@ -417,6 +424,370 @@ export default function JavaSecurityPage() {
                                         <li><strong>External security layers</strong> (OS, containers, cloud primitives)</li>
                                         <li><strong>Module system</strong> for strong encapsulation (Java 9+)</li>
                                     </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {pageState === PageStates.Cryptography && (
+                <div className="card mb-4 shadow-sm">
+                    <div className="card-body">
+                        <h2 className="card-title mb-3">Cryptography in Java</h2>
+                        <p className="lead">Understanding Java's cryptographic APIs and best practices for secure encryption, hashing, and key management.</p>
+
+                        <div className="row mt-4">
+                            <div className="col-12">
+                                <h5>JCA / JCE APIs</h5>
+                                <div className="alert alert-info" role="alert">
+                                    <p className="mb-2"><strong>JCA (Java Cryptography Architecture):</strong> Core framework providing cryptographic services</p>
+                                    <p className="mb-0"><strong>JCE (Java Cryptography Extension):</strong> Extension providing encryption, key exchange, and MAC implementations</p>
+                                </div>
+
+                                <ul className="list-group list-group-flush mb-4">
+                                    <li className="list-group-item">
+                                        <strong>Provider-based architecture:</strong> Pluggable cryptographic implementations
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Algorithm independence:</strong> Switch implementations without changing code
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Core classes:</strong> Cipher, MessageDigest, Signature, KeyGenerator, KeyPairGenerator, SecureRandom
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div className="row mt-4">
+                            <div className="col-md-6">
+                                <h5>Symmetric Cryptography</h5>
+                                <p><strong>Same key for encryption and decryption</strong></p>
+
+                                <h6 className="mt-3">AES (Advanced Encryption Standard)</h6>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item">
+                                        <strong>Key sizes:</strong> 128, 192, or 256 bits
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Recommended:</strong> AES-256 for maximum security
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Performance:</strong> Fast, hardware-accelerated on modern CPUs
+                                    </li>
+                                </ul>
+
+                                <h6 className="mt-3">Modes of Operation</h6>
+                                <div className="table-responsive">
+                                    <table className="table table-sm">
+                                        <thead>
+                                            <tr>
+                                                <th>Mode</th>
+                                                <th>Description</th>
+                                                <th>Use Case</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>GCM</strong></td>
+                                                <td>Galois/Counter Mode - Authenticated encryption</td>
+                                                <td>✅ Recommended - Provides confidentiality + integrity</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>CBC</strong></td>
+                                                <td>Cipher Block Chaining</td>
+                                                <td>⚠️ Legacy - Needs separate MAC for integrity</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>ECB</strong></td>
+                                                <td>Electronic Codebook</td>
+                                                <td>❌ Never use - Deterministic, reveals patterns</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div className="alert alert-success mt-3" role="alert">
+                                    <strong>Best Practice:</strong> Use <code>AES/GCM/NoPadding</code> for authenticated encryption
+                                </div>
+                            </div>
+
+                            <div className="col-md-6">
+                                <h5>Asymmetric Cryptography</h5>
+                                <p><strong>Public key for encryption, private key for decryption</strong></p>
+
+                                <h6 className="mt-3">RSA (Rivest-Shamir-Adleman)</h6>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item">
+                                        <strong>Key sizes:</strong>
+                                        <ul className="mt-2">
+                                            <li>2048 bits - Minimum recommended</li>
+                                            <li>3072 bits - Better security</li>
+                                            <li>4096 bits - Maximum security (slower)</li>
+                                        </ul>
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Use cases:</strong> Digital signatures, key exchange, certificate signing
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Performance:</strong> Slower than symmetric crypto
+                                    </li>
+                                </ul>
+
+                                <h6 className="mt-3">EC (Elliptic Curve)</h6>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item">
+                                        <strong>Key sizes:</strong>
+                                        <ul className="mt-2">
+                                            <li>256 bits (P-256, secp256r1) - Standard</li>
+                                            <li>384 bits (P-384) - Higher security</li>
+                                            <li>521 bits (P-521) - Maximum security</li>
+                                        </ul>
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Advantages:</strong> Smaller keys, better performance than RSA
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Use cases:</strong> TLS, digital signatures (ECDSA), key agreement (ECDH)
+                                    </li>
+                                </ul>
+
+                                <div className="alert alert-success mt-3" role="alert">
+                                    <strong>Modern Recommendation:</strong> Use EC over RSA for new applications (better performance + security)
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="row mt-4">
+                            <div className="col-md-6">
+                                <h5>Hashing & MAC</h5>
+
+                                <h6 className="mt-3">Cryptographic Hashing</h6>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item">
+                                        <strong>SHA-256:</strong> Standard hash function (256-bit output)
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>SHA-384 / SHA-512:</strong> Longer output for higher security
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>SHA-3:</strong> Latest standard, different construction
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>❌ Avoid:</strong> MD5, SHA-1 (cryptographically broken)
+                                    </li>
+                                </ul>
+
+                                <h6 className="mt-3">Properties</h6>
+                                <ul className="list-unstyled">
+                                    <li className="mb-2">✅ <strong>Deterministic:</strong> Same input → Same output</li>
+                                    <li className="mb-2">✅ <strong>One-way:</strong> Can't reverse the hash</li>
+                                    <li className="mb-2">✅ <strong>Collision-resistant:</strong> Hard to find two inputs with same hash</li>
+                                    <li className="mb-2">✅ <strong>Avalanche effect:</strong> Small input change → Completely different hash</li>
+                                </ul>
+
+                                <h6 className="mt-3">Use Cases</h6>
+                                <ul className="list-unstyled">
+                                    <li className="mb-2">• Data integrity verification</li>
+                                    <li className="mb-2">• Digital signatures</li>
+                                    <li className="mb-2">• Checksum generation</li>
+                                    <li className="mb-2">• Unique identifiers</li>
+                                </ul>
+                            </div>
+
+                            <div className="col-md-6">
+                                <h5 className="invisible">Hashing</h5>
+
+                                <h6 className="mt-3">HMAC (Hash-based Message Authentication Code)</h6>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item">
+                                        <strong>Purpose:</strong> Verify data integrity AND authenticity
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>How it works:</strong> Hash + secret key
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Common algorithms:</strong>
+                                        <ul className="mt-2">
+                                            <li>HmacSHA256 - Standard choice</li>
+                                            <li>HmacSHA384 / HmacSHA512 - Higher security</li>
+                                        </ul>
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Use cases:</strong> API authentication, JWT tokens, message verification
+                                    </li>
+                                </ul>
+
+                                <div className="alert alert-warning" role="alert">
+                                    <strong>Important:</strong> Hashing ≠ Encryption
+                                    <ul className="mt-2 mb-0">
+                                        <li>Hash: One-way, can't recover original data</li>
+                                        <li>Encryption: Two-way, can decrypt with key</li>
+                                        <li>Don't use hash for password storage alone - use password hashing algorithms (BCrypt, PBKDF2, Argon2)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="row mt-4">
+                            <div className="col-12">
+                                <h5>Key Management</h5>
+                                <p className="lead">Securely storing and managing cryptographic keys and certificates</p>
+                            </div>
+                        </div>
+
+                        <div className="row mt-3">
+                            <div className="col-md-6">
+                                <h6>KeyStore</h6>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item">
+                                        <strong>Purpose:</strong> Stores private keys and certificates
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Protection:</strong> Password-protected
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Contents:</strong>
+                                        <ul className="mt-2">
+                                            <li>Private keys (for signing, decryption)</li>
+                                            <li>Certificate chains (proves key ownership)</li>
+                                            <li>Secret keys (symmetric encryption keys)</li>
+                                        </ul>
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Use cases:</strong> Server SSL/TLS certificates, code signing, client authentication
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div className="col-md-6">
+                                <h6>TrustStore</h6>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item">
+                                        <strong>Purpose:</strong> Stores trusted CA certificates
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Contents:</strong> Public certificates of Certificate Authorities
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Function:</strong> Validates certificates from external parties
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>Use cases:</strong> Validating server certificates, verifying signed documents
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div className="row mt-3">
+                            <div className="col-12">
+                                <h6>KeyStore Formats</h6>
+                                <div className="table-responsive">
+                                    <table className="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Format</th>
+                                                <th>Type</th>
+                                                <th>Description</th>
+                                                <th>Recommendation</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><strong>PKCS12</strong></td>
+                                                <td><code>.p12, .pfx</code></td>
+                                                <td>Industry-standard format, cross-platform</td>
+                                                <td>✅ Recommended - Default since Java 9</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>JKS</strong></td>
+                                                <td><code>.jks</code></td>
+                                                <td>Java KeyStore - proprietary format</td>
+                                                <td>⚠️ Legacy - Only for backward compatibility</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>JCEKS</strong></td>
+                                                <td><code>.jceks</code></td>
+                                                <td>JKS with stronger encryption</td>
+                                                <td>⚠️ Legacy - Use PKCS12 instead</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>PKCS11</strong></td>
+                                                <td>Hardware</td>
+                                                <td>Interface to hardware security modules (HSM)</td>
+                                                <td>🔒 Enterprise - For maximum security</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="row mt-4">
+                            <div className="col-md-6">
+                                <h6>Key Management Best Practices</h6>
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item">
+                                        <strong>🔑 Key Generation:</strong> Use SecureRandom for random key generation
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>🔒 Key Storage:</strong> Never hardcode keys in source code
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>🔄 Key Rotation:</strong> Rotate keys periodically (90-365 days)
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>🗑️ Key Destruction:</strong> Securely wipe keys from memory after use
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>🏢 Separation:</strong> Different keys for different environments (dev/staging/prod)
+                                    </li>
+                                    <li className="list-group-item">
+                                        <strong>📦 HSM/KMS:</strong> Use hardware security modules or cloud KMS for production
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div className="col-md-6">
+                                <h6>Common Commands</h6>
+                                <div className="bg-light p-3 rounded">
+                                    <p className="mb-2"><strong>Generate KeyStore:</strong></p>
+                                    <code className="d-block mb-3">keytool -genkeypair -alias mykey -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore keystore.p12</code>
+
+                                    <p className="mb-2 mt-3"><strong>List KeyStore contents:</strong></p>
+                                    <code className="d-block mb-3">keytool -list -keystore keystore.p12</code>
+
+                                    <p className="mb-2 mt-3"><strong>Export certificate:</strong></p>
+                                    <code className="d-block mb-3">keytool -exportcert -alias mykey -file cert.cer -keystore keystore.p12</code>
+
+                                    <p className="mb-2 mt-3"><strong>Import certificate to TrustStore:</strong></p>
+                                    <code className="d-block">keytool -importcert -alias trustedca -file ca-cert.cer -keystore truststore.p12</code>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="row mt-4">
+                            <div className="col-12">
+                                <div className="alert alert-success" role="alert">
+                                    <h6 className="alert-heading">Quick Reference</h6>
+                                    <div className="row">
+                                        <div className="col-md-6">
+                                            <p className="mb-2"><strong>For Data at Rest:</strong></p>
+                                            <ul className="mb-0">
+                                                <li>Use AES-256-GCM</li>
+                                                <li>Store keys in KeyStore/KMS</li>
+                                                <li>Rotate keys regularly</li>
+                                            </ul>
+                                        </div>
+                                        <div className="col-md-6">
+                                            <p className="mb-2"><strong>For Data in Transit:</strong></p>
+                                            <ul className="mb-0">
+                                                <li>Use TLS 1.3 with EC certificates</li>
+                                                <li>Validate certificates against TrustStore</li>
+                                                <li>Implement certificate pinning for critical apps</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
