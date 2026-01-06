@@ -54,6 +54,10 @@ export default function NavBar() {
                                                className={`${styles.dropdownItem} ${styles.subSubItem}`}>
                                     Inheritable Thread Local
                                 </Dropdown.Item>
+                                <Dropdown.Item href="/development/java/security"
+                                               className={`${styles.dropdownItem} ${styles.subSubItem}`}>
+                                    Security
+                                </Dropdown.Item>
 
                                 <Dropdown.Item href="/development/spring"
                                                className={`${styles.dropdownItem}`}>
