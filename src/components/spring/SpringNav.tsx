@@ -3,23 +3,23 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const menuItems = [
-  { href: "/development/spring", label: "Main" },
+  { href: "/development/spring/main-component", label: "Main Component" },
   { href: "/development/spring/module", label: "Spring Module" },
   { href: "/development/spring/transaction", label: "Transaction" },
-  { href: "/development/spring/main-component", label: "Main Component" },
   { href: "/development/spring/architecture", label: "Architecture" },
 ];
 
 const SpringNav = () => {
   const pathname = usePathname();
-  // If no menu item matches, default to 'Main'
+  // If no menu item matches, default to the first tab
   const isKnown = menuItems.some((item) => item.href === pathname);
+  const defaultHref = menuItems[0]?.href;
   return (
     <div className="d-flex gap-2 mb-4 flex-wrap">
       {menuItems.map((item) => {
         const isActive = isKnown
           ? pathname === item.href
-          : item.href === "/development/spring";
+          : item.href === defaultHref;
         return (
           <Link
             key={item.href}
