@@ -63,14 +63,6 @@ export default function NavBar() {
                                                className={`${styles.dropdownItem}`}>
                                     Spring
                                 </Dropdown.Item>
-                                <Dropdown.Item href="/kotlin"
-                                               className={`${styles.dropdownItem}`}>
-                                    Kotlin
-                                </Dropdown.Item>
-                                <Dropdown.Item href="/python"
-                                               className={`${styles.dropdownItem}`}>
-                                    Python
-                                </Dropdown.Item>
                                 <Dropdown.Item href="/design-pattern" className={styles.dropdownItem}>
                                     Design Patterns
                                 </Dropdown.Item>
