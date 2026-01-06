@@ -213,211 +213,284 @@ export default function JavaSecurityPage() {
             </div>
             )}
 
-
-            {pageState === PageStates.CoreFoundations && (
+            {pageState === PageStates.CodeExamples && (
                 <div className="card mb-4 shadow-sm">
                     <div className="card-body">
-                        <h2 className="card-title mb-3">Core Foundations</h2>
-                        <p className="lead">The fundamental building blocks that everything else in Java security leans on.</p>
+                        <h2 className="card-title mb-3">Java Security - Code Examples</h2>
 
-                        <div className="row mt-4">
+                        <div className="row">
                             <div className="col-md-6">
-                                <h5>Java Security Architecture</h5>
-                                <ul className="list-group list-group-flush mb-3">
-                                    <li className="list-group-item">
-                                        <strong>Security Providers:</strong>
-                                        <ul className="mt-2">
-                                            <li>Pluggable architecture for cryptographic implementations</li>
-                                            <li>Default providers: SunJCE, SunRsaSign, SunJSSE</li>
-                                            <li>Third-party providers: Bouncy Castle, Conscrypt</li>
-                                            <li>Provider registration and priority ordering</li>
-                                        </ul>
-                                    </li>
-                                    <li className="list-group-item">
-                                        <strong>JCA vs JCE:</strong>
-                                        <ul className="mt-2">
-                                            <li><strong>JCA (Java Cryptography Architecture):</strong> Core framework - signatures, message digests, certificates</li>
-                                            <li><strong>JCE (Java Cryptography Extension):</strong> Extension for encryption - ciphers, key agreement, MACs</li>
-                                            <li>JCE was historically export-restricted, now fully integrated</li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                                <h5>Password Hashing with BCrypt</h5>
+                                <pre className="bg-light p-3 rounded">
+                                    <code>{`// Using BCrypt for password hashing
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+String rawPassword = "mySecurePassword123";
+String hashedPassword = encoder.encode(rawPassword);
+
+// Verify password
+boolean matches = encoder.matches(rawPassword, hashedPassword);`}</code>
+                                </pre>
                             </div>
 
                             <div className="col-md-6">
-                                <h5>ClassLoaders & Security Model</h5>
-                                <ul className="list-group list-group-flush mb-3">
-                                    <li className="list-group-item">
-                                        <strong>ClassLoader Hierarchy:</strong>
-                                        <ul className="mt-2">
-                                            <li>Bootstrap ClassLoader (core Java classes)</li>
-                                            <li>Extension/Platform ClassLoader (extensions)</li>
-                                            <li>Application/System ClassLoader (application classes)</li>
-                                            <li>Custom ClassLoaders for isolation</li>
-                                        </ul>
-                                    </li>
-                                    <li className="list-group-item">
-                                        <strong>Security Implications:</strong>
-                                        <ul className="mt-2">
-                                            <li>Class loading delegation model prevents malicious overrides</li>
-                                            <li>Each class has a protection domain</li>
-                                            <li>Code source (where class came from) + permissions</li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                                <h5>AES Encryption/Decryption</h5>
+                                <pre className="bg-light p-3 rounded">
+                                    <code>{`// AES encryption example
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+
+KeyGenerator keyGen = KeyGenerator.getInstance("AES");
+keyGen.init(256);
+SecretKey secretKey = keyGen.generateKey();
+
+Cipher cipher = Cipher.getInstance("AES/GCM/NoPadding");
+cipher.init(Cipher.ENCRYPT_MODE, secretKey);
+byte[] encrypted = cipher.doFinal("Hello".getBytes());
+
+cipher.init(Cipher.DECRYPT_MODE, secretKey);
+byte[] decrypted = cipher.doFinal(encrypted);`}</code>
+                                </pre>
                             </div>
                         </div>
 
                         <div className="row mt-4">
                             <div className="col-md-6">
-                                <h5>Bytecode Verification</h5>
-                                <ul className="list-group list-group-flush mb-3">
-                                    <li className="list-group-item">
-                                        <strong>Purpose:</strong> Ensure loaded bytecode is valid and safe
-                                    </li>
-                                    <li className="list-group-item">
-                                        <strong>Verification Steps:</strong>
-                                        <ul className="mt-2">
-                                            <li>Structural checks (valid class file format)</li>
-                                            <li>Type safety verification</li>
-                                            <li>Stack overflow/underflow prevention</li>
-                                            <li>No illegal data conversions</li>
-                                            <li>Private/protected access enforcement</li>
-                                        </ul>
-                                    </li>
-                                    <li className="list-group-item">
-                                        <strong>When It Runs:</strong> At class loading time, before execution
-                                    </li>
-                                </ul>
+                                <h5>SQL Injection Prevention</h5>
+                                <pre className="bg-light p-3 rounded">
+                                    <code>{`// BAD - Vulnerable to SQL injection
+String query = "SELECT * FROM users WHERE username='" 
+    + username + "'";
+Statement stmt = conn.createStatement();
+ResultSet rs = stmt.executeQuery(query);
+
+// GOOD - Using PreparedStatement
+String query = "SELECT * FROM users WHERE username=?";
+PreparedStatement pstmt = conn.prepareStatement(query);
+pstmt.setString(1, username);
+ResultSet rs = pstmt.executeQuery();`}</code>
+                                </pre>
                             </div>
 
                             <div className="col-md-6">
-                                <h5>Sandbox Concepts (Historical)</h5>
-                                <ul className="list-group list-group-flush mb-3">
-                                    <li className="list-group-item">
-                                        <strong>Original Vision:</strong> Run untrusted code safely (applets, web apps)
-                                    </li>
-                                    <li className="list-group-item">
-                                        <strong>Key Components:</strong>
-                                        <ul className="mt-2">
-                                            <li>Bytecode verifier (prevents malicious bytecode)</li>
-                                            <li>ClassLoader (isolates code sources)</li>
-                                            <li>SecurityManager (enforces runtime permissions)</li>
-                                            <li>Access Controller (checks permissions)</li>
-                                        </ul>
-                                    </li>
-                                    <li className="list-group-item">
-                                        <strong>Modern Reality:</strong> Sandbox largely abandoned; containers/OS-level security preferred
-                                    </li>
-                                </ul>
+                                <h5>JWT Token Generation</h5>
+                                <pre className="bg-light p-3 rounded">
+                                    <code>{`// Using jjwt library
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+
+String token = Jwts.builder()
+    .setSubject(username)
+    .setIssuedAt(new Date())
+    .setExpiration(new Date(System.currentTimeMillis() 
+        + 86400000)) // 24 hours
+    .signWith(SignatureAlgorithm.HS512, secretKey)
+    .compact();
+
+// Validate token
+Claims claims = Jwts.parser()
+    .setSigningKey(secretKey)
+    .parseClaimsJws(token)
+    .getBody();`}</code>
+                                </pre>
                             </div>
                         </div>
 
                         <div className="row mt-4">
-                            <div className="col-12">
-                                <h5>SecurityManager (Legacy)</h5>
-                                <div className="alert alert-warning" role="alert">
-                                    <strong>Note:</strong> SecurityManager is deprecated as of Java 17 and planned for removal in a future release.
-                                </div>
+                            <div className="col-md-6">
+                                <h5>SSL/TLS Configuration</h5>
+                                <pre className="bg-light p-3 rounded">
+                                    <code>{`// Configure SSLContext
+import javax.net.ssl.*;
+import java.security.KeyStore;
 
-                                <div className="row">
-                                    <div className="col-md-6">
-                                        <h6>Why It Existed</h6>
-                                        <ul className="list-unstyled">
-                                            <li className="mb-2"><strong>🎯 Purpose:</strong> Fine-grained runtime permission checks</li>
-                                            <li className="mb-2"><strong>📋 Use Cases:</strong>
-                                                <ul>
-                                                    <li>Java Applets (run untrusted web code)</li>
-                                                    <li>Application servers (isolate tenant code)</li>
-                                                    <li>Plugin systems (restrict third-party code)</li>
-                                                </ul>
-                                            </li>
-                                            <li className="mb-2"><strong>🔒 Permissions Controlled:</strong>
-                                                <ul>
-                                                    <li>File system access (read/write/delete)</li>
-                                                    <li>Network connections (connect/accept/listen)</li>
-                                                    <li>System properties (read/write)</li>
-                                                    <li>Thread creation and manipulation</li>
-                                                    <li>Reflection and ClassLoader operations</li>
-                                                </ul>
-                                            </li>
-                                            <li className="mb-2"><strong>📝 Policy Files:</strong> Define what code can do what</li>
-                                        </ul>
-                                    </div>
+KeyStore keyStore = KeyStore.getInstance("JKS");
+keyStore.load(new FileInputStream("keystore.jks"), 
+    "password".toCharArray());
 
-                                    <div className="col-md-6">
-                                        <h6>Why It's Being Removed</h6>
-                                        <ul className="list-unstyled">
-                                            <li className="mb-2"><strong>❌ Rarely Used:</strong> Applets are dead, modern apps don't use it</li>
-                                            <li className="mb-2"><strong>⚡ Performance Overhead:</strong> Every security-sensitive operation has a check</li>
-                                            <li className="mb-2"><strong>�� Maintenance Burden:</strong> Complex code that few people understand</li>
-                                            <li className="mb-2"><strong>�� Incomplete Protection:</strong> Doesn't protect against all threats</li>
-                                            <li className="mb-2"><strong>🆕 Better Alternatives Exist:</strong>
-                                                <ul>
-                                                    <li>OS-level security (containers, VMs)</li>
-                                                    <li>Process isolation</li>
-                                                    <li>Module system (Java 9+) for encapsulation</li>
-                                                    <li>Cloud security primitives</li>
-                                                </ul>
-                                            </li>
-                                            <li className="mb-2"><strong>📦 Modern Approach:</strong> Run untrusted code in separate containers/VMs, not the same JVM</li>
-                                        </ul>
-                                    </div>
-                                </div>
+KeyManagerFactory kmf = KeyManagerFactory
+    .getInstance(KeyManagerFactory.getDefaultAlgorithm());
+kmf.init(keyStore, "password".toCharArray());
 
-                                <div className="mt-3">
-                                    <h6>Migration Path</h6>
-                                    <div className="table-responsive">
-                                        <table className="table table-sm">
-                                            <thead>
-                                                <tr>
-                                                    <th>Old Approach (SecurityManager)</th>
-                                                    <th>Modern Alternative</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Policy files for file access</td>
-                                                    <td>OS file permissions, container volume mounts</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Network permission checks</td>
-                                                    <td>Firewalls, network policies, service meshes</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Code signing and verification</td>
-                                                    <td>Supply chain security tools, image signing</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Running untrusted plugins in-process</td>
-                                                    <td>Separate processes, containers, WebAssembly</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>SecurityManager.checkPermission()</td>
-                                                    <td>Explicit authorization frameworks, RBAC/ABAC</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
+SSLContext sslContext = SSLContext.getInstance("TLSv1.3");
+sslContext.init(kmf.getKeyManagers(), null, null);
+
+SSLSocketFactory factory = sslContext.getSocketFactory();`}</code>
+                                </pre>
+                            </div>
+
+                            <div className="col-md-6">
+                                <h5>Secure Random Generation</h5>
+                                <pre className="bg-light p-3 rounded">
+                                    <code>{`// Generate cryptographically secure random values
+import java.security.SecureRandom;
+
+SecureRandom secureRandom = new SecureRandom();
+
+// Generate random bytes for salt
+byte[] salt = new byte[16];
+secureRandom.nextBytes(salt);
+
+// Generate random token
+String token = new BigInteger(130, secureRandom)
+    .toString(32);
+
+// Generate random int
+int randomInt = secureRandom.nextInt(1000);`}</code>
+                                </pre>
+                            </div>
+                        </div>
+
+                        <div className="row mt-4">
+                            <div className="col-md-6">
+                                <h5>Input Validation</h5>
+                                <pre className="bg-light p-3 rounded">
+                                    <code>{`// Using Bean Validation (JSR 303)
+import javax.validation.constraints.*;
+
+public class UserDTO {
+    @NotBlank(message = "Username is required")
+    @Size(min = 3, max = 20)
+    @Pattern(regexp = "^[a-zA-Z0-9_]+$")
+    private String username;
+    
+    @Email(message = "Invalid email format")
+    private String email;
+    
+    @NotNull
+    @Size(min = 8, message = "Password must be 8+ chars")
+    private String password;
+}`}</code>
+                                </pre>
+                            </div>
+
+                            <div className="col-md-6">
+                                <h5>CSRF Protection (Spring Security)</h5>
+                                <pre className="bg-light p-3 rounded">
+                                    <code>{`// Spring Security CSRF configuration
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+    
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) 
+            throws Exception {
+        http
+            .csrf(csrf -> csrf
+                .csrfTokenRepository(
+                    CookieCsrfTokenRepository.withHttpOnlyFalse()
+                )
+            )
+            .authorizeHttpRequests(auth -> auth
+                .anyRequest().authenticated()
+            );
+        return http.build();
+    }
+}`}</code>
+                                </pre>
                             </div>
                         </div>
 
                         <div className="row mt-4">
                             <div className="col-12">
-                                <div className="alert alert-info" role="alert">
-                                    <h6 className="alert-heading">Key Takeaway</h6>
-                                    <p className="mb-0">
-                                        While SecurityManager and the sandbox model are being phased out, understanding them provides 
-                                        valuable context for Java's security evolution. Modern Java security relies on:
-                                    </p>
-                                    <ul className="mt-2 mb-0">
-                                        <li><strong>Strong cryptography</strong> (JCA/JCE)</li>
-                                        <li><strong>Secure coding practices</strong> (input validation, output encoding)</li>
-                                        <li><strong>External security layers</strong> (OS, containers, cloud primitives)</li>
-                                        <li><strong>Module system</strong> for strong encapsulation (Java 9+)</li>
-                                    </ul>
-                                </div>
+                                <h5>Spring Security Complete Configuration</h5>
+                                <pre className="bg-light p-3 rounded">
+                                    <code>{`@Configuration
+@EnableWebSecurity
+public class SecurityConfiguration {
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/api/public/**").permitAll()
+                .requestMatchers("/api/admin/**").hasRole("ADMIN")
+                .anyRequest().authenticated()
+            )
+            .sessionManagement(session -> session
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+            )
+            .csrf(csrf -> csrf.disable()) // For stateless REST APIs
+            .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+            .addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
+            .exceptionHandling(ex -> ex
+                .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
+            );
+        
+        return http.build();
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration config) 
+            throws Exception {
+        return config.getAuthenticationManager();
+    }
+}`}</code>
+                                </pre>
+                            </div>
+                        </div>
+
+                        <div className="row mt-4">
+                            <div className="col-md-6">
+                                <h5>File Upload Validation</h5>
+                                <pre className="bg-light p-3 rounded">
+                                    <code>{`// Secure file upload handling
+import org.apache.tika.Tika;
+
+public void validateFile(MultipartFile file) {
+    // Check file size
+    if (file.getSize() > 10 * 1024 * 1024) { // 10MB
+        throw new IllegalArgumentException("File too large");
+    }
+    
+    // Validate file type using Apache Tika
+    Tika tika = new Tika();
+    String mimeType = tika.detect(file.getInputStream());
+    
+    List<String> allowed = Arrays.asList(
+        "image/jpeg", "image/png", "application/pdf"
+    );
+    
+    if (!allowed.contains(mimeType)) {
+        throw new IllegalArgumentException("Invalid file type");
+    }
+    
+    // Sanitize filename
+    String filename = file.getOriginalFilename();
+    filename = filename.replaceAll("[^a-zA-Z0-9._-]", "_");
+}`}</code>
+                                </pre>
+                            </div>
+
+                            <div className="col-md-6">
+                                <h5>Secure Cookie Configuration</h5>
+                                <pre className="bg-light p-3 rounded">
+                                    <code>{`// Setting secure cookies
+import javax.servlet.http.Cookie;
+
+public Cookie createSecureCookie(String name, String value) {
+    Cookie cookie = new Cookie(name, value);
+    cookie.setHttpOnly(true);  // Prevent XSS
+    cookie.setSecure(true);    // HTTPS only
+    cookie.setPath("/");
+    cookie.setMaxAge(3600);    // 1 hour
+    cookie.setAttribute("SameSite", "Strict"); // CSRF protection
+    
+    return cookie;
+}
+
+// In Spring Boot application.properties
+// server.servlet.session.cookie.http-only=true
+// server.servlet.session.cookie.secure=true
+// server.servlet.session.cookie.same-site=strict`}</code>
+                                </pre>
                             </div>
                         </div>
                     </div>
