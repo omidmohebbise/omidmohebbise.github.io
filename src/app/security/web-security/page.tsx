@@ -1,11 +1,12 @@
 export default function SecurityPage() {
     return (
-        <div className="container py-3">
+        <div className="container py-5">
+            <p className="section-label">Security</p>
+            <h1 className="section-title">Web Security</h1>
+            <hr className="section-rule" />
             <div className="card mb-2">
-                <div className="card-header ">
-                    <h3>Web Security Overview </h3>
-                </div>
                 <div className="card-body">
+                    <h3 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>Web Security Overview</h3>
 
                     <div className="row">
                         <div className="col-md-6">
@@ -80,11 +81,8 @@ export default function SecurityPage() {
                 </div>
             </div>
             <div className="card mb-2">
-                <div className="card-header ">
-                    <h3>Security Frameworks</h3>
-                </div>
-
                 <div className="p-2">
+                    <h3 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>Security Frameworks</h3>
                     <ul>
                         <li>
                             <h4 className="py-3 ">- Web Application Security Frameworks:</h4>

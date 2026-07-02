@@ -5,7 +5,11 @@ import './style.scss'
 const JavaVersions = () => {
   const [activeTab, setActiveTab] = useState(0)
   return (
-    <div className="d-flex align-items-start">
+    <div className="container py-5">
+      <p className="section-label">Development</p>
+      <h1 className="section-title">Java Versions 8–23</h1>
+      <hr className="section-rule" />
+      <div className="d-flex align-items-start">
       <div className="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
         <button className={"min-width m-1 bg-light nav-link" + (activeTab === 0 ? " active " : " ")} onClick={() => setActiveTab(0)} id="v-pills-23-tab" >Java 23</button>
         <button className={"min-width m-1 bg-light nav-link" + (activeTab === 1 ? " active " : " ")} onClick={() => setActiveTab(1)} id="v-pills-22-tab" >Java 22</button>
@@ -252,6 +256,7 @@ void baz() {
           </ul>
         </div>
       </div>
+    </div>
     </div>
   );
 };

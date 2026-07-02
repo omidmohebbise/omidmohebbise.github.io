@@ -1,9 +1,11 @@
 export default function DataArchitectureSourceSystems() {
     return (
-        <div className="pt-4">
+        <div className="container py-5">
+            <p className="section-label">Architecture</p>
+            <h1 className="section-title">Source Systems</h1>
+            <hr className="section-rule" />
             <div className="card mb-4 shadow-sm">
                 <div className="card-body">
-                    <h2 className="card-title mb-3">Source Systems</h2>
                     <p className="mb-3">Source systems are the origin points of data in an organization. They generate, capture, and store business data that flows into the data architecture.</p>
 
                     <div className="row">

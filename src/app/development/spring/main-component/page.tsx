@@ -6,8 +6,10 @@ import SpringNav from '@/components/spring/SpringNav';
 const SpringMainComponent = () => (
   <>
     <SpringNav />
-    <div className="container py-4">
-      <h2 className="mb-3">Spring Framework Architecture (Overview)</h2>
+    <div className="container py-5">
+      <p className="section-label">Development</p>
+      <h1 className="section-title">Spring Framework Architecture (Overview)</h1>
+      <hr className="section-rule" />
 
       <div className="row g-3">
         <div className="col-12 col-md-6">

@@ -1,21 +1,36 @@
 import './page.css'
 import { awsServices } from './data.js';
 
-export default function AWS() {
+const levelDot = (level: string) => {
+    if (level === 'skill-level-high') return <span style={{ display: 'inline-block', width: 10, height: 10, borderRadius: '50%', background: '#22c55e', marginRight: 8, flexShrink: 0 }} title="HIGH" />;
+    if (level === 'skill-level-medium') return <span style={{ display: 'inline-block', width: 10, height: 10, borderRadius: '50%', background: '#eab308', marginRight: 8, flexShrink: 0 }} title="MEDIUM" />;
+    return <span style={{ display: 'inline-block', width: 10, height: 10, borderRadius: '50%', background: '#94a3b8', marginRight: 8, flexShrink: 0 }} title="LOW" />;
+};
 
-    return <div className="container my-4">
-        <h2 className=""> Aws Services</h2>
-        {awsServices.map(categoryAndService =>
-            <div className="service-category" key={categoryAndService.title}>
-                <h4 className='py-3'>{categoryAndService.title}</h4>
-                <ul className="list-group service-list">
-                    {categoryAndService.services.map(service =>
-                        <li className={"list-group-item " + service.level} key={service.title}>
-                            <strong>{service.title}</strong> {service.description}
-                        </li>
-                    )}
-                </ul>
+export default function AWS() {
+    return (
+        <div className="container py-5">
+            <p className="section-label">Cloud</p>
+            <h1 className="section-title">AWS Services</h1>
+            <hr className="section-rule" />
+            <div className="mb-3 d-flex gap-3" style={{ fontSize: '0.8rem', color: '#475569' }}>
+                <span><span style={{ display: 'inline-block', width: 10, height: 10, borderRadius: '50%', background: '#22c55e', marginRight: 4 }} />High priority</span>
+                <span><span style={{ display: 'inline-block', width: 10, height: 10, borderRadius: '50%', background: '#eab308', marginRight: 4 }} />Medium priority</span>
+                <span><span style={{ display: 'inline-block', width: 10, height: 10, borderRadius: '50%', background: '#94a3b8', marginRight: 4 }} />Low priority</span>
             </div>
-        )}
-    </div>
+            {awsServices.map(categoryAndService =>
+                <div className="service-category mb-4" key={categoryAndService.title}>
+                    <h3 style={{ color: '#0f172a', fontWeight: 600, padding: '0.5rem 0.75rem', background: '#f1f5f9', borderRadius: 8, marginBottom: '0.75rem' }}>{categoryAndService.title}</h3>
+                    <ul className="list-group service-list">
+                        {categoryAndService.services.map(service =>
+                            <li className="list-group-item" key={service.title} style={{ display: 'flex', alignItems: 'flex-start' }}>
+                                {levelDot(service.level)}
+                                <span><strong>{service.title}</strong> {service.description}</span>
+                            </li>
+                        )}
+                    </ul>
+                </div>
+            )}
+        </div>
+    );
 }

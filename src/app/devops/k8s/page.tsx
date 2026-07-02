@@ -2,7 +2,10 @@ import React from "react";
 
 export default function KubernetesPage() {
     return (
-        <div className="container pt-1 pb-3">
+        <div className="container py-5">
+            <p className="section-label">DevOps</p>
+            <h1 className="section-title">Kubernetes</h1>
+            <hr className="section-rule" />
             <KubernetesComponents></KubernetesComponents>
             <KubernetesArchitecture></KubernetesArchitecture>
         </div>
@@ -11,8 +14,8 @@ export default function KubernetesPage() {
 
 const KubernetesComponents: React.FC = () => {
     return (
-        <div className=" my-5">
-            <h1 className=" pb-4">Kubernetes Architecture Overview</h1>
+        <div className="my-4">
+            <h2 className="fw-semibold mb-4" style={{ color: '#1e293b' }}>Kubernetes Architecture Overview</h2>
             <div className="row mb-5">
                 <div className="col-12">
                     <img
@@ -30,11 +33,11 @@ const KubernetesComponents: React.FC = () => {
 
 const KubernetesArchitecture: React.FC = () => {
     return (
-        <div className="container my-5">
+        <div>
 
             {/* Control Plane */}
             <section className="mb-5">
-                <h2 className="text-primary">🧠 Control Plane Components</h2>
+                <h3 className="fw-semibold mb-3" style={{ color: '#2563eb' }}>Control Plane Components</h3>
                 <p>
                     The control plane makes global decisions about the cluster and responds to events (e.g., scheduling Pods). Typically, all control plane components run on one machine for simplicity.
                 </p>
@@ -63,10 +66,10 @@ const KubernetesArchitecture: React.FC = () => {
                         }
                     ].map((c, idx) => (
                         <div className="col-md-6 mb-3" key={idx}>
-                            <div className="card h-100">
+                            <div className="card h-100 shadow-sm">
                                 <div className="card-body">
-                                    <h5 className="card-title">{c.title}</h5>
-                                    <p className="card-text">{c.desc}</p>
+                                    <h5 className="card-title" style={{ color: '#1e293b' }}>{c.title}</h5>
+                                    <p className="card-text" style={{ color: '#475569' }}>{c.desc}</p>
                                 </div>
                             </div>
                         </div>
@@ -76,7 +79,7 @@ const KubernetesArchitecture: React.FC = () => {
 
             {/* Node Components */}
             <section className="mb-5">
-                <h2 className="text-success">⚙️ Node Components</h2>
+                <h3 className="fw-semibold mb-3" style={{ color: '#2563eb' }}>Node Components</h3>
                 <p>
                     These run on every node to maintain Pods and manage the runtime environment.
                 </p>
@@ -97,10 +100,10 @@ const KubernetesArchitecture: React.FC = () => {
                         }
                     ].map((n, idx) => (
                         <div className="col-md-4 mb-3" key={idx}>
-                            <div className="card h-100">
+                            <div className="card h-100 shadow-sm">
                                 <div className="card-body">
-                                    <h5 className="card-title">{n.title}</h5>
-                                    <p className="card-text">{n.desc}</p>
+                                    <h5 className="card-title" style={{ color: '#1e293b' }}>{n.title}</h5>
+                                    <p className="card-text" style={{ color: '#475569' }}>{n.desc}</p>
                                 </div>
                             </div>
                         </div>
@@ -110,7 +113,7 @@ const KubernetesArchitecture: React.FC = () => {
 
             {/* Addons */}
             <section className="mb-5">
-                <h2 className="text-warning">🧩 Addons</h2>
+                <h3 className="fw-semibold mb-3" style={{ color: '#2563eb' }}>Addons</h3>
                 <p>
                     Addons extend Kubernetes by using native resources (e.g., Deployments, DaemonSets) to implement additional features.
                 </p>
@@ -139,10 +142,10 @@ const KubernetesArchitecture: React.FC = () => {
                         }
                     ].map((addon, idx) => (
                         <div className="col-md-4 mb-3" key={idx}>
-                            <div className="card h-100">
+                            <div className="card h-100 shadow-sm">
                                 <div className="card-body">
-                                    <h5 className="card-title">{addon.title}</h5>
-                                    <p className="card-text">{addon.desc}</p>
+                                    <h5 className="card-title" style={{ color: '#1e293b' }}>{addon.title}</h5>
+                                    <p className="card-text" style={{ color: '#475569' }}>{addon.desc}</p>
                                 </div>
                             </div>
                         </div>
@@ -152,7 +155,7 @@ const KubernetesArchitecture: React.FC = () => {
 
             {/* Architecture Variations */}
             <section className="mb-5">
-                <h2 className="text-info">🏗️ Architecture Variations</h2>
+                <h3 className="fw-semibold mb-3" style={{ color: '#2563eb' }}>Architecture Variations</h3>
 
                 <div className="alert alert-secondary">
                     <h5>Deployment Options</h5>
@@ -185,7 +188,3 @@ const KubernetesArchitecture: React.FC = () => {
         </div>
     );
 };
-
-
-
-

@@ -1,9 +1,11 @@
 export default function AnalyticsBIArchitecture() {
     return (
-        <div className="pt-4">
+        <div className="container py-5">
+            <p className="section-label">Architecture</p>
+            <h1 className="section-title">Analytics &amp; BI Architecture</h1>
+            <hr className="section-rule" />
             <div className="card mb-4 shadow-sm">
                 <div className="card-body">
-                    <h2 className="card-title mb-3">Analytics & BI Architecture</h2>
                     <p className="mb-3">Analytics & BI architecture enables organizations to extract insights from data. It spans data collection, processing, storage, and visualization.</p>
 
                     <div className="row">

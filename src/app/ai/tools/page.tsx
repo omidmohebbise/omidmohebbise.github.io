@@ -113,12 +113,14 @@ make`,
 
     return (
         <div className="container py-5">
-            <h1 className="mb-4 p-3 bg-light border rounded text-center">🛠 AI Tools</h1>
+            <p className="section-label">AI</p>
+            <h1 className="section-title">AI Tools</h1>
+            <hr className="section-rule" />
 
             {/* Tools List */}
             {tools.map((tool) => (
                 <section key={tool.id} id={tool.id} className="mb-5">
-                    <h3 className="text-primary">{tool.name}</h3>
+                    <h3 style={{ color: '#2563eb' }}>{tool.name}</h3>
                     <p>{tool.description}</p>
 
                     <ul className="list-group list-group-flush mb-3">

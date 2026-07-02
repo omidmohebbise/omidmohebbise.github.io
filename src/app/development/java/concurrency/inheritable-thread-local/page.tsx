@@ -2,17 +2,17 @@ import React from 'react';
 
 const InheritableThreadLocalComponent: React.FC = () => {
     return (
-        <div className="container mt-4">
-            <h2>InheritableThreadLocal in Java</h2>
+        <div className="container py-5">
+            <p className="section-label">Development</p>
+            <h1 className="section-title">InheritableThreadLocal in Java</h1>
+            <hr className="section-rule" />
             <p>
                 <strong>InheritableThreadLocal</strong> is a subclass of ThreadLocal in Java that allows child threads to inherit values from their parent thread. This can be useful in scenarios where you need to maintain context information relevant to a thread’s lifecycle, and want the context accessible in any threads spawned by the parent.
             </p>
 
             <div className="card mb-4">
-                <div className="card-header">
-                    <h4>Example: InheritableThreadLocal</h4>
-                </div>
                 <div className="card-body">
+                    <h4 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>Example: InheritableThreadLocal</h4>
           <pre>
 {`import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

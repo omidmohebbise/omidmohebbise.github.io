@@ -1,12 +1,12 @@
 export default function SecurityPage() {
     return (
-        <div className="container py-3">
-
+        <div className="container py-5">
+            <p className="section-label">Security</p>
+            <h1 className="section-title">Modern Security Approaches</h1>
+            <hr className="section-rule" />
             <div className="card mb-2">
-                <div className="card-header ">
-                    <h3>1. Zero Trust model </h3>
-                </div>
                 <div className="card-body">
+                    <h3 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>1. Zero Trust model</h3>
                     <div className="   my-3">
                         <strong>Never Trust, Always Verify <br /></strong> Unlike traditional security models, Zero Trust operates on the principle of "never trust, always verify," requiring rigorous verification for every access attempt.
                     </div>
@@ -23,10 +23,8 @@ export default function SecurityPage() {
             </div>
 
             <div className="card mb-2">
-                <div className="card-header ">
-                    <h3>2. Passwordless authentication </h3>
-                </div>
                 <div className="card-body">
+                    <h3 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>2. Passwordless authentication</h3>
                     <div className="   my-3">
                         <strong>Shift from Passwords <br /></strong> Passwordless authentication focuses on what you have (e.g., a mobile device), who you are (e.g., biometrics), and where you are (e.g., geolocation) instead of traditional passwords.
                     </div>
@@ -40,10 +38,8 @@ export default function SecurityPage() {
             </div>
 
             <div className="card mb-2">
-                <div className="card-header ">
-                    <h3>3. Threat modeling</h3>
-                </div>
                 <div className="card-body">
+                    <h3 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>3. Threat modeling</h3>
                     <div className="   my-3">
                         <strong>Understanding Threats <br /></strong>Threat modeling is about identifying and categorizing security threats to your applications and systems, similar to analyzing an opponent's tactics in a game.
 
@@ -60,10 +56,8 @@ export default function SecurityPage() {
             </div>
 
             <div className="card mb-2">
-                <div className="card-header ">
-                    <h3>4. Web application firewall vs. traditional firewall</h3>
-                </div>
                 <div className="card-body">
+                    <h3 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>4. Web application firewall vs. traditional firewall</h3>
                     <div className="   my-3">
                         <strong>Specialized Focus <br /></strong> Web Application Firewalls (WAFs) specifically target HTTP and HTTPS traffic, defending against web-based threats like SQL injection and denial of service attacks, which traditional firewalls may not effectively handle.
                     </div>
@@ -77,10 +71,8 @@ export default function SecurityPage() {
             </div>
 
             <div className="card mb-2">
-                <div className="card-header ">
-                    <h3>5. Shifting left</h3>
-                </div>
                 <div className="card-body">
+                    <h3 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>5. Shifting left</h3>
                     <div className="  my-3">
                         <strong>Early Security Integration <br /></strong>Integrating security measures early in the software development lifecycle ensures that security is a priority from the start, leading to more secure and quality software products.
 

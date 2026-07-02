@@ -18,8 +18,11 @@ export default function JavaSecurityPage() {
     const [pageState, setPageState] = useState(PageStates.Overview)
 
     return (
-        <div className="pt-4">
-            <div className="d-flex gap-2 mb-3">
+        <div className="container py-5">
+            <p className="section-label">Development</p>
+            <h1 className="section-title">Java Security</h1>
+            <hr className="section-rule" />
+            <div className="d-flex gap-2 mb-3 flex-wrap">
                 <button
                     className={`btn ${pageState === PageStates.Overview ? 'btn-primary' : 'btn-outline-primary'}`}
                     onClick={() => setPageState(PageStates.Overview)}
@@ -1531,13 +1534,9 @@ export default function JavaSecurityPage() {
 
             {pageState === PageStates.SecureCoding && (
                 <div>
-                    <h2 className="mb-4">Secure Coding Practices</h2>
-
                     <div className="card mb-4">
-                        <div className="card-header">
-                            <h4>Input Validation & Encoding</h4>
-                        </div>
                         <div className="card-body">
+                            <h4 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>Input Validation & Encoding</h4>
                             <div className="alert alert-info">
                                 <strong>Key Principle:</strong> Never trust user input - validate, sanitize, and encode all data
                             </div>
@@ -1594,10 +1593,8 @@ export default function JavaSecurityPage() {
                     </div>
 
                     <div className="card mb-4">
-                        <div className="card-header">
-                            <h4>Deserialization Vulnerabilities</h4>
-                        </div>
                         <div className="card-body">
+                            <h4 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>Deserialization Vulnerabilities</h4>
                             <div className="alert alert-danger">
                                 <strong>Critical Risk:</strong> Java deserialization can lead to remote code execution
                             </div>
@@ -1646,10 +1643,8 @@ export default function JavaSecurityPage() {
                     </div>
 
                     <div className="card mb-4">
-                        <div className="card-header">
-                            <h4>Timing Attacks & Secure Comparisons</h4>
-                        </div>
                         <div className="card-body">
+                            <h4 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>Timing Attacks & Secure Comparisons</h4>
                             <div className="alert alert-warning">
                                 <strong>Timing Attack:</strong> Attackers measure response time to extract sensitive information
                             </div>
@@ -1690,10 +1685,8 @@ MessageDigest.isEqual(
                     </div>
 
                     <div className="card mb-4">
-                        <div className="card-header">
-                            <h4>Secure Randomness (SecureRandom)</h4>
-                        </div>
                         <div className="card-body">
+                            <h4 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>Secure Randomness (SecureRandom)</h4>
                             <div className="alert alert-warning">
                                 <strong>Never use Math.random() or Random() for security!</strong>
                             </div>
@@ -1743,10 +1736,8 @@ MessageDigest.isEqual(
                     </div>
 
                     <div className="card mb-4">
-                        <div className="card-header">
-                            <h4>Secrets Handling & Credential Management</h4>
-                        </div>
                         <div className="card-body">
+                            <h4 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>Secrets Handling & Credential Management</h4>
                             <div className="alert alert-danger">
                                 <strong>Critical:</strong> Never hard-code credentials or secrets in source code
                             </div>
@@ -1822,13 +1813,11 @@ try {
 
             {pageState === PageStates.WebSecurity && (
                 <div>
-                    <h2 className="mb-4">Java Web & Framework Security</h2>
+                    <h3 className="mb-4 fw-semibold" style={{ color: '#1e293b' }}>Java Web &amp; Framework Security</h3>
 
                     <div className="card mb-4">
-                        <div className="card-header">
-                            <h4>Spring Security Internals</h4>
-                        </div>
                         <div className="card-body">
+                            <h4 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>Spring Security Internals</h4>
                             <h5>Core Components</h5>
                             <table className="table table-bordered">
                                 <thead>
@@ -1875,10 +1864,8 @@ try {
                     </div>
 
                     <div className="card mb-4">
-                        <div className="card-header">
-                            <h4>Security Filter Chain</h4>
-                        </div>
                         <div className="card-body">
+                            <h4 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>Security Filter Chain</h4>
                             <h5>Default Filter Order</h5>
                             <table className="table table-bordered">
                                 <thead>
@@ -1945,10 +1932,8 @@ public SecurityFilterChain filterChain(HttpSecurity http) {
                     </div>
 
                     <div className="card mb-4">
-                        <div className="card-header">
-                            <h4>CSRF (Cross-Site Request Forgery) Protection</h4>
-                        </div>
                         <div className="card-body">
+                            <h4 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>CSRF (Cross-Site Request Forgery) Protection</h4>
                             <div className="alert alert-info">
                                 <strong>CSRF Attack:</strong> Tricks user into executing unwanted actions while authenticated
                             </div>
@@ -2004,10 +1989,8 @@ public SecurityFilterChain filterChain(HttpSecurity http) {
                     </div>
 
                     <div className="card mb-4">
-                        <div className="card-header">
-                            <h4>CORS (Cross-Origin Resource Sharing)</h4>
-                        </div>
                         <div className="card-body">
+                            <h4 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>CORS (Cross-Origin Resource Sharing)</h4>
                             <h5>Configuration Levels</h5>
                             <table className="table table-bordered">
                                 <thead>
@@ -2060,10 +2043,8 @@ public CorsConfigurationSource corsConfigurationSource() {
                     </div>
 
                     <div className="card mb-4">
-                        <div className="card-header">
-                            <h4>Session vs Stateless Security</h4>
-                        </div>
                         <div className="card-body">
+                            <h4 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>Session vs Stateless Security</h4>
                             <h5>Comparison</h5>
                             <table className="table table-bordered">
                                 <thead>
@@ -2114,10 +2095,8 @@ public CorsConfigurationSource corsConfigurationSource() {
                     </div>
 
                     <div className="card mb-4">
-                        <div className="card-header">
-                            <h4>JWT Pitfalls & Best Practices</h4>
-                        </div>
                         <div className="card-body">
+                            <h4 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>JWT Pitfalls & Best Practices</h4>
                             <div className="alert alert-danger">
                                 <strong>Common JWT Mistakes</strong>
                             </div>
@@ -2182,10 +2161,8 @@ public CorsConfigurationSource corsConfigurationSource() {
                     </div>
 
                     <div className="card mb-4">
-                        <div className="card-header">
-                            <h4>Method-Level Security</h4>
-                        </div>
                         <div className="card-body">
+                            <h4 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>Method-Level Security</h4>
                             <h5>Annotations</h5>
                             <table className="table table-bordered">
                                 <thead>
@@ -2254,13 +2231,11 @@ public class SecurityConfig {
 
             {pageState === PageStates.JVMSecurity && (
                 <div>
-                    <h2 className="mb-4">JVM & Runtime Security</h2>
+                    <h3 className="mb-4 fw-semibold" style={{ color: '#1e293b' }}>JVM &amp; Runtime Security</h3>
 
                     <div className="card mb-4">
-                        <div className="card-header">
-                            <h4>Process Isolation</h4>
-                        </div>
                         <div className="card-body">
+                            <h4 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>Process Isolation</h4>
                             <div className="alert alert-info">
                                 <strong>Key Principle:</strong> Each Java process should be isolated to limit the blast radius of security incidents
                             </div>
@@ -2337,10 +2312,8 @@ public class SecurityConfig {
                     </div>
 
                     <div className="card mb-4">
-                        <div className="card-header">
-                            <h4>Native Code Risks (JNI)</h4>
-                        </div>
                         <div className="card-body">
+                            <h4 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>Native Code Risks (JNI)</h4>
                             <div className="alert alert-danger">
                                 <strong>Critical Risk:</strong> JNI bypasses JVM safety guarantees and introduces C/C++ vulnerabilities
                             </div>
@@ -2436,10 +2409,8 @@ public class SecurityConfig {
                     </div>
 
                     <div className="card mb-4">
-                        <div className="card-header">
-                            <h4>Container Security Considerations</h4>
-                        </div>
                         <div className="card-body">
+                            <h4 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>Container Security Considerations</h4>
                             <h5>Container-Specific Java Challenges</h5>
                             <table className="table table-bordered">
                                 <thead>
@@ -2521,10 +2492,8 @@ ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]`}
                     </div>
 
                     <div className="card mb-4">
-                        <div className="card-header">
-                            <h4>JVM Flags with Security Impact</h4>
-                        </div>
                         <div className="card-body">
+                            <h4 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>JVM Flags with Security Impact</h4>
                             <h5>Critical Security Flags</h5>
                             <table className="table table-bordered">
                                 <thead>
@@ -2610,13 +2579,11 @@ ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]`}
 
             {pageState === PageStates.Advanced && (
                 <div>
-                    <h2 className="mb-4">Advanced & Defensive Security Topics</h2>
+                    <h3 className="mb-4 fw-semibold" style={{ color: '#1e293b' }}>Advanced &amp; Defensive Security Topics</h3>
 
                     <div className="card mb-4">
-                        <div className="card-header">
-                            <h4>Threat Modeling</h4>
-                        </div>
                         <div className="card-body">
+                            <h4 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>Threat Modeling</h4>
                             <h5>STRIDE Framework</h5>
                             <table className="table table-bordered">
                                 <thead>
@@ -2673,10 +2640,8 @@ ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]`}
                     </div>
 
                     <div className="card mb-4">
-                        <div className="card-header">
-                            <h4>Secure Architecture Design</h4>
-                        </div>
                         <div className="card-body">
+                            <h4 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>Secure Architecture Design</h4>
                             <h5>Security Design Principles</h5>
                             <table className="table table-bordered">
                                 <thead>
@@ -2739,10 +2704,8 @@ ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]`}
                     </div>
 
                     <div className="card mb-4">
-                        <div className="card-header">
-                            <h4>OWASP Top 10 (Java Perspective)</h4>
-                        </div>
                         <div className="card-body">
+                            <h4 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>OWASP Top 10 (Java Perspective)</h4>
                             <h5>OWASP Top 10 - 2021</h5>
                             <table className="table table-bordered">
                                 <thead>
@@ -2809,10 +2772,8 @@ ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]`}
                     </div>
 
                     <div className="card mb-4">
-                        <div className="card-header">
-                            <h4>Dependency Security & Supply Chain</h4>
-                        </div>
                         <div className="card-body">
+                            <h4 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>Dependency Security & Supply Chain</h4>
                             <h5>Dependency Risks</h5>
                             <table className="table table-bordered">
                                 <thead>
@@ -2911,10 +2872,8 @@ ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]`}
                     </div>
 
                     <div className="card mb-4">
-                        <div className="card-header">
-                            <h4>Security Testing</h4>
-                        </div>
                         <div className="card-body">
+                            <h4 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>Security Testing</h4>
                             <h5>Testing Approaches</h5>
                             <table className="table table-bordered">
                                 <thead>

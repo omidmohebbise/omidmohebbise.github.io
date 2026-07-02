@@ -77,12 +77,12 @@ const AiPage: React.FC = () => {
 
     return (
         <div className="container py-5">
-            <h1 className="mb-4 p-3 bg-light border rounded text-center">
-                🤖 AI Main Concepts
-            </h1>
+            <p className="section-label">AI</p>
+            <h1 className="section-title">AI Main Concepts</h1>
+            <hr className="section-rule" />
             {concepts.map((concept) => (
                 <section id={concept.id} className="mb-5" key={concept.id}>
-                    <h3 className="mb-2 text-primary">{concept.title}</h3>
+                    <h3 className="mb-2" style={{ color: '#2563eb' }}>{concept.title}</h3>
                     <p>{concept.description}</p>
                     <ul className="list-group list-group-flush">
                         {concept.items.map((item, index) => (

@@ -5,8 +5,10 @@ const ConcurrencyConcepts = () => {
 
 
     return (
-        <div className="container">
-            <h2 className="mb-4">Java Concurrency Concepts</h2>
+        <div className="container py-5">
+            <p className="section-label">Development</p>
+            <h1 className="section-title">Java Concurrency Concepts</h1>
+            <hr className="section-rule" />
 
             {concepts.map((concept, index) => (
                 <div key={index} className="mb-4">

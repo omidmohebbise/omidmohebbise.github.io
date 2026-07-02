@@ -2,17 +2,17 @@ import React from 'react';
 
 const ThreadLocalComponent: React.FC = () => {
     return (
-        <div className="container mt-4">
-            <h2>ThreadLocal in Java</h2>
+        <div className="container py-5">
+            <p className="section-label">Development</p>
+            <h1 className="section-title">ThreadLocal in Java</h1>
+            <hr className="section-rule" />
             <p>
                 <strong>ThreadLocal</strong> is a class in Java that provides thread-local variables. Each thread accessing such a variable has its own, independently initialized copy of the variable. This is useful for maintaining per-thread context without requiring explicit synchronization.
             </p>
 
             <div className="card mb-4">
-                <div className="card-header">
-                    <h4>Example: ThreadLocal</h4>
-                </div>
                 <div className="card-body">
+                    <h4 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>Example: ThreadLocal</h4>
           <pre>
 {`public class ThreadLocalExample {
     private static ThreadLocal<Integer> threadLocalValue = ThreadLocal.withInitial(() -> 0);

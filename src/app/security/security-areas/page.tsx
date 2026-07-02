@@ -1,9 +1,10 @@
 export default function SecurityPage() {
     return (
-        <div className="container py-3">
-
+        <div className="container py-5">
+            <p className="section-label">Security</p>
+            <h1 className="section-title">Key Areas of Security</h1>
+            <hr className="section-rule" />
             <div className="">
-                <h2>Key Areas of Security</h2>
                 <div className="row my-3">
 
                     <div className="col-6 my-3">

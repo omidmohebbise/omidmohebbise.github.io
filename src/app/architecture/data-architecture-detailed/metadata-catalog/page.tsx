@@ -1,9 +1,11 @@
 export default function DataArchitectureMetadataCatalog() {
     return (
-        <div className="pt-4">
+        <div className="container py-5">
+            <p className="section-label">Architecture</p>
+            <h1 className="section-title">Metadata &amp; Data Catalog</h1>
+            <hr className="section-rule" />
             <div className="card mb-4 shadow-sm">
                 <div className="card-body">
-                    <h2 className="card-title mb-3">Metadata & Data Catalog</h2>
                     <p className="mb-3">Metadata describes the data itself. A data catalog makes metadata searchable and discoverable, enabling teams to find and understand data assets.</p>
 
                     <div className="row">

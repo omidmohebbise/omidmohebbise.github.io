@@ -1,9 +1,11 @@
 export default function DevOpsPlatformArchitecture() {
     return (
-        <div className="pt-4">
+        <div className="container py-5">
+            <p className="section-label">Architecture</p>
+            <h1 className="section-title">DevOps &amp; Platform Architecture</h1>
+            <hr className="section-rule" />
             <div className="card mb-4 shadow-sm">
                 <div className="card-body">
-                    <h2 className="card-title mb-3">DevOps & Platform Architecture</h2>
                     <p className="mb-3">DevOps architecture enables fast, reliable software delivery through automation, collaboration, and infrastructure management. Platform architecture provides self-service capabilities for development teams.</p>
 
                     <div className="row">

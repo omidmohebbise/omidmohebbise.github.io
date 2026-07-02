@@ -4,9 +4,11 @@
 const CloudPage = () => {
 
   return (<div>
-    <div className="container my-5">
-      <h1 className="text-center mb-4">Cloud Service: AWS, Azure, GCP</h1>
-      <p className="text-center">
+    <div className="container py-5">
+      <p className="section-label">Cloud</p>
+      <h1 className="section-title">Cloud Service Mapping: AWS, Azure, GCP</h1>
+      <hr className="section-rule" />
+      <p style={{ color: '#475569' }}>
         This document shows the most commonly used services across
         <strong> Amazon Web Services (AWS)</strong>, <strong>Microsoft Azure</strong>, and
         <strong> Google Cloud Platform (GCP)</strong>.

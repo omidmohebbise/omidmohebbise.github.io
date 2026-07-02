@@ -1,9 +1,11 @@
 export default function SoftwareArchitectureDefinition() {
     return (
-        <div className="pt-4">
+        <div className="container py-5">
+            <p className="section-label">Architecture</p>
+            <h1 className="section-title">Software Architecture Definition</h1>
+            <hr className="section-rule" />
             <div className="card mb-4 shadow-sm">
                 <div className="card-body">
-                    <h2 className="card-title mb-3">Software Architecture Definition</h2>
 
                     <div className="row">
                         <div className="col-md-6">

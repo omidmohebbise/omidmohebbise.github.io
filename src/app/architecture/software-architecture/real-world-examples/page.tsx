@@ -1,9 +1,11 @@
 export default function SoftwareArchitectureRealWorldExamples() {
     return (
-        <div className="pt-4">
+        <div className="container py-5">
+            <p className="section-label">Architecture</p>
+            <h1 className="section-title">Real-World Examples</h1>
+            <hr className="section-rule" />
             <div className="card mb-4 shadow-sm">
                 <div className="card-body">
-                    <h2 className="card-title mb-3">Real-World Examples</h2>
 
                     <div className="row">
                         <div className="col-md-6">

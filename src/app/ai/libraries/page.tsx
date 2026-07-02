@@ -39,27 +39,29 @@ const AiLibrariesPage: React.FC = () => {
     ];
 
     return (
-        <div className="container py-4">
-            <h1 className="p-3 mb-5 bg-light rounded text-center">🤖 AI Libraries</h1>
+        <div className="container py-5">
+            <p className="section-label">AI</p>
+            <h1 className="section-title">AI Libraries</h1>
+            <hr className="section-rule" />
 
-            {librariesByCategory.map((category, idx) => (
-                <div className="row mb-4" key={category.title}>
-                    <div className={category.title === "AutoML" ? "col-md-6" : "col-md-6"}>
-                        <h3 className="category-title">{category.title}</h3>
-                        <ul className="category-list list-unstyled ps-3">
-                            {category.items.map((lib) => (
-                                <li key={lib} className="mb-1">
-                                    • {lib}
-                                </li>
-                            ))}
-                        </ul>
+            <div className="row">
+                {librariesByCategory.map((category) => (
+                    <div className="col-md-6 mb-4" key={category.title}>
+                        <div className="card h-100">
+                            <div className="card-body">
+                                <h4 style={{ color: '#0f172a', fontWeight: 600, marginBottom: '0.75rem' }}>{category.title}</h4>
+                                <ul className="list-unstyled mb-0">
+                                    {category.items.map((lib) => (
+                                        <li key={lib} className="mb-1" style={{ color: '#475569' }}>
+                                            • {lib}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    {/* For odd count categories that don't fill two columns, leave blank col */}
-                    {category.title !== "AutoML" && idx % 2 === 0 ? (
-                        <div className="col-md-6"></div>
-                    ) : null}
-                </div>
-            ))}
+                ))}
+            </div>
         </div>
     );
 };

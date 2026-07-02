@@ -1,9 +1,11 @@
 export default function EnterpriseArchitectureGovernance() {
     return (
-        <div className="pt-4">
+        <div className="container py-5">
+            <p className="section-label">Architecture</p>
+            <h1 className="section-title">Architecture Governance</h1>
+            <hr className="section-rule" />
             <div className="card mb-4 shadow-sm">
                 <div className="card-body">
-                    <h2 className="card-title mb-3">Architecture Governance</h2>
                     <p className="mb-3">Architecture Governance ensures architectural decisions align with business strategy and are implemented consistently across the organization.</p>
 
                     <div className="row">

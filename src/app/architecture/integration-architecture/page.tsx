@@ -1,9 +1,11 @@
 export default function IntegrationArchitecture() {
     return (
-        <div className="pt-4">
+        <div className="container py-5">
+            <p className="section-label">Architecture</p>
+            <h1 className="section-title">Integration Architecture</h1>
+            <hr className="section-rule" />
             <div className="card mb-4 shadow-sm">
                 <div className="card-body">
-                    <h2 className="card-title mb-3">Integration Architecture</h2>
                     <p className="mb-3">Integration architecture enables different systems, applications, and data sources to communicate and share information seamlessly.</p>
 
                     <div className="row">

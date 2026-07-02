@@ -12,20 +12,17 @@ const PageStates = {
 export default function SoftSkillPage() {
     
     return (
-        <div className="">
-            <h3 className='py-3'> K8s Interview Questions:</h3>
-            <div className='row m-0' >
+        <div className="container py-5">
+            <p className="section-label">DevOps</p>
+            <h1 className="section-title">K8s Interview Questions — Intermediate</h1>
+            <hr className="section-rule" />
+            <div className='d-flex gap-2 mb-4' >
                 {Object.keys(PageStates)
-                    .map(x => <div className="text-center col-3 p-1" key={PageStates[x]}>
-                        <div role="button" className={ "p-3 border-bottom"} >
-                            <Link href={CURRENT_PATH+ PageStates[x]}>{x}</Link>
-                            </div>
+                    .map(x => <div className="p-1" key={PageStates[x as keyof typeof PageStates]}>
+                        <Link href={CURRENT_PATH + PageStates[x as keyof typeof PageStates]} className="btn btn-outline-secondary">{x}</Link>
                     </div>)}
             </div>
-            <div className=" mt-4">
-                no content
-            </div>
-
+            <p style={{ color: '#475569' }}>no content</p>
         </div>
     )
 }

@@ -1,9 +1,11 @@
 export default function EnterpriseArchitectureOverview() {
     return (
-        <div className="pt-4">
+        <div className="container py-5">
+            <p className="section-label">Architecture</p>
+            <h1 className="section-title">Enterprise Architecture Overview</h1>
+            <hr className="section-rule" />
             <div className="card mb-4 shadow-sm">
                 <div className="card-body">
-                    <h2 className="card-title mb-3">Enterprise Architecture Overview</h2>
                     <p className="mb-3">Enterprise Architecture (EA) is a comprehensive approach to aligning an organization's IT infrastructure with business objectives. It spans business, data, application, and technology architectures.</p>
 
                     <div className="row">

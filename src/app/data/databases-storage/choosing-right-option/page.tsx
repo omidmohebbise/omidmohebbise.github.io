@@ -1,9 +1,11 @@
 export default function ChoosingRightOptionPage() {
     return (
-        <div className="pt-4">
+        <div className="container py-5">
+            <p className="section-label">Data</p>
+            <h1 className="section-title">Choosing the Right Option</h1>
+            <hr className="section-rule" />
             <div className="card mb-4 shadow-sm">
                 <div className="card-body">
-                    <h2 className="card-title mb-3">Choosing the Right Option</h2>
 
                     <div className="row">
                         <div className="col-md-6">

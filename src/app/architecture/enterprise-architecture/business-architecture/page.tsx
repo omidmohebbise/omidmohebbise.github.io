@@ -1,9 +1,11 @@
 export default function EnterpriseArchitectureBusinessArchitecture() {
     return (
-        <div className="pt-4">
+        <div className="container py-5">
+            <p className="section-label">Architecture</p>
+            <h1 className="section-title">Business Architecture</h1>
+            <hr className="section-rule" />
             <div className="card mb-4 shadow-sm">
                 <div className="card-body">
-                    <h2 className="card-title mb-3">Business Architecture</h2>
                     <p className="mb-3">Business Architecture defines organizational structure, capabilities, processes, and strategies. It bridges business strategy and IT implementation.</p>
 
                     <div className="row">

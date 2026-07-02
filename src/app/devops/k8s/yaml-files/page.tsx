@@ -2,8 +2,10 @@ import React from "react";
 
 const KubernetesYamlFiles: React.FC = () => {
     return (
-        <div className="container my-4">
-            <h2 className="mb-3">📁 Core Kubernetes YAML File Types</h2>
+        <div className="container py-5">
+            <p className="section-label">DevOps</p>
+            <h1 className="section-title">Core Kubernetes YAML File Types</h1>
+            <hr className="section-rule" />
             <p>
                 Kubernetes is largely driven by <strong>YAML configuration files</strong>, each describing an object in the cluster.
             </p>

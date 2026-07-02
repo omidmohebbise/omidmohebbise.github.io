@@ -2,8 +2,10 @@ import React from 'react';
 
 const RoleComparison: React.FC = () => {
   return (
-    <div className="container mt-4">
-      <h2 className="mb-4">Tech Lead vs Chapter Lead</h2>
+    <div className="container py-5">
+      <p className="section-label">Other</p>
+      <h1 className="section-title">Tech Lead vs Chapter Lead</h1>
+      <hr className="section-rule" />
 
       <div className="table-responsive">
         <table className="table table-bordered table-hover">

@@ -1,7 +1,9 @@
 export default function ModernTrendsPage() {
     return (
-        <div className='pt-2'>
-            <h2 className="mb-4 mt-3">Modern Trends</h2>
+        <div className="container py-5">
+            <p className="section-label">Data</p>
+            <h1 className="section-title">Modern Trends</h1>
+            <hr className="section-rule" />
 
             <div className="row">
                 <div className="col-md-6">

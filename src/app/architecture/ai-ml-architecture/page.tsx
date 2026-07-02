@@ -1,9 +1,11 @@
 export default function AIMLArchitecture() {
     return (
-        <div className="pt-4">
+        <div className="container py-5">
+            <p className="section-label">Architecture</p>
+            <h1 className="section-title">AI/ML Architecture</h1>
+            <hr className="section-rule" />
             <div className="card mb-4 shadow-sm">
                 <div className="card-body">
-                    <h2 className="card-title mb-3">AI/ML Architecture</h2>
                     <p className="mb-3">AI/ML architecture supports the complete machine learning lifecycle: from data preparation through model training, deployment, and continuous monitoring.</p>
 
                     <div className="row">

@@ -118,19 +118,23 @@ const databaseTypes = [
 
 const DatabaseTypes = () => {
   return (
-    <div className="container my-5">
-      <h2 className="text-center mb-4">Types of Databases</h2>
+    <div className="container py-5">
+      <p className="section-label">Development</p>
+      <h1 className="section-title">Types of Databases</h1>
+      <hr className="section-rule" />
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         {databaseTypes.map((db, index) => (
           <div className="col" key={index}>
-            <div className="p-3 border rounded bg-light h-100">
-              <h5>{db.title}</h5>
-              <ul>
-                {db.features.map((feature, i) => (
-                  <li key={i}>{feature}</li>
-                ))}
-              </ul>
-              <strong>Examples:</strong> {db.examples}
+            <div className="card h-100 shadow-sm">
+              <div className="card-body">
+                <h5 className="fw-semibold mb-2" style={{ color: '#1e293b' }}>{db.title}</h5>
+                <ul>
+                  {db.features.map((feature, i) => (
+                    <li key={i}>{feature}</li>
+                  ))}
+                </ul>
+                <p className="mb-0 mt-2"><strong>Examples:</strong> {db.examples}</p>
+              </div>
             </div>
           </div>
         ))}

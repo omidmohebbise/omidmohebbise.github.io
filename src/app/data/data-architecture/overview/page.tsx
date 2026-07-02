@@ -1,7 +1,9 @@
 export default function DataArchitectureOverviewPage() {
     return (
-        <div className='pt-2'>
-            <h2 className="mb-4 mt-3">Data Architecture Overview</h2>
+        <div className="container py-5">
+            <p className="section-label">Data</p>
+            <h1 className="section-title">Data Architecture Overview</h1>
+            <hr className="section-rule" />
 
             <div className="row">
                 <div className="col-md-6">

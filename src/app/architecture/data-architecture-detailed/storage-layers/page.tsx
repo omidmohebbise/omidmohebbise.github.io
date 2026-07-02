@@ -1,9 +1,11 @@
 export default function DataArchitectureStorageLayers() {
     return (
-        <div className="pt-4">
+        <div className="container py-5">
+            <p className="section-label">Architecture</p>
+            <h1 className="section-title">Storage Layers</h1>
+            <hr className="section-rule" />
             <div className="card mb-4 shadow-sm">
                 <div className="card-body">
-                    <h2 className="card-title mb-3">Storage Layers</h2>
                     <p className="mb-3">Storage layers organize data at different stages of processing and accessibility. They form the backbone of the data architecture.</p>
 
                     <div className="row">
