@@ -1,81 +1,161 @@
-.header {
-    background-color: #ffffff;
-    padding: 2rem 0;
-    border-bottom: 1px solid #e5e7eb;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-
+/* ─── Hero shell ─────────────────────────────────────────── */
+.hero {
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  padding: 2.25rem 0 2rem;
+  position: relative;
+  overflow: hidden;
 }
 
+/* ─── Name ───────────────────────────────────────────────── */
+.name {
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+  margin: 0 0 0.5rem;
+}
+
+/* ─── Title ──────────────────────────────────────────────── */
 .title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #1f2937;
-    margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  margin-bottom: 0.85rem;
+  line-height: 1.5;
 }
 
-.subtitle {
-    color: #6b7280;
-    font-size: 1.1rem;
-    font-weight: 500;
+/* ─── Tagline ────────────────────────────────────────────── */
+.tagline {
+  font-size: 0.9rem;
+  color: #64748b;
+  line-height: 1.65;
+  max-width: 48ch;
+  margin-bottom: 1.25rem;
 }
 
-.socialLinks {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: flex-end;
-    align-items: center;
+/* ─── CTA buttons ────────────────────────────────────────── */
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
 }
 
-.icon {
-    width: 1.75rem;
-    height: 1.75rem;
-    transition: transform 0.2s ease, color 0.2s ease;
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-primary);
+  color: #ffffff;
+  padding: 0.55rem 1.35rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.15s ease;
 }
 
-.icon:hover {
-    transform: translateY(-2px);
+.btnPrimary:hover {
+  background: var(--color-primary-dark);
+  color: #ffffff;
+  transform: translateY(-1px);
 }
 
-.mailIcon {
-    color: #ef4444;
+.btnGhost {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  padding: 0.55rem 1.35rem;
+  border-radius: 8px;
+  border: 1.5px solid var(--color-border-strong);
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, transform 0.15s ease;
 }
 
-.mailIcon:hover {
-    color: #b91c1c;
+.btnGhost:hover {
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  transform: translateY(-1px);
 }
 
-.githubIcon {
-    color: #1f2937;
+/* ─── Social icons ───────────────────────────────────────── */
+.socialRow {
+  display: flex;
+  gap: 0.55rem;
 }
 
-.githubIcon:hover {
-    color: #111827;
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.15rem;
+  height: 2.15rem;
+  border-radius: 8px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
 }
 
-.twitterIcon {
-    color: #60a5fa;
+.socialIcon:hover {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
 }
 
-.twitterIcon:hover {
-    color: #2563eb;
+/* ─── Stats card ─────────────────────────────────────────── */
+.statsCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.5rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-@media (max-width: 768px) {
-    .header {
-        padding: 1.5rem 0;
-    }
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
 
-    .socialLinks {
-        justify-content: center;
-        margin-top: 1rem;
-    }
+.statNum {
+  font-size: 2.15rem;
+  font-weight: 800;
+  color: var(--color-text);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
 
-    .title {
-        text-align: center;
-        font-size: 2rem;
-    }
+.statLabel {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
 
-    .subtitle {
-        text-align: center;
-    }
+.statDivider {
+  height: 1px;
+  background: var(--color-border);
+}
+
+/* ─── Mobile ─────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .hero { padding: 1.75rem 0 1.5rem; }
+
+  .name    { text-align: center; }
+  .title   { text-align: center; }
+  .tagline { text-align: center; max-width: 100%; margin-inline: auto; }
+
+  .actions    { justify-content: center; }
+  .socialRow  { justify-content: center; }
 }
