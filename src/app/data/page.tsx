@@ -20,11 +20,11 @@ export default function DataPage() {
                     <div className="col-md-6 mb-4">
                         <div className="card h-100">
                             <div className="card-body">
-                                <h3 style={{ color: '#0f172a', fontWeight: 600, marginBottom: '0.75rem' }}>Data-Driven Decision Making</h3>
-                                <ul>
-                                    <li><strong>Strategic Advantage:</strong> Organizations leverage data to make informed decisions.</li>
-                                    <li><strong>Competitive Edge:</strong> Data insights drive innovation and efficiency.</li>
-                                    <li><strong>Risk Mitigation:</strong> Data analysis helps identify and manage risks proactively.</li>
+                                <h5>Data-Driven Decision Making</h5>
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item"><strong>Strategic Advantage:</strong> Organizations leverage data to make informed decisions.</li>
+                                    <li className="list-group-item"><strong>Competitive Edge:</strong> Data insights drive innovation and efficiency.</li>
+                                    <li className="list-group-item"><strong>Risk Mitigation:</strong> Data analysis helps identify and manage risks proactively.</li>
                                 </ul>
                             </div>
                         </div>
@@ -33,13 +33,13 @@ export default function DataPage() {
                     <div className="col-md-6 mb-4">
                         <div className="card h-100">
                             <div className="card-body">
-                                <h3 style={{ color: '#0f172a', fontWeight: 600, marginBottom: '0.75rem' }}>The Data Lifecycle</h3>
-                                <ul>
-                                    <li><strong>Collection:</strong> Gather data from various sources (systems, sensors, users).</li>
-                                    <li><strong>Processing:</strong> Clean, transform, and aggregate data for analysis.</li>
-                                    <li><strong>Storage:</strong> Persist data in databases, data lakes, or warehouses.</li>
-                                    <li><strong>Analysis:</strong> Extract insights and patterns from data.</li>
-                                    <li><strong>Visualization:</strong> Present findings through dashboards and reports.</li>
+                                <h5>The Data Lifecycle</h5>
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item"><strong>Collection:</strong> Gather data from various sources (systems, sensors, users).</li>
+                                    <li className="list-group-item"><strong>Processing:</strong> Clean, transform, and aggregate data for analysis.</li>
+                                    <li className="list-group-item"><strong>Storage:</strong> Persist data in databases, data lakes, or warehouses.</li>
+                                    <li className="list-group-item"><strong>Analysis:</strong> Extract insights and patterns from data.</li>
+                                    <li className="list-group-item"><strong>Visualization:</strong> Present findings through dashboards and reports.</li>
                                 </ul>
                             </div>
                         </div>
@@ -48,11 +48,11 @@ export default function DataPage() {
                     <div className="col-md-6 mb-4">
                         <div className="card h-100">
                             <div className="card-body">
-                                <h3 style={{ color: '#0f172a', fontWeight: 600, marginBottom: '0.75rem' }}>Role of Data in Organizations</h3>
-                                <ul>
-                                    <li><strong>Business Functions:</strong> Marketing, Sales, Operations, Finance all depend on data.</li>
-                                    <li><strong>Cultural Shift:</strong> Building a data-driven culture requires organizational alignment.</li>
-                                    <li><strong>Governance:</strong> Data quality, security, and compliance are paramount.</li>
+                                <h5>Role of Data in Organizations</h5>
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item"><strong>Business Functions:</strong> Marketing, Sales, Operations, Finance all depend on data.</li>
+                                    <li className="list-group-item"><strong>Cultural Shift:</strong> Building a data-driven culture requires organizational alignment.</li>
+                                    <li className="list-group-item"><strong>Governance:</strong> Data quality, security, and compliance are paramount.</li>
                                 </ul>
                             </div>
                         </div>
@@ -61,12 +61,12 @@ export default function DataPage() {
                     <div className="col-md-6 mb-4">
                         <div className="card h-100">
                             <div className="card-body">
-                                <h3 style={{ color: '#0f172a', fontWeight: 600, marginBottom: '0.75rem' }}>Modern Data Challenges</h3>
-                                <ul>
-                                    <li><strong>Volume:</strong> Managing increasing amounts of data (Big Data).</li>
-                                    <li><strong>Velocity:</strong> Processing data in real-time.</li>
-                                    <li><strong>Variety:</strong> Handling structured and unstructured data.</li>
-                                    <li><strong>Veracity:</strong> Ensuring data quality and accuracy.</li>
+                                <h5>Modern Data Challenges</h5>
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item"><strong>Volume:</strong> Managing increasing amounts of data (Big Data).</li>
+                                    <li className="list-group-item"><strong>Velocity:</strong> Processing data in real-time.</li>
+                                    <li className="list-group-item"><strong>Variety:</strong> Handling structured and unstructured data.</li>
+                                    <li className="list-group-item"><strong>Veracity:</strong> Ensuring data quality and accuracy.</li>
                                 </ul>
                             </div>
                         </div>
@@ -83,13 +83,13 @@ export default function DataPage() {
                     <div className="col-md-6 mb-4">
                         <div className="card h-100">
                             <div className="card-body">
-                                <h3 style={{ color: '#0f172a', fontWeight: 600, marginBottom: '0.75rem' }}>Why Data Matters</h3>
-                                <p><strong>Business Value:</strong></p>
-                                <ul>
-                                    <li>Enables informed decision-making</li>
-                                    <li>Powers personalization and customer experience</li>
-                                    <li>Automates processes and improves efficiency</li>
-                                    <li>Drives innovation and new business models</li>
+                                <h5>Why Data Matters</h5>
+                                <p className="mb-2"><strong>Business Value:</strong></p>
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item">Enables informed decision-making</li>
+                                    <li className="list-group-item">Powers personalization and customer experience</li>
+                                    <li className="list-group-item">Automates processes and improves efficiency</li>
+                                    <li className="list-group-item">Drives innovation and new business models</li>
                                 </ul>
                             </div>
                         </div>
@@ -98,41 +98,18 @@ export default function DataPage() {
                     <div className="col-md-6 mb-4">
                         <div className="card h-100">
                             <div className="card-body">
-                                <h3 style={{ color: '#0f172a', fontWeight: 600, marginBottom: '0.75rem' }}>Data-Driven Culture</h3>
-                                <p><strong>What It Means:</strong></p>
-                                <ul>
-                                    <li>Decisions based on evidence rather than intuition</li>
-                                    <li>Shared responsibility for data quality</li>
-                                    <li>Continuous learning and improvement</li>
+                                <h5>Data-Driven Culture</h5>
+                                <p className="mb-2"><strong>What It Means:</strong></p>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item">Decisions based on evidence rather than intuition</li>
+                                    <li className="list-group-item">Shared responsibility for data quality</li>
+                                    <li className="list-group-item">Continuous learning and improvement</li>
                                 </ul>
-                                <p><strong>Roles &amp; Responsibilities:</strong></p>
-                                <ul>
-                                    <li><strong>Business:</strong> Define requirements and use insights</li>
-                                    <li><strong>IT:</strong> Build infrastructure and manage platforms</li>
-                                    <li><strong>Leadership:</strong> Champion culture and allocate resources</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="col-md-6 mb-4">
-                        <div className="card h-100">
-                            <div className="card-body">
-                                <h3 style={{ color: '#0f172a', fontWeight: 600, marginBottom: '0.75rem' }}>Data in Business Functions</h3>
-                                <p><strong>Marketing:</strong></p>
-                                <ul>
-                                    <li>Customer analytics and segmentation</li>
-                                    <li>Campaign performance tracking</li>
-                                </ul>
-                                <p><strong>Operations:</strong></p>
-                                <ul>
-                                    <li>Process optimization and monitoring</li>
-                                    <li>Supply chain visibility</li>
-                                </ul>
-                                <p><strong>Finance:</strong></p>
-                                <ul>
-                                    <li>Forecasting and budgeting</li>
-                                    <li>Risk analysis and fraud detection</li>
+                                <p className="mb-2"><strong>Roles &amp; Responsibilities:</strong></p>
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item"><strong>Business:</strong> Define requirements and use insights</li>
+                                    <li className="list-group-item"><strong>IT:</strong> Build infrastructure and manage platforms</li>
+                                    <li className="list-group-item"><strong>Leadership:</strong> Champion culture and allocate resources</li>
                                 </ul>
                             </div>
                         </div>
@@ -141,18 +118,41 @@ export default function DataPage() {
                     <div className="col-md-6 mb-4">
                         <div className="card h-100">
                             <div className="card-body">
-                                <h3 style={{ color: '#0f172a', fontWeight: 600, marginBottom: '0.75rem' }}>Data Governance &amp; Ethics</h3>
-                                <p><strong>Data Governance:</strong></p>
-                                <ul>
-                                    <li>Data ownership and accountability</li>
-                                    <li>Quality standards and validation</li>
-                                    <li>Metadata management and lineage</li>
+                                <h5>Data in Business Functions</h5>
+                                <p className="mb-2"><strong>Marketing:</strong></p>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item">Customer analytics and segmentation</li>
+                                    <li className="list-group-item">Campaign performance tracking</li>
                                 </ul>
-                                <p><strong>Privacy &amp; Compliance:</strong></p>
-                                <ul>
-                                    <li>GDPR, CCPA, and regional regulations</li>
-                                    <li>Ethical use of data</li>
-                                    <li>Security and encryption standards</li>
+                                <p className="mb-2"><strong>Operations:</strong></p>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item">Process optimization and monitoring</li>
+                                    <li className="list-group-item">Supply chain visibility</li>
+                                </ul>
+                                <p className="mb-2"><strong>Finance:</strong></p>
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item">Forecasting and budgeting</li>
+                                    <li className="list-group-item">Risk analysis and fraud detection</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-md-6 mb-4">
+                        <div className="card h-100">
+                            <div className="card-body">
+                                <h5>Data Governance &amp; Ethics</h5>
+                                <p className="mb-2"><strong>Data Governance:</strong></p>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item">Data ownership and accountability</li>
+                                    <li className="list-group-item">Quality standards and validation</li>
+                                    <li className="list-group-item">Metadata management and lineage</li>
+                                </ul>
+                                <p className="mb-2"><strong>Privacy &amp; Compliance:</strong></p>
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item">GDPR, CCPA, and regional regulations</li>
+                                    <li className="list-group-item">Ethical use of data</li>
+                                    <li className="list-group-item">Security and encryption standards</li>
                                 </ul>
                             </div>
                         </div>
@@ -169,45 +169,20 @@ export default function DataPage() {
                     <div className="col-md-6 mb-4">
                         <div className="card h-100">
                             <div className="card-body">
-                                <h3 style={{ color: '#0f172a', fontWeight: 600, marginBottom: '0.75rem' }}>Databases vs Storage</h3>
-                                <p><strong>Databases:</strong></p>
-                                <ul>
-                                    <li>Structured data with defined schemas</li>
-                                    <li>Support ACID transactions</li>
-                                    <li>Enable complex queries (SQL/NoSQL)</li>
-                                    <li>Optimized for transactional operations</li>
+                                <h5>Databases vs Storage</h5>
+                                <p className="mb-2"><strong>Databases:</strong></p>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item">Structured data with defined schemas</li>
+                                    <li className="list-group-item">Support ACID transactions</li>
+                                    <li className="list-group-item">Enable complex queries (SQL/NoSQL)</li>
+                                    <li className="list-group-item">Optimized for transactional operations</li>
                                 </ul>
-                                <p><strong>Storage:</strong></p>
-                                <ul>
-                                    <li>Raw files, objects, or archives</li>
-                                    <li>Backups and long-term retention</li>
-                                    <li>Data lakes for semi-structured data</li>
-                                    <li>Optimized for capacity and cost</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="col-md-6 mb-4">
-                        <div className="card h-100">
-                            <div className="card-body">
-                                <h3 style={{ color: '#0f172a', fontWeight: 600, marginBottom: '0.75rem' }}>Types of Databases</h3>
-                                <p><strong>Relational (SQL):</strong></p>
-                                <ul>
-                                    <li>PostgreSQL, MySQL, Oracle, SQL Server</li>
-                                    <li>Structured tables with relationships</li>
-                                </ul>
-                                <p><strong>NoSQL:</strong></p>
-                                <ul>
-                                    <li><strong>Key-Value:</strong> Redis, DynamoDB</li>
-                                    <li><strong>Document:</strong> MongoDB, Firestore</li>
-                                    <li><strong>Column-Family:</strong> HBase, Cassandra</li>
-                                    <li><strong>Graph:</strong> Neo4j, ArangoDB</li>
-                                </ul>
-                                <p><strong>In-Memory:</strong></p>
-                                <ul>
-                                    <li>Redis, Memcached</li>
-                                    <li>Ultra-fast access for caching</li>
+                                <p className="mb-2"><strong>Storage:</strong></p>
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item">Raw files, objects, or archives</li>
+                                    <li className="list-group-item">Backups and long-term retention</li>
+                                    <li className="list-group-item">Data lakes for semi-structured data</li>
+                                    <li className="list-group-item">Optimized for capacity and cost</li>
                                 </ul>
                             </div>
                         </div>
@@ -216,24 +191,23 @@ export default function DataPage() {
                     <div className="col-md-6 mb-4">
                         <div className="card h-100">
                             <div className="card-body">
-                                <h3 style={{ color: '#0f172a', fontWeight: 600, marginBottom: '0.75rem' }}>Storage Options</h3>
-                                <p><strong>File Storage (NAS):</strong></p>
-                                <ul>
-                                    <li>Network-attached storage for shared files</li>
+                                <h5>Types of Databases</h5>
+                                <p className="mb-2"><strong>Relational (SQL):</strong></p>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item">PostgreSQL, MySQL, Oracle, SQL Server</li>
+                                    <li className="list-group-item">Structured tables with relationships</li>
                                 </ul>
-                                <p><strong>Object Storage:</strong></p>
-                                <ul>
-                                    <li>AWS S3, Azure Blob, Google Cloud Storage</li>
-                                    <li>Highly scalable and cost-effective</li>
+                                <p className="mb-2"><strong>NoSQL:</strong></p>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item"><strong>Key-Value:</strong> Redis, DynamoDB</li>
+                                    <li className="list-group-item"><strong>Document:</strong> MongoDB, Firestore</li>
+                                    <li className="list-group-item"><strong>Column-Family:</strong> HBase, Cassandra</li>
+                                    <li className="list-group-item"><strong>Graph:</strong> Neo4j, ArangoDB</li>
                                 </ul>
-                                <p><strong>Data Lakes:</strong></p>
-                                <ul>
-                                    <li>Repository for raw, semi-structured data</li>
-                                    <li>Foundation for analytics and ML</li>
-                                </ul>
-                                <p><strong>Data Warehouses:</strong></p>
-                                <ul>
-                                    <li>Analytics-optimized storage (Snowflake, Redshift)</li>
+                                <p className="mb-2"><strong>In-Memory:</strong></p>
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item">Redis, Memcached</li>
+                                    <li className="list-group-item">Ultra-fast access for caching</li>
                                 </ul>
                             </div>
                         </div>
@@ -242,18 +216,44 @@ export default function DataPage() {
                     <div className="col-md-6 mb-4">
                         <div className="card h-100">
                             <div className="card-body">
-                                <h3 style={{ color: '#0f172a', fontWeight: 600, marginBottom: '0.75rem' }}>Choosing the Right Option</h3>
-                                <p><strong>OLTP vs OLAP:</strong></p>
-                                <ul>
-                                    <li><strong>OLTP:</strong> Online Transaction Processing (real-time writes)</li>
-                                    <li><strong>OLAP:</strong> Online Analytical Processing (complex queries)</li>
+                                <h5>Storage Options</h5>
+                                <p className="mb-2"><strong>File Storage (NAS):</strong></p>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item">Network-attached storage for shared files</li>
                                 </ul>
-                                <p><strong>Decision Factors:</strong></p>
-                                <ul>
-                                    <li>Scalability requirements</li>
-                                    <li>Consistency vs Availability (CAP theorem)</li>
-                                    <li>Cost and performance trade-offs</li>
-                                    <li>Data structure and query patterns</li>
+                                <p className="mb-2"><strong>Object Storage:</strong></p>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item">AWS S3, Azure Blob, Google Cloud Storage</li>
+                                    <li className="list-group-item">Highly scalable and cost-effective</li>
+                                </ul>
+                                <p className="mb-2"><strong>Data Lakes:</strong></p>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item">Repository for raw, semi-structured data</li>
+                                    <li className="list-group-item">Foundation for analytics and ML</li>
+                                </ul>
+                                <p className="mb-2"><strong>Data Warehouses:</strong></p>
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item">Analytics-optimized storage (Snowflake, Redshift)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-md-6 mb-4">
+                        <div className="card h-100">
+                            <div className="card-body">
+                                <h5>Choosing the Right Option</h5>
+                                <p className="mb-2"><strong>OLTP vs OLAP:</strong></p>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item"><strong>OLTP:</strong> Online Transaction Processing (real-time writes)</li>
+                                    <li className="list-group-item"><strong>OLAP:</strong> Online Analytical Processing (complex queries)</li>
+                                </ul>
+                                <p className="mb-2"><strong>Decision Factors:</strong></p>
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item">Scalability requirements</li>
+                                    <li className="list-group-item">Consistency vs Availability (CAP theorem)</li>
+                                    <li className="list-group-item">Cost and performance trade-offs</li>
+                                    <li className="list-group-item">Data structure and query patterns</li>
                                 </ul>
                             </div>
                         </div>
@@ -270,13 +270,13 @@ export default function DataPage() {
                     <div className="col-md-6 mb-4">
                         <div className="card h-100">
                             <div className="card-body">
-                                <h3 style={{ color: '#0f172a', fontWeight: 600, marginBottom: '0.75rem' }}>Batch Processing</h3>
-                                <ul>
-                                    <li><strong>Definition:</strong> Process large volumes of data at scheduled intervals</li>
-                                    <li><strong>Use Cases:</strong> Daily reports, nightly jobs, bulk transformations</li>
-                                    <li><strong>Tools:</strong> Apache Spark, Hadoop, AWS Batch</li>
-                                    <li><strong>Advantages:</strong> Cost-effective, handles large datasets</li>
-                                    <li><strong>Disadvantages:</strong> Latency, not suitable for real-time</li>
+                                <h5>Batch Processing</h5>
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item"><strong>Definition:</strong> Process large volumes of data at scheduled intervals</li>
+                                    <li className="list-group-item"><strong>Use Cases:</strong> Daily reports, nightly jobs, bulk transformations</li>
+                                    <li className="list-group-item"><strong>Tools:</strong> Apache Spark, Hadoop, AWS Batch</li>
+                                    <li className="list-group-item"><strong>Advantages:</strong> Cost-effective, handles large datasets</li>
+                                    <li className="list-group-item"><strong>Disadvantages:</strong> Latency, not suitable for real-time</li>
                                 </ul>
                             </div>
                         </div>
@@ -285,13 +285,13 @@ export default function DataPage() {
                     <div className="col-md-6 mb-4">
                         <div className="card h-100">
                             <div className="card-body">
-                                <h3 style={{ color: '#0f172a', fontWeight: 600, marginBottom: '0.75rem' }}>Real-Time / Streaming Processing</h3>
-                                <ul>
-                                    <li><strong>Definition:</strong> Process events as they happen in real-time</li>
-                                    <li><strong>Use Cases:</strong> Fraud detection, real-time dashboards, IoT analytics</li>
-                                    <li><strong>Tools:</strong> Apache Kafka, Apache Flink, AWS Kinesis</li>
-                                    <li><strong>Advantages:</strong> Immediate insights, low latency</li>
-                                    <li><strong>Disadvantages:</strong> Complex infrastructure, higher cost</li>
+                                <h5>Real-Time / Streaming Processing</h5>
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item"><strong>Definition:</strong> Process events as they happen in real-time</li>
+                                    <li className="list-group-item"><strong>Use Cases:</strong> Fraud detection, real-time dashboards, IoT analytics</li>
+                                    <li className="list-group-item"><strong>Tools:</strong> Apache Kafka, Apache Flink, AWS Kinesis</li>
+                                    <li className="list-group-item"><strong>Advantages:</strong> Immediate insights, low latency</li>
+                                    <li className="list-group-item"><strong>Disadvantages:</strong> Complex infrastructure, higher cost</li>
                                 </ul>
                             </div>
                         </div>
@@ -300,18 +300,18 @@ export default function DataPage() {
                     <div className="col-md-6 mb-4">
                         <div className="card h-100">
                             <div className="card-body">
-                                <h3 style={{ color: '#0f172a', fontWeight: 600, marginBottom: '0.75rem' }}>ETL &amp; ELT</h3>
-                                <p><strong>ETL (Extract, Transform, Load):</strong></p>
-                                <ul>
-                                    <li>Transform data before loading to warehouse</li>
-                                    <li>Traditional approach, slower initial load</li>
+                                <h5>ETL &amp; ELT</h5>
+                                <p className="mb-2"><strong>ETL (Extract, Transform, Load):</strong></p>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item">Transform data before loading to warehouse</li>
+                                    <li className="list-group-item">Traditional approach, slower initial load</li>
                                 </ul>
-                                <p><strong>ELT (Extract, Load, Transform):</strong></p>
-                                <ul>
-                                    <li>Load raw data first, transform in warehouse</li>
-                                    <li>Modern approach, leverage warehouse compute power</li>
+                                <p className="mb-2"><strong>ELT (Extract, Load, Transform):</strong></p>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item">Load raw data first, transform in warehouse</li>
+                                    <li className="list-group-item">Modern approach, leverage warehouse compute power</li>
                                 </ul>
-                                <p><strong>Tools:</strong> Apache NiFi, Talend, Informatica</p>
+                                <p className="mb-0"><strong>Tools:</strong> Apache NiFi, Talend, Informatica</p>
                             </div>
                         </div>
                     </div>
@@ -319,12 +319,12 @@ export default function DataPage() {
                     <div className="col-md-6 mb-4">
                         <div className="card h-100">
                             <div className="card-body">
-                                <h3 style={{ color: '#0f172a', fontWeight: 600, marginBottom: '0.75rem' }}>Data Integration</h3>
-                                <ul>
-                                    <li><strong>APIs:</strong> Service-to-service integration</li>
-                                    <li><strong>Message Queues:</strong> Asynchronous integration (RabbitMQ, Kafka)</li>
-                                    <li><strong>File-Based:</strong> Batch file transfers</li>
-                                    <li><strong>CDC (Change Data Capture):</strong> Track data changes for real-time sync</li>
+                                <h5>Data Integration</h5>
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item"><strong>APIs:</strong> Service-to-service integration</li>
+                                    <li className="list-group-item"><strong>Message Queues:</strong> Asynchronous integration (RabbitMQ, Kafka)</li>
+                                    <li className="list-group-item"><strong>File-Based:</strong> Batch file transfers</li>
+                                    <li className="list-group-item"><strong>CDC (Change Data Capture):</strong> Track data changes for real-time sync</li>
                                 </ul>
                             </div>
                         </div>
@@ -333,15 +333,15 @@ export default function DataPage() {
                     <div className="col-md-6 mb-4">
                         <div className="card h-100">
                             <div className="card-body">
-                                <h3 style={{ color: '#0f172a', fontWeight: 600, marginBottom: '0.75rem' }}>Analytics &amp; BI</h3>
-                                <p><strong>Analytics Types:</strong></p>
-                                <ul>
-                                    <li><strong>Descriptive:</strong> What happened? (historical analysis)</li>
-                                    <li><strong>Diagnostic:</strong> Why did it happen? (root cause analysis)</li>
-                                    <li><strong>Predictive:</strong> What will happen? (forecasting)</li>
-                                    <li><strong>Prescriptive:</strong> What should we do? (recommendations)</li>
+                                <h5>Analytics &amp; BI</h5>
+                                <p className="mb-2"><strong>Analytics Types:</strong></p>
+                                <ul className="list-group list-group-flush mb-3">
+                                    <li className="list-group-item"><strong>Descriptive:</strong> What happened? (historical analysis)</li>
+                                    <li className="list-group-item"><strong>Diagnostic:</strong> Why did it happen? (root cause analysis)</li>
+                                    <li className="list-group-item"><strong>Predictive:</strong> What will happen? (forecasting)</li>
+                                    <li className="list-group-item"><strong>Prescriptive:</strong> What should we do? (recommendations)</li>
                                 </ul>
-                                <p><strong>Tools:</strong> Tableau, Power BI, Looker</p>
+                                <p className="mb-0"><strong>Tools:</strong> Tableau, Power BI, Looker</p>
                             </div>
                         </div>
                     </div>
@@ -357,13 +357,13 @@ export default function DataPage() {
                     <div className="col-md-6 mb-4">
                         <div className="card h-100">
                             <div className="card-body">
-                                <h3 style={{ color: '#0f172a', fontWeight: 600, marginBottom: '0.75rem' }}>Data Architecture Overview</h3>
-                                <p><strong>Definition:</strong> Blueprint for organizing data systems and flows</p>
-                                <p><strong>Layers:</strong></p>
-                                <ul>
-                                    <li><strong>Conceptual:</strong> Business-level requirements and entities</li>
-                                    <li><strong>Logical:</strong> Data models and relationships</li>
-                                    <li><strong>Physical:</strong> Actual implementation details</li>
+                                <h5>Data Architecture Overview</h5>
+                                <p className="mb-2"><strong>Definition:</strong> Blueprint for organizing data systems and flows</p>
+                                <p className="mb-2"><strong>Layers:</strong></p>
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item"><strong>Conceptual:</strong> Business-level requirements and entities</li>
+                                    <li className="list-group-item"><strong>Logical:</strong> Data models and relationships</li>
+                                    <li className="list-group-item"><strong>Physical:</strong> Actual implementation details</li>
                                 </ul>
                             </div>
                         </div>
@@ -372,25 +372,12 @@ export default function DataPage() {
                     <div className="col-md-6 mb-4">
                         <div className="card h-100">
                             <div className="card-body">
-                                <h3 style={{ color: '#0f172a', fontWeight: 600, marginBottom: '0.75rem' }}>Reference Architectures</h3>
-                                <p><strong>Data Warehouse:</strong> Centralized analytics repository</p>
-                                <p><strong>Data Lake:</strong> Raw data repository for diverse workloads</p>
-                                <p><strong>Lakehouse:</strong> Hybrid approach combining lake and warehouse benefits</p>
-                                <p><strong>Event-Driven:</strong> Real-time event streaming architecture</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="col-md-6 mb-4">
-                        <div className="card h-100">
-                            <div className="card-body">
-                                <h3 style={{ color: '#0f172a', fontWeight: 600, marginBottom: '0.75rem' }}>Core Components</h3>
-                                <ul>
-                                    <li><strong>Source Systems:</strong> Operational databases, APIs, sensors</li>
-                                    <li><strong>Ingestion:</strong> ETL/ELT, streaming pipelines</li>
-                                    <li><strong>Storage Layers:</strong> Raw (bronze), curated (silver), serving (gold)</li>
-                                    <li><strong>Processing:</strong> Spark, SQL engines, ML frameworks</li>
-                                    <li><strong>Consumption:</strong> BI tools, APIs, ML models</li>
+                                <h5>Reference Architectures</h5>
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item"><strong>Data Warehouse:</strong> Centralized analytics repository</li>
+                                    <li className="list-group-item"><strong>Data Lake:</strong> Raw data repository for diverse workloads</li>
+                                    <li className="list-group-item"><strong>Lakehouse:</strong> Hybrid approach combining lake and warehouse benefits</li>
+                                    <li className="list-group-item"><strong>Event-Driven:</strong> Real-time event streaming architecture</li>
                                 </ul>
                             </div>
                         </div>
@@ -399,12 +386,13 @@ export default function DataPage() {
                     <div className="col-md-6 mb-4">
                         <div className="card h-100">
                             <div className="card-body">
-                                <h3 style={{ color: '#0f172a', fontWeight: 600, marginBottom: '0.75rem' }}>Data Management Practices</h3>
-                                <ul>
-                                    <li><strong>Data Quality:</strong> Validation rules, profiling, monitoring</li>
-                                    <li><strong>Metadata Management:</strong> Catalogs, lineage tracking</li>
-                                    <li><strong>Master Data Management (MDM):</strong> Single source of truth</li>
-                                    <li><strong>Data Lineage:</strong> Track data movement and transformations</li>
+                                <h5>Core Components</h5>
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item"><strong>Source Systems:</strong> Operational databases, APIs, sensors</li>
+                                    <li className="list-group-item"><strong>Ingestion:</strong> ETL/ELT, streaming pipelines</li>
+                                    <li className="list-group-item"><strong>Storage Layers:</strong> Raw (bronze), curated (silver), serving (gold)</li>
+                                    <li className="list-group-item"><strong>Processing:</strong> Spark, SQL engines, ML frameworks</li>
+                                    <li className="list-group-item"><strong>Consumption:</strong> BI tools, APIs, ML models</li>
                                 </ul>
                             </div>
                         </div>
@@ -413,11 +401,27 @@ export default function DataPage() {
                     <div className="col-md-6 mb-4">
                         <div className="card h-100">
                             <div className="card-body">
-                                <h3 style={{ color: '#0f172a', fontWeight: 600, marginBottom: '0.75rem' }}>Modern Trends</h3>
-                                <p><strong>Data Mesh:</strong> Decentralized data ownership and architecture</p>
-                                <p><strong>Data Fabric:</strong> Unified data access across distributed systems</p>
-                                <p><strong>Cloud-Native:</strong> Serverless, auto-scaling platforms (Snowflake, BigQuery)</p>
-                                <p><strong>DataOps:</strong> DevOps practices applied to data pipelines</p>
+                                <h5>Data Management Practices</h5>
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item"><strong>Data Quality:</strong> Validation rules, profiling, monitoring</li>
+                                    <li className="list-group-item"><strong>Metadata Management:</strong> Catalogs, lineage tracking</li>
+                                    <li className="list-group-item"><strong>Master Data Management (MDM):</strong> Single source of truth</li>
+                                    <li className="list-group-item"><strong>Data Lineage:</strong> Track data movement and transformations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-md-6 mb-4">
+                        <div className="card h-100">
+                            <div className="card-body">
+                                <h5>Modern Trends</h5>
+                                <ul className="list-group list-group-flush">
+                                    <li className="list-group-item"><strong>Data Mesh:</strong> Decentralized data ownership and architecture</li>
+                                    <li className="list-group-item"><strong>Data Fabric:</strong> Unified data access across distributed systems</li>
+                                    <li className="list-group-item"><strong>Cloud-Native:</strong> Serverless, auto-scaling platforms (Snowflake, BigQuery)</li>
+                                    <li className="list-group-item"><strong>DataOps:</strong> DevOps practices applied to data pipelines</li>
+                                </ul>
                             </div>
                         </div>
                     </div>

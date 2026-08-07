@@ -5,37 +5,47 @@ export default function DataManagementPracticesPage() {
             <h1 className="section-title">Data Management Practices</h1>
             <hr className="section-rule" />
 
-            <div className="row">
-                <div className="col-md-6">
-                    <h3>Data Quality</h3>
-                    <ul>
-                        <li>Profiling, validation rules, automated checks</li>
-                        <li>Alerting on anomalies and thresholds</li>
-                        <li>Data contracts between producers and consumers</li>
-                    </ul>
+            <div className="card mb-4 shadow-sm">
+                <div className="card-body">
+                    <div className="row">
+                        <div className="col-md-6">
+                            <h5>Data Quality</h5>
+                            <ul className="list-group list-group-flush">
+                                <li className="list-group-item">Profiling, validation rules, automated checks</li>
+                                <li className="list-group-item">Alerting on anomalies and thresholds</li>
+                                <li className="list-group-item">Data contracts between producers and consumers</li>
+                            </ul>
+                        </div>
 
-                    <h3>Metadata & Lineage</h3>
-                    <ul>
-                        <li>Catalog datasets with descriptions, owners, and schemas</li>
-                        <li>Track transformations for auditability</li>
-                        <li>Use tools like Apache Atlas, Amundsen, or DataHub</li>
-                    </ul>
-                </div>
+                        <div className="col-md-6">
+                            <h5>Master Data Management</h5>
+                            <ul className="list-group list-group-flush">
+                                <li className="list-group-item">Single source of truth for critical entities (customers, products)</li>
+                                <li className="list-group-item">Data deduplication and reconciliation processes</li>
+                                <li className="list-group-item">Define canonical identifiers and mapping rules</li>
+                            </ul>
+                        </div>
+                    </div>
 
-                <div className="col-md-6">
-                    <h3>Master Data Management</h3>
-                    <ul>
-                        <li>Single source of truth for critical entities (customers, products)</li>
-                        <li>Data deduplication and reconciliation processes</li>
-                        <li>Define canonical identifiers and mapping rules</li>
-                    </ul>
+                    <div className="row mt-4">
+                        <div className="col-md-6">
+                            <h5>Metadata & Lineage</h5>
+                            <ul className="list-group list-group-flush">
+                                <li className="list-group-item">Catalog datasets with descriptions, owners, and schemas</li>
+                                <li className="list-group-item">Track transformations for auditability</li>
+                                <li className="list-group-item">Use tools like Apache Atlas, Amundsen, or DataHub</li>
+                            </ul>
+                        </div>
 
-                    <h3>Data Ops</h3>
-                    <ul>
-                        <li>Apply CI/CD to data pipelines using unit tests and regression tests</li>
-                        <li>Monitor pipeline SLAs and health dashboards</li>
-                        <li>Automate deployments and rollback strategies</li>
-                    </ul>
+                        <div className="col-md-6">
+                            <h5>Data Ops</h5>
+                            <ul className="list-group list-group-flush">
+                                <li className="list-group-item">Apply CI/CD to data pipelines using unit tests and regression tests</li>
+                                <li className="list-group-item">Monitor pipeline SLAs and health dashboards</li>
+                                <li className="list-group-item">Automate deployments and rollback strategies</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

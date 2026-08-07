@@ -5,7 +5,7 @@ export const positions = [
             location: "Amsterdam, Netherlands",
             period: "Jan 2026 – Present",
             responsibilities: [
-                "Introduced AI-assisted development practices using GitHub Copilot and prompt engineering to accelerate coding, testing, documentation, and technical analysis.",
+               "Introduced AI-assisted development practices using GitHub Copilot and prompt engineering to accelerate coding, testing, documentation, and technical analysis.",
                "Explored and implemented Generative AI use cases to streamline business requirement analysis, solution design, and developer workflows.",
                "Led the enhancement of event-driven lending solutions, improving system performance, reliability, and scalability",
                "Designed and deployed scalable services using AWS, Azure, Splunk, Spring, and MongoDB to meet Rabobank’s business and technical requirements",

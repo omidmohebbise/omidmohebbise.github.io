@@ -77,3 +77,7 @@ Prefer tight vertical rhythm over generous hero-style padding:
 `src/components/header/Header.tsx` + `Header.module.css` is the canonical
 example of all the rules above — check there first before styling a new
 top-of-page section.
+
+For the markup pattern inside a content page's `<main>` body (headings,
+lists, tables, card structure), see [[content-page-style]] instead — this
+skill covers the page shell, that one covers page content.

@@ -111,6 +111,17 @@ section {
   background: transparent;
 }
 
+/* ─── Plain content lists ────────────────────────────────── */
+/* Any bullet/numbered list in page content that isn't a .list-group
+   (which is already sized above) should still match body copy —
+   not fall back to the browser's default 1rem list styling. */
+main ul:not(.list-group) li,
+main ol:not(.list-group) li {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
 /* ─── Alert cleanup ──────────────────────────────────────── */
 .alert {
   border-radius: var(--radius-md) !important;
