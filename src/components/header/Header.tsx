@@ -1,6 +1,7 @@
 'use client';
 
 import { Mail, Linkedin, Github, Twitter } from "lucide-react";
+import { usePathname } from "next/navigation";
 import styles from './Header.module.css';
 
 const stats = [
@@ -17,6 +18,9 @@ const socials = [
 ];
 
 export default function Header() {
+  const pathname = usePathname();
+  if (pathname !== '/') return null;
+
   return (
     <header className={styles.hero}>
       <div className="container">

@@ -1,9 +1,29 @@
 export const positions = [
+     {
+            title: "Senior Software Engineer",
+            company: "RABOBANK",
+            location: "Amsterdam, Netherlands",
+            period: "Jan 2026 – Present",
+            responsibilities: [
+                "Introduced AI-assisted development practices using GitHub Copilot and prompt engineering to accelerate coding, testing, documentation, and technical analysis.",
+               "Explored and implemented Generative AI use cases to streamline business requirement analysis, solution design, and developer workflows.",
+               "Led the enhancement of event-driven lending solutions, improving system performance, reliability, and scalability",
+               "Designed and deployed scalable services using AWS, Azure, Splunk, Spring, and MongoDB to meet Rabobank’s business and technical requirements",
+               "Integrated third-party Fintech platforms, including Salt Edge, Creditsafe, SEPA, and SurePay, to expand financial capabilities and strengthen transaction security",
+               "Optimized development and business analysis processes, achieving efficiency improvements"
+               ],
+            techStack: [
+                'Generative AI', 'LLM Integration', 'Prompt Engineering', 'RAG',
+                'GitHub Copilot','Java 21–25', 'Python', 'Spring', 'AWS', 'Azure',
+                'Kubernetes', 'Docker', 'React', 'MongoDB', 'Kafka',
+                'Redis', 'Splunk', 'Pact', 'Azure DevOps', 'Lambda', 'GitHub Copilot',
+            ],
+        },
     {
         title: "Senior Software Engineer",
         company: "RABOBANK, Consultant for Maxima Europe",
         location: "Amsterdam, Netherlands",
-        period: "Feb 2024 – Present",
+        period: "Feb 2024 – Dec 2025",
         responsibilities: [
             "Spearheading the enhancement of event-driven loan solutions to ensure optimal performance and reliability.",
             "Leveraging a diverse technology stack — AWS, Azure, Splunk, Spring, and MongoDB — to create and deploy scalable services tailored to Rabobank's specific needs.",
