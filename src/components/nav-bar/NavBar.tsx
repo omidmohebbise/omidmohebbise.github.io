@@ -119,10 +119,9 @@ export default function NavBar() {
                                 DevOps
                             </Dropdown.Toggle>
                             <Dropdown.Menu className={styles.dropdownMenu}>
-                                <Dropdown.Item href="/devops/k8s" className={styles.dropdownItem}>K8S</Dropdown.Item>
-                                <Dropdown.Item href="/devops/k8s" className={`${styles.dropdownItem} ${styles.subItem}`}>Architecture</Dropdown.Item>
-                                <Dropdown.Item href="/devops/k8s/yaml-files" className={`${styles.dropdownItem} ${styles.subItem}`}>Yaml Files</Dropdown.Item>
-                                <Nav.Link href="/cloud" className={styles.dropdownItem}>Docker</Nav.Link>
+                                <Dropdown.Item href="/devops/k8s" className={styles.dropdownItem}>Kubernetes</Dropdown.Item>
+                                <Dropdown.Item href="/devops/k8s/yaml-files" className={`${styles.dropdownItem} ${styles.subItem}`}>YAML Files</Dropdown.Item>
+                                <Dropdown.Item href="/devops/k8s/iqs" className={`${styles.dropdownItem} ${styles.subItem}`}>Interview Questions</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
 

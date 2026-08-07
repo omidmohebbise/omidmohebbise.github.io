@@ -10,6 +10,19 @@ const KubernetesYamlFiles: React.FC = () => {
                 Kubernetes is largely driven by <strong>YAML configuration files</strong>, each describing an object in the cluster.
             </p>
 
+            <div className="card mb-4 shadow-sm">
+                <div className="card-body">
+                    <h5>Anatomy of a Manifest</h5>
+                    <p className="mb-2">Every Kubernetes YAML file shares the same four top-level fields:</p>
+                    <ul className="list-group list-group-flush">
+                        <li className="list-group-item"><strong>apiVersion:</strong> Which version of the Kubernetes API this object uses (e.g. <code>apps/v1</code>).</li>
+                        <li className="list-group-item"><strong>kind:</strong> The type of object being defined — see the table below.</li>
+                        <li className="list-group-item"><strong>metadata:</strong> Identifying information — <code>name</code>, <code>namespace</code>, <code>labels</code>, <code>annotations</code>.</li>
+                        <li className="list-group-item"><strong>spec:</strong> The desired state — what the object should actually do or contain.</li>
+                    </ul>
+                </div>
+            </div>
+
             <div className="table-responsive">
                 <table className="table table-bordered table-striped align-middle">
                     <thead className="table-dark">
@@ -51,21 +64,17 @@ const KubernetesYamlFiles: React.FC = () => {
                 </table>
             </div>
 
-            <h3 className="mt-4">🔧 Tools That Use These Files</h3>
-            <ul>
-                <li>
-                    <code>kubectl apply -f file.yaml</code> — applies the config to the cluster
-                </li>
-                <li>
-                    <code>kustomize</code> — manages multiple YAMLs with overlays
-                </li>
-                <li>
-                    <code>Helm</code> — packages multiple YAMLs into reusable charts
-                </li>
-                <li>
-                    <code>kubeadm</code> — uses its own config file to bootstrap clusters
-                </li>
-            </ul>
+            <div className="card mt-4 shadow-sm">
+                <div className="card-body">
+                    <h5>Tools That Use These Files</h5>
+                    <ul className="list-group list-group-flush">
+                        <li className="list-group-item"><code>kubectl apply -f file.yaml</code> — applies the config to the cluster</li>
+                        <li className="list-group-item"><code>kustomize</code> — manages multiple YAMLs with overlays</li>
+                        <li className="list-group-item"><code>Helm</code> — packages multiple YAMLs into reusable charts</li>
+                        <li className="list-group-item"><code>kubeadm</code> — uses its own config file to bootstrap clusters</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     );
 };
