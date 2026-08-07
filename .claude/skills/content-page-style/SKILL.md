@@ -91,6 +91,42 @@ Always wrap in `<div className="table-responsive">`, table itself gets
 `className="table table-striped"` (drop `table-sm` — not used
 elsewhere, keep tables consistent).
 
+## Architecture-diagram pages
+
+Added 2026-08-07 for `devops/k8s` and `devops/terraform` — the pattern
+for a tool/technology page anchored on a provided architecture diagram:
+
+1. **Intro card**: `<h5>What is {Tool}?</h5>` + a short lead paragraph
+   + a `list-group` of its defining traits.
+2. **Architecture diagram card**: `<h5>{Tool} Architecture</h5>` + one
+   lead paragraph, then the diagram as the first `<img>` on the page
+   (`className="img-fluid border rounded shadow-sm"`, wrapped in
+   `<div className="text-center mb-3">`), then a `list-group`
+   translating the diagram's boxes/flow into text — don't make the
+   image the only explanation, screen readers and skimmers need the
+   list too. Write a real, specific `alt` describing the flow, not
+   just the tool name.
+3. **Core Concepts/Objects card**: same 2-column themed `list-group`
+   pattern as the rest of this skill.
+4. **Workflow commands / enumerable standalone items** (e.g. `terraform
+   plan`, `kube-apiserver`): use a *grid of individual cards*
+   (`col-md-4`/`col-md-6` > `card h-100 shadow-sm` > `card-title` +
+   `card-text`) instead of `list-group`. These are named, standalone
+   things that deserve their own visual weight — cramming a dozen
+   named commands into list-group rows reads worse than a grid. This
+   is the one deliberate exception to "always list-group" above.
+5. **Use Cases card**: plain `list-group` definition list.
+6. **Example card**: a real, runnable snippet in
+   `<pre className="bg-light p-3 rounded"><code>{...}</code></pre>`
+   (established convention, see `development/java/concurrency/page.tsx`)
+   followed by one paragraph walking through it.
+7. **Best Practices card**: `list-unstyled` — same as everywhere else.
+
+Image assets: source files land in `src/images/` (not servable);
+copy to `public/images/` before referencing with `/images/<name>.png`.
+
+## What NOT to change
+
 ## What NOT to change
 
 The top-level tab-switcher buttons on tab-based pages (`PageStates`
@@ -111,6 +147,12 @@ own explicit go-ahead.
   case: four equal-weight topics, one `h5` + one `list-group` each.
 - `src/app/data/role-of-data/why-data-matters/page.tsx` — the
   pre-existing page this pattern was generalized from.
+- `src/app/devops/terraform/page.tsx` — full architecture-diagram
+  pattern: intro, diagram+summary, core concepts, workflow-command
+  card grid, use cases, code example, best practices.
+- `src/app/devops/k8s/page.tsx` — same pattern, plus an example of
+  mixing card-grids (Control Plane/Node/Addon components) with
+  `alert-*` boxes for architecture variations.
 
 See also [[design-system]] for the site's color tokens, hero pattern,
 and spacing rules — this skill covers content-page *body* markup

@@ -120,8 +120,7 @@ export default function NavBar() {
                             </Dropdown.Toggle>
                             <Dropdown.Menu className={styles.dropdownMenu}>
                                 <Dropdown.Item href="/devops/k8s" className={styles.dropdownItem}>Kubernetes</Dropdown.Item>
-                                <Dropdown.Item href="/devops/k8s/yaml-files" className={`${styles.dropdownItem} ${styles.subItem}`}>YAML Files</Dropdown.Item>
-                                <Dropdown.Item href="/devops/k8s/iqs" className={`${styles.dropdownItem} ${styles.subItem}`}>Interview Questions</Dropdown.Item>
+                                <Dropdown.Item href="/devops/terraform" className={styles.dropdownItem}>Terraform</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
 
