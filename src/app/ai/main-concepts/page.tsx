@@ -82,7 +82,7 @@ const AiPage: React.FC = () => {
             <hr className="section-rule" />
             {concepts.map((concept) => (
                 <section id={concept.id} className="mb-5" key={concept.id}>
-                    <h3 className="mb-2" style={{ color: '#2563eb' }}>{concept.title}</h3>
+                    <h3 className="fw-semibold mb-2">{concept.title}</h3>
                     <p>{concept.description}</p>
                     <ul className="list-group list-group-flush">
                         {concept.items.map((item, index) => (

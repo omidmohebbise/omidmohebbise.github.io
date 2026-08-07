@@ -4,103 +4,79 @@ export default function SecurityPage() {
             <p className="section-label">Security</p>
             <h1 className="section-title">Key Concepts</h1>
             <hr className="section-rule" />
-            <div className="card mb-2">
+
+            <div className="card mb-4 shadow-sm">
                 <div className="card-body">
-                    <h3 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>Threats vs Vulnerabilities vs Risk</h3>
-                    <div className="my-3">
-                        <strong>Threats <br /></strong> Potential causes of unwanted incidents that could harm systems or data
-                    </div>
-                    <div className="my-3">
-                        <strong>Vulnerabilities <br /></strong> Weaknesses in systems that can be exploited by threats.
-                    </div>
-                    <div className="my-3">
-                        <strong>Risk <br /></strong> The potential for loss or damage when a threat exploits a vulnerability, considering both the likelihood and impact.
-                    </div>
+                    <h5>Threats vs Vulnerabilities vs Risk</h5>
+                    <ul className="list-group list-group-flush">
+                        <li className="list-group-item"><strong>Threat:</strong> A potential cause of an unwanted incident that could harm systems or data.</li>
+                        <li className="list-group-item"><strong>Vulnerability:</strong> A weakness in a system that can be exploited by a threat.</li>
+                        <li className="list-group-item"><strong>Risk:</strong> The potential for loss or damage when a threat exploits a vulnerability, considering both likelihood and impact.</li>
+                    </ul>
                 </div>
             </div>
 
-            <div className="card mb-2">
+            <div className="card mb-4 shadow-sm">
                 <div className="card-body">
-                    <h3 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>Layered Security Strategy</h3>
-                    <p>Defense in depth involves multiple layers of security controls across network, endpoint, user, and data levels to prevent, detect, and respond to attacks.</p>
-
-                    <strong className="mt-3">Network Level Controls</strong>
-                    <p>Firewalls, intrusion detection systems, and network segmentation act as the first line of defense.</p>
-
-                    <strong className="mt-3">Endpoint Level Controls</strong>
-                    <p>Endpoint detection and response (EDR) protects devices connecting to the network.</p>
-
-                    <strong className="mt-3">User Level Controls</strong>
-                    <p>Strong authentication methods like multi-factor authentication and access control policies ensure only the right people have access.</p>
-
-                    <strong className="mt-3">Data Level Controls</strong>
-                    <p>Encryption, backups, and data classification secure the core data even if other defenses are breached.</p>
-
-                    <div className="mt-3 alert alert-warning" role="alert">
+                    <h5>Layered Security Strategy</h5>
+                    <p className="mb-3">Defense in depth involves multiple layers of security controls across network, endpoint, user, and data levels to prevent, detect, and respond to attacks.</p>
+                    <ul className="list-group list-group-flush mb-3">
+                        <li className="list-group-item"><strong>Network Level Controls:</strong> Firewalls, intrusion detection systems, and network segmentation act as the first line of defense.</li>
+                        <li className="list-group-item"><strong>Endpoint Level Controls:</strong> Endpoint detection and response (EDR) protects devices connecting to the network.</li>
+                        <li className="list-group-item"><strong>User Level Controls:</strong> Strong authentication methods like multi-factor authentication and access control policies ensure only the right people have access.</li>
+                        <li className="list-group-item"><strong>Data Level Controls:</strong> Encryption, backups, and data classification secure the core data even if other defenses are breached.</li>
+                    </ul>
+                    <div className="alert alert-warning mb-0" role="alert">
                         <strong>Risk Consideration:</strong> The potential for loss or damage when a threat exploits a vulnerability, considering both the likelihood and impact.
                     </div>
                 </div>
             </div>
 
-            <div className="card mb-2">
+            <div className="card mb-4 shadow-sm">
                 <div className="card-body">
-                    <h3 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>Threats and Attacks</h3>
-                    <div className="my-3">
-                        <strong>Types of Insider Threats <br /></strong> Insider threats can be malicious insiders, negligent insiders, or accidental insiders.
-                    </div>
-                    <div className="my-3">
-                        <strong>Examples and Implications <br /></strong>  Insider threats can lead to significant data breaches and security compromises, as illustrated by the example of a financial institution&apos;s data breach.
-                    </div>
-                    <div className="my-3">
-                        <strong>Prevention Strategies <br /></strong> Effective prevention involves technical controls like access management and user behavior analytics, as well as organizational measures such as regular training and fostering a culture of security awareness.
-                    </div>
+                    <h5>Threats and Attacks</h5>
+                    <ul className="list-group list-group-flush">
+                        <li className="list-group-item"><strong>Types of Insider Threats:</strong> Insider threats can be malicious insiders, negligent insiders, or accidental insiders.</li>
+                        <li className="list-group-item"><strong>Examples and Implications:</strong> Insider threats can lead to significant data breaches and security compromises, as illustrated by the example of a financial institution&apos;s data breach.</li>
+                        <li className="list-group-item"><strong>Prevention Strategies:</strong> Effective prevention involves technical controls like access management and user behavior analytics, as well as organizational measures such as regular training and fostering a culture of security awareness.</li>
+                    </ul>
                 </div>
             </div>
 
-            <div className="card mb-2">
+            <div className="card mb-4 shadow-sm">
                 <div className="card-body">
-                    <h3 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>Ransomware</h3>
-                    <div className="my-3">
-                        <strong>Definition <br /></strong>Ransomware is malicious software that encrypts files and demands a ransom, often in cryptocurrency, with threats to release sensitive data if not paid.
-                    </div>
-                    <div className="my-3">
-                        <strong>Defense Strategies <br /></strong>
-                        <ul>
-                            <li>- Regular software updates and robust endpoint security.</li>
-                            <li>- Educating employees about phishing</li>
-                            <li>- Implementing immutable storage architectures, application whitelisting, and network segmentation</li>
-                            <li>- Using end-to-end encryption and having a well-tested incident response plan</li>
-                            <li>- Engaging in threat hunting and leveraging threat intelligence services.</li>
-                        </ul>
-                    </div>
+                    <h5>Ransomware</h5>
+                    <p className="mb-3"><strong>Definition:</strong> Malicious software that encrypts files and demands a ransom, often in cryptocurrency, with threats to release sensitive data if not paid.</p>
+                    <h6>Defense Strategies</h6>
+                    <ul className="list-unstyled mb-0">
+                        <li className="mb-1">Regular software updates and robust endpoint security.</li>
+                        <li className="mb-1">Educating employees about phishing.</li>
+                        <li className="mb-1">Implementing immutable storage architectures, application whitelisting, and network segmentation.</li>
+                        <li className="mb-1">Using end-to-end encryption and having a well-tested incident response plan.</li>
+                        <li className="mb-0">Engaging in threat hunting and leveraging threat intelligence services.</li>
+                    </ul>
                 </div>
             </div>
 
-            <div className="card mb-2">
+            <div className="card mb-4 shadow-sm">
                 <div className="card-body">
-                    <h3 className="fw-semibold mb-3" style={{ color: '#1e293b' }}>DoS Attacks</h3>
-                    <div className="my-3">
-                        <strong>Definition <br /></strong>
-                        Is a cyberattack aimed at disrupting the normal functioning of a system, network, or website by overwhelming it with excessive requests or traffic. This makes the service unavailable to legitimate users.
-                    </div>
-                    <div className="my-3">
-                        <strong>Types of DoS Attacks <br /></strong>
-                        <ul>
-                            <li><b>- Distributed Denial of Service (DDoS): </b>Multiple compromised computers (botnets) overwhelm a single target, disrupting its capacity to handle requests.</li>
-                            <li><b>- Application Layer Attacks: </b> Target specific functionalities within an application, making it slow or unresponsive.</li>
-                            <li><b>- Network Layer Attacks: </b> Disrupt connectivity between the user and service by targeting network protocols and equipment like routers and switches.</li>
-                        </ul>
-                    </div>
+                    <h5>DoS Attacks</h5>
+                    <p className="mb-3">A cyberattack aimed at disrupting the normal functioning of a system, network, or website by overwhelming it with excessive requests or traffic — making the service unavailable to legitimate users.</p>
 
-                    <div className="col-12 my-3">
-                        <strong> Mitigation Strategies <br /></strong>
-                        <ul>
-                            <li className="my-1">- Implement firewalls and intrusion prevention systems (IPS).</li>
-                            <li className="my-1">- Use rate limiting and traffic filtering.</li>
-                            <li className="my-1">- Deploy content delivery networks (CDN).</li>
-                            <li className="my-1">- Utilize anti-DDoS services from cloud providers.</li>
-                        </ul>
-                    </div>
+                    <h6>Types of DoS Attacks</h6>
+                    <ul className="list-group list-group-flush mb-3">
+                        <li className="list-group-item"><strong>Distributed Denial of Service (DDoS):</strong> Multiple compromised computers (botnets) overwhelm a single target, disrupting its capacity to handle requests.</li>
+                        <li className="list-group-item"><strong>Application Layer Attacks:</strong> Target specific functionalities within an application, making it slow or unresponsive.</li>
+                        <li className="list-group-item"><strong>Network Layer Attacks:</strong> Disrupt connectivity between the user and service by targeting network protocols and equipment like routers and switches.</li>
+                    </ul>
+
+                    <h6>Mitigation Strategies</h6>
+                    <ul className="list-unstyled mb-0">
+                        <li className="mb-1">Implement firewalls and intrusion prevention systems (IPS).</li>
+                        <li className="mb-1">Use rate limiting and traffic filtering.</li>
+                        <li className="mb-1">Deploy content delivery networks (CDN).</li>
+                        <li className="mb-0">Utilize anti-DDoS services from cloud providers.</li>
+                    </ul>
                 </div>
             </div>
         </div>

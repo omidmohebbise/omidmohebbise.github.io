@@ -1,0 +1,38 @@
+.categoryTitle {
+    color: var(--color-text);
+    font-weight: 600;
+    padding: 0.5rem 0.75rem;
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    margin-bottom: 0.75rem;
+}
+
+.legendRow {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+}
+
+.dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+.legendRow .dot {
+    margin-right: 4px;
+}
+
+.dotHigh {
+    background: #22c55e;
+}
+
+.dotMedium {
+    background: #eab308;
+}
+
+.dotLow {
+    background: #94a3b8;
+}

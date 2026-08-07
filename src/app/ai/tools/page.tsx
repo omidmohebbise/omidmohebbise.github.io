@@ -117,142 +117,141 @@ make`,
             <h1 className="section-title">AI Tools</h1>
             <hr className="section-rule" />
 
-            {/* Tools List */}
             {tools.map((tool) => (
-                <section key={tool.id} id={tool.id} className="mb-5">
-                    <h3 style={{ color: '#2563eb' }}>{tool.name}</h3>
-                    <p>{tool.description}</p>
+                <section key={tool.id} id={tool.id} className="card mb-4 shadow-sm">
+                    <div className="card-body">
+                        <h5 className="mb-2">{tool.name}</h5>
+                        <p>{tool.description}</p>
 
-                    <ul className="list-group list-group-flush mb-3">
-                        {tool.details.map((detail, idx) => (
-                            <li className="list-group-item" key={idx}>
-                                {detail}
-                            </li>
-                        ))}
-                    </ul>
+                        <ul className="list-group list-group-flush mb-3">
+                            {tool.details.map((detail, idx) => (
+                                <li className="list-group-item" key={idx}>
+                                    {detail}
+                                </li>
+                            ))}
+                        </ul>
 
-                    {tool.installation && (
-                        <>
-                            <h6>Installation:</h6>
-                            <pre className="bg-dark text-white p-3 rounded" style={{ whiteSpace: "pre-wrap" }}>
-                {tool.installation}
-              </pre>
-                        </>
-                    )}
+                        {tool.installation && (
+                            <>
+                                <h6>Installation</h6>
+                                <pre className="bg-light p-3 rounded"><code>{tool.installation}</code></pre>
+                            </>
+                        )}
 
-                    {tool.usage && (
-                        <>
-                            <h6>Usage:</h6>
-                            <code>{tool.usage}</code>
-                        </>
-                    )}
+                        {tool.usage && (
+                            <>
+                                <h6>Usage</h6>
+                                <pre className="bg-light p-3 rounded"><code>{tool.usage}</code></pre>
+                            </>
+                        )}
 
-                    {tool.example && (
-                        <>
-                            <h6>Example:</h6>
-                            <pre className="bg-dark text-white p-3 rounded" style={{ whiteSpace: "pre-wrap" }}>
-                {tool.example.trim()}
-              </pre>
-                        </>
-                    )}
+                        {tool.example && (
+                            <>
+                                <h6>Example</h6>
+                                <pre className="bg-light p-3 rounded"><code>{tool.example.trim()}</code></pre>
+                            </>
+                        )}
 
-                    {tool.website && (
-                        <p>
-                            Website:{" "}
-                            <a href={tool.website} target="_blank" rel="noopener noreferrer">
-                                {tool.website}
-                            </a>
+                        {tool.website && (
+                            <p className="mb-2">
+                                Website:{" "}
+                                <a href={tool.website} target="_blank" rel="noopener noreferrer">
+                                    {tool.website}
+                                </a>
+                            </p>
+                        )}
+
+                        <p className="mb-0">
+                            <strong>Use Case:</strong> {tool.useCase}
                         </p>
-                    )}
-
-                    <p>
-                        <strong>Use Case:</strong> {tool.useCase}
-                    </p>
-                    <hr />
+                    </div>
                 </section>
             ))}
 
-            {/* Comparison Table */}
-            <h2 className="mb-3">Comparison Table</h2>
-            <div className="table-responsive">
-                <table className="table table-striped table-bordered align-middle">
-                    <thead className="table-light">
-                    <tr>
-                        <th>Tool</th>
-                        <th>Ease of Use</th>
-                        <th>Hardware Needs</th>
-                        <th>Interface</th>
-                        <th>Supported Models</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Ollama</td>
-                        <td>Easy (CLI)</td>
-                        <td>Moderate</td>
-                        <td>CLI</td>
-                        <td>LLaMA, Mistral, Custom</td>
-                    </tr>
-                    <tr>
-                        <td>LM Studio</td>
-                        <td>Very Easy</td>
-                        <td>Moderate</td>
-                        <td>GUI</td>
-                        <td>LLaMA, GPT4All, Mistral</td>
-                    </tr>
-                    <tr>
-                        <td>GPT4All</td>
-                        <td>Easy</td>
-                        <td>Low/Moderate</td>
-                        <td>CLI & GUI</td>
-                        <td>GPT-J, LLaMA, Mistral</td>
-                    </tr>
-                    <tr>
-                        <td>Hugging Face</td>
-                        <td>Moderate</td>
-                        <td>Moderate/High</td>
-                        <td>Code-based</td>
-                        <td>Any model on Hugging Face</td>
-                    </tr>
-                    <tr>
-                        <td>llama.cpp</td>
-                        <td>Moderate</td>
-                        <td>Low</td>
-                        <td>CLI</td>
-                        <td>LLaMA models</td>
-                    </tr>
-                    <tr>
-                        <td>LocalAI</td>
-                        <td>Easy</td>
-                        <td>Moderate</td>
-                        <td>API-compatible</td>
-                        <td>LLaMA, GPT-J, Mistral</td>
-                    </tr>
-                    <tr>
-                        <td>KoboldCpp</td>
-                        <td>Easy</td>
-                        <td>Low</td>
-                        <td>GUI</td>
-                        <td>GGML Models (LLaMA, etc.)</td>
-                    </tr>
-                    <tr>
-                        <td>TensorRT-LLM</td>
-                        <td>Moderate</td>
-                        <td>High (GPU)</td>
-                        <td>Code-based</td>
-                        <td>Optimized GPT, LLaMA</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
+            <div className="card shadow-sm">
+                <div className="card-body">
+                    <h5 className="mb-3">Comparison Table</h5>
+                    <div className="table-responsive">
+                        <table className="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Tool</th>
+                                    <th>Ease of Use</th>
+                                    <th>Hardware Needs</th>
+                                    <th>Interface</th>
+                                    <th>Supported Models</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Ollama</td>
+                                    <td>Easy (CLI)</td>
+                                    <td>Moderate</td>
+                                    <td>CLI</td>
+                                    <td>LLaMA, Mistral, Custom</td>
+                                </tr>
+                                <tr>
+                                    <td>LM Studio</td>
+                                    <td>Very Easy</td>
+                                    <td>Moderate</td>
+                                    <td>GUI</td>
+                                    <td>LLaMA, GPT4All, Mistral</td>
+                                </tr>
+                                <tr>
+                                    <td>GPT4All</td>
+                                    <td>Easy</td>
+                                    <td>Low/Moderate</td>
+                                    <td>CLI &amp; GUI</td>
+                                    <td>GPT-J, LLaMA, Mistral</td>
+                                </tr>
+                                <tr>
+                                    <td>Hugging Face</td>
+                                    <td>Moderate</td>
+                                    <td>Moderate/High</td>
+                                    <td>Code-based</td>
+                                    <td>Any model on Hugging Face</td>
+                                </tr>
+                                <tr>
+                                    <td>llama.cpp</td>
+                                    <td>Moderate</td>
+                                    <td>Low</td>
+                                    <td>CLI</td>
+                                    <td>LLaMA models</td>
+                                </tr>
+                                <tr>
+                                    <td>LocalAI</td>
+                                    <td>Easy</td>
+                                    <td>Moderate</td>
+                                    <td>API-compatible</td>
+                                    <td>LLaMA, GPT-J, Mistral</td>
+                                </tr>
+                                <tr>
+                                    <td>KoboldCpp</td>
+                                    <td>Easy</td>
+                                    <td>Low</td>
+                                    <td>GUI</td>
+                                    <td>GGML Models (LLaMA, etc.)</td>
+                                </tr>
+                                <tr>
+                                    <td>TensorRT-LLM</td>
+                                    <td>Moderate</td>
+                                    <td>High (GPU)</td>
+                                    <td>Code-based</td>
+                                    <td>Optimized GPT, LLaMA</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-            <div className="alert alert-info mt-4">
-                <strong>Tips:</strong>{" "}
-                Try <em>Ollama, LM Studio, or GPT4All</em> for ease of use. Use{" "}
-                <em>LocalAI</em> for API-based needs. For low-resource setups, consider{" "}
-                <em>llama.cpp</em> or <em>KoboldCpp</em>. Developers looking for advanced
-                control should try <em>Hugging Face Transformers</em>. For GPU-heavy
-                workloads, NVIDIA's <em>TensorRT-LLM</em> is the way to go.
+                    <div className="alert alert-info mb-0">
+                        <strong>Tips:</strong>{" "}
+                        Try <em>Ollama, LM Studio, or GPT4All</em> for ease of use. Use{" "}
+                        <em>LocalAI</em> for API-based needs. For low-resource setups, consider{" "}
+                        <em>llama.cpp</em> or <em>KoboldCpp</em>. Developers looking for advanced
+                        control should try <em>Hugging Face Transformers</em>. For GPU-heavy
+                        workloads, NVIDIA&apos;s <em>TensorRT-LLM</em> is the way to go.
+                    </div>
+                </div>
             </div>
         </div>
     );

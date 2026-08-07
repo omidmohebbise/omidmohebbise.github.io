@@ -1,5 +1,4 @@
 import React from "react";
-import './page.scss';
 
 const AiLibrariesPage: React.FC = () => {
     const librariesByCategory = [
@@ -47,12 +46,12 @@ const AiLibrariesPage: React.FC = () => {
             <div className="row">
                 {librariesByCategory.map((category) => (
                     <div className="col-md-6 mb-4" key={category.title}>
-                        <div className="card h-100">
+                        <div className="card h-100 shadow-sm">
                             <div className="card-body">
-                                <h4 style={{ color: '#0f172a', fontWeight: 600, marginBottom: '0.75rem' }}>{category.title}</h4>
+                                <h5 className="mb-2">{category.title}</h5>
                                 <ul className="list-unstyled mb-0">
                                     {category.items.map((lib) => (
-                                        <li key={lib} className="mb-1" style={{ color: '#475569' }}>
+                                        <li key={lib} className="mb-1">
                                             • {lib}
                                         </li>
                                     ))}

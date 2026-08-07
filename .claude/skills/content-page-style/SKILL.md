@@ -125,7 +125,25 @@ for a tool/technology page anchored on a provided architecture diagram:
 Image assets: source files land in `src/images/` (not servable);
 copy to `public/images/` before referencing with `/images/<name>.png`.
 
-## What NOT to change
+## Prose-only topics (no bullets)
+
+When a topic is genuinely just a paragraph of explanation with nothing
+to itemize (see `security/security-areas`), skip the list entirely:
+`<h5>{Topic}</h5>` + `<p className="mb-0">{explanation}</p>` in each
+column. Don't force a one-item list-group just to "match the pattern."
+
+## Extract a shared component for repeated data-driven markup
+
+Added 2026-08-07 for `cloud/aws`, `cloud/azure`, `cloud/gcp` — they
+rendered the same `{title, services: [{title, description, level}]}`
+shape with byte-for-byte identical JSX (including a triplicated
+`levelDot()` helper and inline-styled colored dots). When 3+ pages
+share the same data shape and rendering logic, extract one shared
+component (e.g. `src/app/cloud/CloudServiceLevel.tsx` + a CSS module
+for anything that was inline-styled) instead of copy-pasting per page.
+Each page becomes a thin wrapper: import the shared component, pass
+its data, done. This is what "integrated UI" means in practice — one
+place to fix a bug or restyle, not three.
 
 ## What NOT to change
 
@@ -153,6 +171,12 @@ own explicit go-ahead.
 - `src/app/devops/k8s/page.tsx` — same pattern, plus an example of
   mixing card-grids (Control Plane/Node/Addon components) with
   `alert-*` boxes for architecture variations.
+- `src/app/security/algorithms/page.tsx` — 6 equal-weight topics as
+  3 stacked rows of `h5` + `list-group`, in one outer card.
+- `src/app/security/security-areas/page.tsx` — prose-only topics,
+  no lists at all.
+- `src/app/cloud/CloudServiceLevel.tsx` + `cloud/aws/page.tsx` —
+  the shared-component extraction pattern above.
 
 See also [[design-system]] for the site's color tokens, hero pattern,
 and spacing rules — this skill covers content-page *body* markup

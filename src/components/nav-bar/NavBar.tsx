@@ -96,6 +96,8 @@ export default function NavBar() {
                             </Dropdown.Toggle>
                             <Dropdown.Menu className={styles.dropdownMenu}>
                                 <Dropdown.Item href="/ai/main-concepts" className={styles.dropdownItem}>Main Concepts</Dropdown.Item>
+                                <Dropdown.Item href="/ai/common-model" className={styles.dropdownItem}>Common Models</Dropdown.Item>
+                                <Dropdown.Item href="/ai/gans" className={styles.dropdownItem}>Generative AI (GANs/VAE)</Dropdown.Item>
                                 <Dropdown.Item href="/ai/tools" className={styles.dropdownItem}>Tools</Dropdown.Item>
                                 <Dropdown.Item href="/ai/libraries" className={styles.dropdownItem}>Libraries</Dropdown.Item>
                             </Dropdown.Menu>
