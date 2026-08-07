@@ -121,6 +121,7 @@ export default function NavBar() {
                             <Dropdown.Menu className={styles.dropdownMenu}>
                                 <Dropdown.Item href="/devops/k8s" className={styles.dropdownItem}>Kubernetes</Dropdown.Item>
                                 <Dropdown.Item href="/devops/terraform" className={styles.dropdownItem}>Terraform</Dropdown.Item>
+                                <Dropdown.Item href="/devops/gitops" className={styles.dropdownItem}>GitOps</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
 
