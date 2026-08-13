@@ -1,0 +1,151 @@
+.wrapper {
+    position: relative;
+}
+
+/* The other nav dropdown toggles are <span>s (left-aligned by default);
+   this one is a real <button> for accessibility, which the browser
+   center-aligns by default — override so it matches on mobile. */
+.trigger {
+    text-align: left;
+    background: transparent;
+    border: none;
+    font: inherit;
+}
+
+/* The site's global CSS suppresses the default outline on buttons;
+   restore a visible keyboard-focus ring on this component's own
+   interactive elements without touching shared/global styles. */
+.trigger:focus-visible,
+.itemLink:focus-visible,
+.expandBtn:focus-visible,
+.overviewLink:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+.panel {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    z-index: 1030;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.1), 0 4px 8px -2px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e2e8f0;
+    min-width: 240px;
+    padding: 0.5rem;
+    animation: dropIn 0.15s ease;
+}
+
+@keyframes dropIn {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.overviewLink {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #2563eb;
+    text-decoration: none;
+    margin-bottom: 0.25rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+.overviewLink:hover { background: #f0f7ff; }
+
+.level {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.item {
+    position: relative;
+}
+
+.itemRow {
+    display: flex;
+    align-items: center;
+}
+
+.itemLink {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #374151;
+    text-decoration: none;
+}
+.itemLink:hover { background: #f0f7ff; color: #2563eb; }
+
+.expandBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: transparent;
+    border-radius: 6px;
+    color: #6b7280;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+.expandBtn:hover { background: #f1f5f9; color: #2563eb; }
+.expandBtn[aria-expanded="true"] { background: #eff6ff; color: #2563eb; }
+.expandBtn svg { transition: transform 0.15s ease; }
+
+.flyout {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-left: 4px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.1), 0 4px 8px -2px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e2e8f0;
+    min-width: 220px;
+    padding: 0.5rem;
+    z-index: 1031;
+}
+
+.seeAll {
+    padding: 0.25rem 0.75rem 0.5rem 1.5rem;
+}
+.seeAll a {
+    font-size: 0.78rem;
+    color: #2563eb;
+    text-decoration: none;
+}
+.seeAll a:hover { text-decoration: underline; }
+
+/* ─── Mobile: flyouts become inline expanding blocks ─────────── */
+@media (max-width: 768px) {
+    .wrapper { width: 100%; }
+
+    .panel {
+        position: static;
+        box-shadow: none;
+        border: none;
+        background: #f8fafc;
+        border-radius: 8px;
+        width: 100%;
+        margin-top: 0.25rem;
+        animation: none;
+    }
+
+    .flyout {
+        position: static;
+        margin-left: 0;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        padding-left: 0.75rem;
+        border-left: 2px solid #e2e8f0;
+    }
+
+    .expandBtn[aria-expanded="true"] svg { transform: rotate(90deg); }
+}
