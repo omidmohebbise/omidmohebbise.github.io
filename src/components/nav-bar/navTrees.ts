@@ -1,4 +1,5 @@
 import { musicTree, type MusicNode } from '@/app/music/musicTree';
+import { algorithms } from '@/components/algorithms/meta';
 import type { NavNode } from './NavMenu';
 
 export interface NavMenuConfig {
@@ -138,6 +139,19 @@ const dataNav: NavNode[] = [
             { title: 'Modern Trends', href: '/data/data-architecture/modern-trends' },
         ],
     },
+    {
+        title: 'Algorithms',
+        href: '/data/algorithms',
+        children: algorithms.map((a) => ({ title: a.title, href: `/data/algorithms/${a.slug}` })),
+    },
+];
+
+const mathNav: NavNode[] = [
+    { title: 'Algebra', href: '/math/algebra' },
+    { title: 'Calculus', href: '/math/calculus' },
+    { title: 'Linear Algebra', href: '/math/linear-algebra' },
+    { title: 'Probability & Statistics', href: '/math/probability-statistics' },
+    { title: 'Discrete Math', href: '/math/discrete-math' },
 ];
 
 function musicNodesToNavNodes(nodes: MusicNode[], basePath: string): NavNode[] {
@@ -159,5 +173,6 @@ export const mainNavMenus: NavMenuConfig[] = [
     { label: 'Security', activePrefix: '/security', nodes: securityNav },
     { label: 'DevOps', activePrefix: '/devops', nodes: devopsNav },
     { label: 'Data', activePrefix: '/data', overviewHref: '/data', overviewLabel: 'Overview', nodes: dataNav },
+    { label: 'Math', activePrefix: '/math', overviewHref: '/math', overviewLabel: 'Math Overview', nodes: mathNav },
     { label: 'Music', activePrefix: '/music', overviewHref: '/music', overviewLabel: 'Music Overview', nodes: musicNodesToNavNodes(musicTree, '/music') },
 ];
